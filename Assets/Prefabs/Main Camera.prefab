@@ -150,6 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e603bdaf7dd7f4a4690918a39c335964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BPM: 130
-  beatForce: 0.25
+  BPM: 240
+  beatForce: 0.15
   returnSpeed: 4

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,31 @@ public class CameraBPM : MonoBehaviour
     private float startZoom;
 
     private float beatCounter;
+    private bool runningBeat;
 
+    public static void StartBPM() { BPMStarted(); }
+    private static Action BPMStarted;
+    public static void StopBPM() { BPMStopped(); }
+    private static Action BPMStopped;
+
+    private void OnEnable()
+    {
+        BPMStarted += _StartBeat;
+        BPMStopped += _StopBeat;
+    }
+    private void OnDisable()
+    {
+        BPMStarted -= _StartBeat;
+        BPMStopped -= _StopBeat;
+    }
+
+    private void _StartBeat()
+    {
+        runningBeat = true;
+        beatCounter = BPM; // Just for the first beat to happen
+    }
+
+    private void _StopBeat() => runningBeat = false;
 
     void Start()
     {
@@ -23,7 +48,8 @@ public class CameraBPM : MonoBehaviour
 
     void Update()
     {
-        beatCounter += Time.deltaTime;
+        if (runningBeat)
+            beatCounter += Time.deltaTime;
 
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, startZoom, Time.deltaTime * returnSpeed);
 

@@ -6,7 +6,20 @@ public class IdleState : State
 
     public override void Enter(string[] data = null)
     {
+        CameraBPM.StopBPM();
+
         ((PlayerController)machine.owner).lineRenderer.enabled = true;
+        InputManager.JumpPressed += JumpPressed;
+    }
+
+    public void JumpPressed()
+    {
+        var owner = (PlayerController)machine.owner;
+        machine.ChangeState("moving", 
+            new string[] { Util.SerializeVector3Array(new Vector3[] { owner.platform.up }) });
+
+        if (owner.platform.TryGetComponent(out PlatformController plat))
+            plat.hasPlayer = false;
     }
 
 
@@ -14,18 +27,16 @@ public class IdleState : State
     {
         var owner = (PlayerController)machine.owner;
         owner.transform.up = owner.platform.up;
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            machine.ChangeState("moving", new string[] { Util.SerializeVector3Array(new Vector3[] { owner.platform.up }) });
-
-            if (owner.platform.TryGetComponent(out PlatformMoving plat))
-                plat.hasPlayer = false;
-        }
     }
 
     public override void Exit()
     {
+        CameraBPM.StartBPM();
+
         var owner = (PlayerController)machine.owner;
         owner.lineRenderer.enabled = false;
-        owner.platform.gameObject.SetActive(false);
+
+        if (owner.platform.TryGetComponent(out PlatformController plat)) plat.Disable();
+        InputManager.JumpPressed -= JumpPressed;
     }
 }

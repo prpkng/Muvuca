@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IEnablable
 {
     public float movingSpeed;
 
@@ -32,8 +32,10 @@ public class PlayerController : MonoBehaviour
         machine.AddState("moving", new MovingState());
         machine.owner = this;
         machine.ChangeState("idle", new string[] { });
-        if (platform.TryGetComponent(out PlatformMoving plat))
+        if (platform.TryGetComponent(out PlatformController plat))
             plat.hasPlayer = true;
+
+        LevelManager.Instance.startingPlatform = platform;
     }
 
     void Update()
@@ -44,6 +46,23 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         machine.FixedUpdate();
+    }
+
+    public void Enable()
+    {
+        platform = LevelManager.Instance.startingPlatform;
+        gameObject.SetActive(true);
+
+        if (platform.TryGetComponent(out PlatformController plat))
+            plat.hasPlayer = true;
+
+        transform.position = platform.position;
+    }
+
+    public void Disable()
+    {
+        if (platform.TryGetComponent(out PlatformController plat)) plat.Disable();
+        LevelManager.Instance.disabledElements.Add(this);
     }
 
     public Action<Transform> collidedWithPlatform;

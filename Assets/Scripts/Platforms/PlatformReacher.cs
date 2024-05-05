@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlatformReacher : MonoBehaviour
 {
     
-    [SerializeField] private float minDistance = 1;
+    const float minDistance = 1;
 
 
     private IEnumerator Start()
