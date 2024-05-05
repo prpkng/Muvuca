@@ -2,61 +2,63 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class CameraBPM : MonoBehaviour
+namespace Muvuca.Effects
 {
-    public float BPM;
-    public float beatForce;
-    public float returnSpeed;
-
-    private Camera cam;
-
-    private float startZoom;
-
-    private float beatCounter;
-    private bool runningBeat;
-
-    public static void StartBPM() { BPMStarted(); }
-    private static Action BPMStarted;
-    public static void StopBPM() { BPMStopped(); }
-    private static Action BPMStopped;
-
-    private void OnEnable()
+    public class CameraBPM : MonoBehaviour
     {
-        BPMStarted += _StartBeat;
-        BPMStopped += _StopBeat;
-    }
-    private void OnDisable()
-    {
-        BPMStarted -= _StartBeat;
-        BPMStopped -= _StopBeat;
-    }
+        public float BPM;
+        public float beatForce;
+        public float returnSpeed;
 
-    private void _StartBeat()
-    {
-        runningBeat = true;
-        beatCounter = BPM; // Just for the first beat to happen
-    }
+        private Camera cam;
 
-    private void _StopBeat() => runningBeat = false;
+        private float startZoom;
 
-    void Start()
-    {
-        cam = GetComponent<Camera>();
-        startZoom = cam.orthographicSize;
-    }
+        private float beatCounter;
+        private bool runningBeat;
 
-    void Update()
-    {
-        if (runningBeat)
-            beatCounter += Time.deltaTime;
+        public static void StartBPM() { BPMStarted(); }
+        private static Action BPMStarted;
+        public static void StopBPM() { BPMStopped(); }
+        private static Action BPMStopped;
 
-        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, startZoom, Time.deltaTime * returnSpeed);
+        private void OnEnable()
+        {
+            BPMStarted += _StartBeat;
+            BPMStopped += _StopBeat;
+        }
+        private void OnDisable()
+        {
+            BPMStarted -= _StartBeat;
+            BPMStopped -= _StopBeat;
+        }
 
-        if (beatCounter < 60f / BPM)
-            return;
+        private void _StartBeat()
+        {
+            runningBeat = true;
+            beatCounter = BPM; // Just for the first beat to happen
+        }
 
-        beatCounter = 0;
-        cam.orthographicSize = startZoom + beatForce;
+        private void _StopBeat() => runningBeat = false;
+
+        void Start()
+        {
+            cam = GetComponent<Camera>();
+            startZoom = cam.orthographicSize;
+        }
+
+        void Update()
+        {
+            if (runningBeat)
+                beatCounter += Time.deltaTime;
+
+            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, startZoom, Time.deltaTime * returnSpeed);
+
+            if (beatCounter < 60f / BPM)
+                return;
+
+            beatCounter = 0;
+            cam.orthographicSize = startZoom + beatForce;
+        }
     }
 }

@@ -1,26 +1,30 @@
+using Muvuca.Player;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+namespace Muvuca.Systems
 {
-    public static LevelManager Instance;
-    private void Awake()
+    public class LevelManager : MonoBehaviour
     {
-        if (Instance != null) Debug.LogError("You can't have multiple Level Managers in one single scene!");
-        Instance = this;
-    }
-
-
-    public Transform startingPlatform;
-    public List<IEnablable> disabledElements = new();
-
-    public static void Reset()
-    {
-        print("Reset");
-        PlayerController.Instance.Disable();
-        foreach (var item in Instance.disabledElements)
+        public static LevelManager Instance;
+        private void Awake()
         {
-            item.Enable();
+            if (Instance != null) Debug.LogError("You can't have multiple Level Managers in one single scene!");
+            Instance = this;
+        }
+
+
+        public Transform startingPlatform;
+        public List<IEnablable> disabledElements = new();
+
+        public static void Reset()
+        {
+            print("Reset");
+            PlayerController.Instance.Disable();
+            foreach (var item in Instance.disabledElements)
+            {
+                item.Enable();
+            }
         }
     }
 }

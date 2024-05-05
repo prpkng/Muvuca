@@ -1,39 +1,42 @@
+using Muvuca.Systems;
 using UnityEngine;
-
-public class PlatformController : MonoBehaviour, IEnablable
+namespace Muvuca.Elements
 {
-    public bool hasPlayer;
-    public float rotationSpeed;
-
-    private Quaternion startRot;
-    private Vector3 startPos;
-
-    private void Awake()
+    public class PlatformController : MonoBehaviour, IEnablable
     {
-        startRot = transform.rotation;
-        startPos = transform.position;
-    }
+        public bool hasPlayer;
+        public float rotationSpeed;
 
-    public void Disable()
-    {
-        hasPlayer = false;
-        gameObject.SetActive(false);
-        LevelManager.Instance.disabledElements.Add(this);
-    }
+        private Quaternion startRot;
+        private Vector3 startPos;
 
-    public void Enable()
-    {
-        print("enabled");
-        gameObject.SetActive(true);
-        gameObject.AddComponent<PlatformReacher>();
+        private void Awake()
+        {
+            startRot = transform.rotation;
+            startPos = transform.position;
+        }
 
-        transform.rotation = startRot;
-        transform.position = startPos;
-    }
+        public void Disable()
+        {
+            hasPlayer = false;
+            gameObject.SetActive(false);
+            LevelManager.Instance.disabledElements.Add(this);
+        }
 
-    public void Update()
-    {
-        if (!hasPlayer) return;
-        transform.Rotate(rotationSpeed * Time.deltaTime * Vector3.forward);
+        public void Enable()
+        {
+            print("enabled");
+            gameObject.SetActive(true);
+            gameObject.AddComponent<PlatformReacher>();
+
+            transform.rotation = startRot;
+            transform.position = startPos;
+        }
+
+        public void Update()
+        {
+            if (!hasPlayer) return;
+            transform.Rotate(rotationSpeed * Time.deltaTime * Vector3.forward);
+        }
     }
 }

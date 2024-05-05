@@ -1,6 +1,9 @@
-public interface IEnablable
+namespace Muvuca.Systems
 {
-    public void Enable();
+    public interface IEnablable
+    {
+        public void Enable();
 
-    public void Disable();
+        public void Disable();
+    }
 }

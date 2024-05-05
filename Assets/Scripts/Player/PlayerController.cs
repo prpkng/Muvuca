@@ -1,74 +1,80 @@
+using Muvuca.Elements;
+using Muvuca.Sysems;
+using Muvuca.Systems;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour, IEnablable
+namespace Muvuca.Player
 {
-    public float movingSpeed;
-
-    public Transform platform;
-
-    private StateMachine machine = new();
-
-    public LineRenderer lineRenderer;
-
-    public static PlayerController Instance;
-
-    private void OnDisable()
+    public class PlayerController : MonoBehaviour, IEnablable
     {
-        machine.currentState?.Exit();
-    }
+        public float movingSpeed;
 
-    private void Awake()
-    {
-        if (Instance != null)
+        public Transform platform;
+
+        private StateMachine machine = new();
+
+        public LineRenderer lineRenderer;
+
+        public static PlayerController Instance;
+
+        private void OnDisable()
         {
-            Destroy(Instance);
-            return;
+            machine.currentState?.Exit();
         }
 
-        Instance = this;
+        private void Awake()
+        {
+            if (Instance != null)
+            {
+                Destroy(Instance);
+                return;
+            }
+
+            Instance = this;
+        }
+
+        void Start()
+        {
+            machine.AddState("idle", new IdleState());
+            machine.AddState("moving", new MovingState());
+            machine.owner = this;
+            machine.ChangeState("idle", new string[] { });
+            if (platform.TryGetComponent(out PlatformController plat))
+                plat.hasPlayer = true;
+
+            LevelManager.Instance.startingPlatform = platform;
+        }
+
+        void Update()
+        {
+            machine.Update();
+        }
+
+        private void FixedUpdate()
+        {
+            machine.FixedUpdate();
+        }
+
+        public void Enable()
+        {
+            platform = LevelManager.Instance.startingPlatform;
+            gameObject.SetActive(true);
+
+            if (platform.TryGetComponent(out PlatformController plat))
+                plat.hasPlayer = true;
+
+            transform.position = platform.position;
+        }
+
+        public void Disable()
+        {
+            if (platform.TryGetComponent(out PlatformController plat)) plat.Disable();
+            LevelManager.Instance.disabledElements.Add(this);
+        }
+
+        public Action<Transform> collidedWithPlatform;
     }
-
-    void Start()
-    {
-        machine.AddState("idle", new IdleState());
-        machine.AddState("moving", new MovingState());
-        machine.owner = this;
-        machine.ChangeState("idle", new string[] { });
-        if (platform.TryGetComponent(out PlatformController plat))
-            plat.hasPlayer = true;
-
-        LevelManager.Instance.startingPlatform = platform;
-    }
-
-    void Update()
-    {
-        machine.Update();
-    }
-
-    private void FixedUpdate()
-    {
-        machine.FixedUpdate();
-    }
-
-    public void Enable()
-    {
-        platform = LevelManager.Instance.startingPlatform;
-        gameObject.SetActive(true);
-
-        if (platform.TryGetComponent(out PlatformController plat))
-            plat.hasPlayer = true;
-
-        transform.position = platform.position;
-    }
-
-    public void Disable()
-    {
-        if (platform.TryGetComponent(out PlatformController plat)) plat.Disable();
-        LevelManager.Instance.disabledElements.Add(this);
-    }
-
-    public Action<Transform> collidedWithPlatform;
 }
