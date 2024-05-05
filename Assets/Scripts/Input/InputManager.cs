@@ -13,6 +13,8 @@ namespace Muvuca.Input
 
         private void Awake()
         {
+            JumpPressed = null;
+            AttackPressed = null;
             playerInput = GetComponent<PlayerInput>();
             playerInput.onActionTriggered += OnActionTriggered;
         }

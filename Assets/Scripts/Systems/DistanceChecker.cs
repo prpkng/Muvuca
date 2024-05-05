@@ -14,12 +14,12 @@ namespace Muvuca.Systems
         public Action entered;
         public Action exited;
 
-        private bool isInRange;
+        public bool IsInRange { get; private set; }
 
         public void Disable()
         {
-            StopCoroutine(Start());
-            isInRange = false;
+            StopAllCoroutines();
+            IsInRange = false;
             LevelManager.Instance.disabledElements.Add(this);
         }
 
@@ -40,14 +40,14 @@ namespace Muvuca.Systems
                     continue;
 
                 var shouldBeInRange = Vector2.Distance(transform.position, target.position) < distance;
-                if (shouldBeInRange && !isInRange)
+                if (shouldBeInRange && !IsInRange)
                 {
-                    isInRange = true;
+                    IsInRange = true;
                     entered?.Invoke();
                 }
-                else if (!shouldBeInRange && isInRange)
+                else if (!shouldBeInRange && IsInRange)
                 {
-                    isInRange = false;
+                    IsInRange = false;
                     exited?.Invoke();
                 }
 
@@ -56,10 +56,10 @@ namespace Muvuca.Systems
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = isInRange ? Color.green : Color.red;
-            Gizmos.DrawWireSphere(transform.position, distance);
+            Gizmos.color = IsInRange ? Color.green : Color.red;
+            Gizmos.DrawWireSphere(transform.position, distance / 2);
             Gizmos.color -= Color.black * .5f;
-            Gizmos.DrawSphere(transform.position, distance);
+            Gizmos.DrawSphere(transform.position, distance / 2);
         }
 
     }

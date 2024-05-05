@@ -4,6 +4,14 @@ using UnityEngine;
 
 namespace Muvuca.Systems
 {
+    public enum Element
+    {
+        Neutral,
+        Fire,
+        Water,
+        Earth,
+        Air
+    }
     public class LevelManager : MonoBehaviour
     {
         public static LevelManager Instance;
@@ -13,6 +21,7 @@ namespace Muvuca.Systems
             Instance = this;
         }
 
+        public Element activeElement = Element.Neutral;
 
         public Transform startingPlatform;
         public List<IEnablable> disabledElements = new();

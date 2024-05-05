@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkFrequency: 0.1
-  distance: 1
+  distance: 1.25
   target: {fileID: 0}
 --- !u!58 &5157163686233595278
 CircleCollider2D:

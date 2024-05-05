@@ -26,12 +26,6 @@ namespace Muvuca.Player
 
         private void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(Instance);
-                return;
-            }
-
             Instance = this;
         }
 
@@ -75,6 +69,6 @@ namespace Muvuca.Player
             machine.ChangeState("idle");
         }
 
-        public Action<Transform> collidedWithPlatform;
+        public Action<Transform> EnteredPlatform;
     }
 }

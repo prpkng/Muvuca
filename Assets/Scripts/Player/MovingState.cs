@@ -18,7 +18,7 @@ namespace Muvuca.Player
             direction = Util.DeserializeVector3Array(data[0])[0];
 
             var owner = (PlayerController)machine.owner;
-            owner.collidedWithPlatform += Collided;
+            owner.EnteredPlatform += Collided;
 
             InputManager.AttackPressed += AttackPressed;
         }
@@ -32,7 +32,7 @@ namespace Muvuca.Player
 
         public override void Exit()
         {
-            ((PlayerController)machine.owner).collidedWithPlatform -= Collided;
+            ((PlayerController)machine.owner).EnteredPlatform -= Collided;
             InputManager.AttackPressed -= AttackPressed;
         }
 
