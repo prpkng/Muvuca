@@ -10,7 +10,7 @@ namespace Muvuca.Elements
         private Quaternion startRot;
         private Vector3 startPos;
 
-        private void Awake()
+        private void Awake()    
         {
             startRot = transform.rotation;
             startPos = transform.position;

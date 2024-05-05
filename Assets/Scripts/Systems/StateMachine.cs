@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Muvuca.Sysems
+namespace Muvuca.Systems
 {
     public abstract class State
     {

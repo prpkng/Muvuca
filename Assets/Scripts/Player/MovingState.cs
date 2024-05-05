@@ -1,7 +1,7 @@
 using DG.Tweening;
 using Muvuca.Elements;
 using Muvuca.Input;
-using Muvuca.Sysems;
+using Muvuca.Systems;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
