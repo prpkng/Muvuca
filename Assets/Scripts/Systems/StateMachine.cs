@@ -16,7 +16,7 @@ public class StateMachine
     public Dictionary<string, State> states = new();
 
     public Object owner;
-    private State currentState;
+    public State currentState;
 
     public void AddState(string name, State state)
     {

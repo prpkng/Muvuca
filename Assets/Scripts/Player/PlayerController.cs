@@ -15,6 +15,11 @@ public class PlayerController : MonoBehaviour, IEnablable
 
     public static PlayerController Instance;
 
+    private void OnDisable()
+    {
+        machine.currentState?.Exit();
+    }
+
     private void Awake()
     {
         if (Instance != null)

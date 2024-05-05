@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +14,21 @@ public class MovingState : State
 
         var owner = (PlayerController)machine.owner;
         owner.collidedWithPlatform += Collided;
+
+        InputManager.AttackPressed += AttackPressed;
     }
+
+    private void AttackPressed()
+    {
+        var owner = (PlayerController)machine.owner;
+        owner.transform.GetChild(0).localEulerAngles = Vector3.zero;
+        owner.transform.GetChild(0).DOLocalRotate(-Vector3.forward * 360, .25f, RotateMode.LocalAxisAdd);
+    }
+
     public override void Exit()
     {
         ((PlayerController)machine.owner).collidedWithPlatform -= Collided;
+        InputManager.AttackPressed -= AttackPressed;
     }
 
     private void Collided(Transform platform)
