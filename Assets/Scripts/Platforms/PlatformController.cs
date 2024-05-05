@@ -10,7 +10,7 @@ namespace Muvuca.Elements
         private Quaternion startRot;
         private Vector3 startPos;
 
-        private void Awake()    
+        private void Awake()
         {
             startRot = transform.rotation;
             startPos = transform.position;
@@ -18,6 +18,7 @@ namespace Muvuca.Elements
 
         public void Disable()
         {
+            if (gameObject.TryGetComponent(out DistanceChecker checker)) checker.Disable();
             hasPlayer = false;
             gameObject.SetActive(false);
             LevelManager.Instance.disabledElements.Add(this);
@@ -25,7 +26,6 @@ namespace Muvuca.Elements
 
         public void Enable()
         {
-            print("enabled");
             gameObject.SetActive(true);
             gameObject.AddComponent<PlatformReacher>();
 

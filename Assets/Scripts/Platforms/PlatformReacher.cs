@@ -1,34 +1,36 @@
 using Muvuca.Player;
+using Muvuca.Systems;
 using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace Muvuca.Elements
 {
     public class PlatformReacher : MonoBehaviour
     {
+        private DistanceChecker distanceChecker;
+        private void Start()
+        {
+            distanceChecker = GetComponent<DistanceChecker>();
+            distanceChecker.target = PlayerController.Instance.transform;
+            distanceChecker.entered += Entered;
+        }
+
+        private void OnDestroy()
+        {
+            distanceChecker.entered -= Entered;
+        }
+
+        private void Entered()
+        {
+            PlayerController.Instance.collidedWithPlatform?.Invoke(transform);
+        }
 
         const float minDistance = 1;
 
 
-        private IEnumerator Start()
-        {
-            while (true)
-            {
-                if (Vector3.Distance(transform.position, PlayerController.Instance.transform.position)
-                    < minDistance)
-                {
-                    PlayerController.Instance.collidedWithPlatform?.Invoke(transform);
-                    Debug.DrawLine(transform.position, PlayerController.Instance.transform.position,
-                        Color.green, .09f);
-                    Destroy(this);
-                    break;
-                }
-                Debug.DrawLine(transform.position,
-                    PlayerController.Instance.transform.position, Color.red, .09f);
-                yield return new WaitForSeconds(0.1f);
-            }
-        }
+
 
     }
 }

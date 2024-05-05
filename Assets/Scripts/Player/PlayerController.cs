@@ -72,6 +72,7 @@ namespace Muvuca.Player
         {
             if (platform.TryGetComponent(out PlatformController plat)) plat.Disable();
             LevelManager.Instance.disabledElements.Add(this);
+            machine.ChangeState("idle");
         }
 
         public Action<Transform> collidedWithPlatform;

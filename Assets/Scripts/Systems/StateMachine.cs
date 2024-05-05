@@ -25,7 +25,7 @@ namespace Muvuca.Systems
             state.machine = this;
         }
 
-        public void ChangeState(string nextState, string[] data)
+        public void ChangeState(string nextState, string[] data = null)
         {
             if (!states.ContainsKey(nextState))
             {

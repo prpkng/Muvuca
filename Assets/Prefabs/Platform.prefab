@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1392051661559621390}
   - component: {fileID: 2149596396478059255}
   - component: {fileID: 949211724773215982}
+  - component: {fileID: 639840535489388089}
   - component: {fileID: 5157163686233595278}
   m_Layer: 6
   m_Name: Platform
@@ -145,7 +146,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fcd4a91a9a01144ba6317fa154c3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 1
+--- !u!114 &639840535489388089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975769417725167653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ca84b942263b94092ab5c2ec1a5428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkFrequency: 0.1
+  distance: 1
+  target: {fileID: 0}
 --- !u!58 &5157163686233595278
 CircleCollider2D:
   m_ObjectHideFlags: 0
