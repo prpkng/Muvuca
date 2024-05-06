@@ -19,6 +19,7 @@ namespace Muvuca.Systems
         {
             if (Instance != null) Debug.LogError("You can't have multiple Level Managers in one single scene!");
             Instance = this;
+            Instance.activeElement = Element.Neutral;
         }
 
         public Element activeElement = Element.Neutral;
@@ -28,6 +29,7 @@ namespace Muvuca.Systems
 
         public static void Reset()
         {
+            Instance.activeElement = Element.Neutral;
             print("Reset");
             PlayerController.Instance.Disable();
             foreach (var item in Instance.disabledElements)

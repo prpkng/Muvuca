@@ -46,9 +46,9 @@ namespace Muvuca.Input
                     var size = Screen.width;
                     var left = TouchPos.x < size / 2;
                     if (left) // LEFT CLICK
-                        JumpPressed?.Invoke();
-                    else                       // RIGHT CLICK
                         AttackPressed?.Invoke();
+                    else                       // RIGHT CLICK
+                        JumpPressed?.Invoke();
                     break;
 
             }

@@ -5,6 +5,7 @@ namespace Muvuca.Elements
     public class PlatformController : MonoBehaviour, IEnablable
     {
         public bool hasPlayer;
+        public bool reverse;
         public float rotationSpeed;
 
         private Quaternion startRot;
@@ -36,7 +37,7 @@ namespace Muvuca.Elements
         public void Update()
         {
             if (!hasPlayer) return;
-            transform.Rotate(rotationSpeed * Time.deltaTime * Vector3.forward);
+            transform.Rotate((reverse ? -1 : 1) * rotationSpeed * Time.deltaTime * Vector3.forward);
         }
     }
 }

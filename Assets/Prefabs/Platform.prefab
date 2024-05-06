@@ -133,7 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPlayer: 0
-  rotationSpeed: -180
+  reverse: 0
+  rotationSpeed: -100
 --- !u!114 &949211724773215982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fcd4a91a9a01144ba6317fa154c3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startEnabled: 1
 --- !u!114 &639840535489388089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkFrequency: 0.1
-  distance: 1.25
+  distance: 2
   target: {fileID: 0}
 --- !u!58 &5157163686233595278
 CircleCollider2D:
