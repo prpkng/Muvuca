@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Muvuca.Effects;
 using Muvuca.Input;
 using Muvuca.Player;
 using Muvuca.Systems;
@@ -34,6 +35,7 @@ namespace Muvuca
         {
             if (!distanceChecker.IsInRange) return;
             LevelManager.Instance.activeElement = element;
+            CameraBPM.TriggerBeat();
             Disable();
         }
 
@@ -47,6 +49,10 @@ namespace Muvuca
             gameObject.SetActive(false);
             distanceChecker.Disable();
             LevelManager.Instance.disabledElements.Add(this);
+        }
+
+        private void Update() {
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (distanceChecker.IsInRange ? 1.5f : 1f), Time.deltaTime * 8f);
         }
     }
 }

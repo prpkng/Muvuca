@@ -14,51 +14,31 @@ namespace Muvuca.Effects
 
         private float startZoom;
 
-        private float beatCounter;
-        private bool runningBeat;
-
-        public static void StartBPM() { BPMStarted(); }
-        private static Action BPMStarted;
-        public static void StopBPM() { BPMStopped(); }
-        private static Action BPMStopped;
-
-        private void OnEnable()
-        {
-            BPMStarted += _StartBeat;
-            BPMStopped += _StopBeat;
-        }
-        private void OnDisable()
-        {
-            BPMStarted -= _StartBeat;
-            BPMStopped -= _StopBeat;
+        public void Beat() {
+            cam.orthographicSize = startZoom + beatForce;
         }
 
-        private void _StartBeat()
-        {
-            runningBeat = true;
-            beatCounter = BPM; // Just for the first beat to happen
-        }
 
-        private void _StopBeat() => runningBeat = false;
+        public static void TriggerBeat() => _BeatEvent?.Invoke();
+        private static event Action _BeatEvent;
 
-        void Start()
+        void Awake()
         {
             cam = GetComponent<Camera>();
             startZoom = cam.orthographicSize;
         }
 
+        private void OnEnable() {
+            _BeatEvent += Beat;
+        }
+        
+        private void OnDisable() {
+            _BeatEvent -= Beat;
+        }
+
         void Update()
         {
-            if (runningBeat)
-                beatCounter += Time.deltaTime;
-
             cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, startZoom, Time.deltaTime * returnSpeed);
-
-            if (beatCounter < 60f / BPM)
-                return;
-
-            beatCounter = 0;
-            cam.orthographicSize = startZoom + beatForce;
         }
     }
 }

@@ -11,10 +11,10 @@ namespace Muvuca.Player
 
         public override void Enter(string[] data = null)
         {
-            CameraBPM.StopBPM();
-
             ((PlayerController)machine.owner).lineRenderer.enabled = true;
             InputManager.JumpPressed += JumpPressed;
+            CameraBPM.TriggerBeat();
+
         }
 
         public void JumpPressed()
@@ -23,7 +23,7 @@ namespace Muvuca.Player
             machine.ChangeState("moving",
                 new string[] { Util.SerializeVector3Array(new Vector3[] { owner.platform.up }) });
 
-            if (owner.platform.TryGetComponent(out PlatformController plat))
+            if (owner.platform.TryGetComponent(out PlatformRotator plat))
                 plat.hasPlayer = false;
         }
 
@@ -36,13 +36,13 @@ namespace Muvuca.Player
 
         public override void Exit()
         {
-            CameraBPM.StartBPM();
-
             var owner = (PlayerController)machine.owner;
             owner.lineRenderer.enabled = false;
 
-            if (owner.platform.TryGetComponent(out PlatformController plat)) plat.Disable();
+            if (owner.platform.TryGetComponent(out PlatformRotator plat)) plat.Disable();
             InputManager.JumpPressed -= JumpPressed;
+            CameraBPM.TriggerBeat();
+
         }
     }
 }

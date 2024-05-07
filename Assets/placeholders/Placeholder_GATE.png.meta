@@ -108,7 +108,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Placeholder_GATE_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 28.444445
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc68848cbda7c340a05ab4f2505191a
+      internalID: -1546007308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_GATE_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 28.444445
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2129f1d91c8706442a9a9a6ae24c86b2
+      internalID: -1630184953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_GATE_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 28.444445
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c020ddfdce8aeaa4bac027ef5339bbce
+      internalID: -2020498966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_GATE_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 28.444445
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcbe4a5df0832848ad9eff5fedd8b2b
+      internalID: -1517408985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_GATE_4
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 28.444445
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd980bb10e4544441afd3b3301014560
+      internalID: 1230639150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_GATE_5
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 28.444445
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6561ac64c8cb52542be4bf785ace59e1
+      internalID: -1300844643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Placeholder_GATE_6
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 0
+        width: 28.444445
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d77be56ed99c084294c15a0910c331e
+      internalID: 442934869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +266,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Placeholder_GATE_0: -1546007308
+      Placeholder_GATE_1: -1630184953
+      Placeholder_GATE_2: -2020498966
+      Placeholder_GATE_3: -1517408985
+      Placeholder_GATE_4: 1230639150
+      Placeholder_GATE_5: -1300844643
+      Placeholder_GATE_6: 442934869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

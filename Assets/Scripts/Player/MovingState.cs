@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Muvuca.Effects;
 using Muvuca.Elements;
 using Muvuca.Input;
 using Muvuca.Systems;
@@ -18,7 +19,7 @@ namespace Muvuca.Player
             direction = Util.DeserializeVector3Array(data[0])[0];
 
             var owner = (PlayerController)machine.owner;
-            owner.EnteredPlatform += Collided;
+            owner.EnteredPlatform += EnteredPlatform;
 
             InputManager.AttackPressed += AttackPressed;
         }
@@ -32,17 +33,18 @@ namespace Muvuca.Player
 
         public override void Exit()
         {
-            ((PlayerController)machine.owner).EnteredPlatform -= Collided;
+            ((PlayerController)machine.owner).EnteredPlatform -= EnteredPlatform;
             InputManager.AttackPressed -= AttackPressed;
         }
 
-        private void Collided(Transform platform)
+        private void EnteredPlatform(Transform platform)
         {
             var owner = (PlayerController)machine.owner;
             owner.platform = platform;
             owner.transform.position = platform.position;
-            if (platform.TryGetComponent(out PlatformController plat))
+            if (platform.TryGetComponent(out PlatformRotator plat))
                 plat.hasPlayer = true;
+            
             machine.ChangeState("idle", null);
         }
 

@@ -16,8 +16,11 @@ namespace Muvuca.Systems
 
         public bool IsInRange { get; private set; }
 
+        [ReadOnly] public bool isRunning;
+
         public void Disable()
         {
+            isRunning = false;
             StopAllCoroutines();
             IsInRange = false;
             LevelManager.Instance.disabledElements.Add(this);
@@ -25,7 +28,7 @@ namespace Muvuca.Systems
 
         public void Enable()
         {
-            print("checker enabled");
+            isRunning = true;
             gameObject.SetActive(true);
             StartCoroutine(Start());
         }

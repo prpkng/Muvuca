@@ -134,6 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPlayer: 0
   reverse: 0
+  minAngle: 0
+  maxAngle: 90
   rotationSpeed: -100
 --- !u!114 &949211724773215982
 MonoBehaviour:
@@ -163,6 +165,7 @@ MonoBehaviour:
   checkFrequency: 0.1
   distance: 2
   target: {fileID: 0}
+  isRunning: 0
 --- !u!58 &5157163686233595278
 CircleCollider2D:
   m_ObjectHideFlags: 0
