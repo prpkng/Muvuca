@@ -2,10 +2,8 @@ using Muvuca.Systems;
 using UnityEngine;
 namespace Muvuca.Elements
 {
-    public class PlatformRotator : MonoBehaviour, IEnablable
+    public class RotatingPlatform : FixedPlatform
     {
-        public bool hasPlayer;
-        public bool reverse;
 
         public float minAngle;
         public float maxAngle;
@@ -22,22 +20,12 @@ namespace Muvuca.Elements
             startPos = transform.position;
         }
 
-        public void Disable()
+        public override void Enable()
         {
-            if (gameObject.TryGetComponent(out DistanceChecker checker)) checker.Disable();
-            hasPlayer = false;
-            gameObject.SetActive(false);
-            LevelManager.Instance.disabledElements.Add(this);
-        }
-
-        public void Enable()
-        {
-            gameObject.SetActive(true);
-            gameObject.AddComponent<PlatformReacher>();
+            base.Enable();
 
             counter = 0;
-            transform.rotation = startRot;
-            transform.position = startPos;
+            transform.SetPositionAndRotation(startPos, startRot);
         }
 
         public void Update()

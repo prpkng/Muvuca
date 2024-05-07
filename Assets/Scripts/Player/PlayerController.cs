@@ -35,7 +35,7 @@ namespace Muvuca.Player
             machine.AddState("moving", new MovingState());
             machine.owner = this;
             machine.ChangeState("idle", new string[] { });
-            if (platform.TryGetComponent(out PlatformRotator plat))
+            if (platform.TryGetComponent(out FixedPlatform plat))
                 plat.hasPlayer = true;
 
             LevelManager.Instance.startingPlatform = platform;
@@ -56,7 +56,7 @@ namespace Muvuca.Player
             platform = LevelManager.Instance.startingPlatform;
             gameObject.SetActive(true);
 
-            if (platform.TryGetComponent(out PlatformRotator plat))
+            if (platform.TryGetComponent(out FixedPlatform plat))
                 plat.hasPlayer = true;
 
             transform.position = platform.position;
@@ -64,7 +64,7 @@ namespace Muvuca.Player
 
         public void Disable()
         {
-            if (platform.TryGetComponent(out PlatformRotator plat)) plat.Disable();
+            if (platform.TryGetComponent(out FixedPlatform plat)) plat.Disable();
             LevelManager.Instance.disabledElements.Add(this);
             machine.ChangeState("idle");
         }

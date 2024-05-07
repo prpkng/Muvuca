@@ -42,7 +42,7 @@ namespace Muvuca.Player
             var owner = (PlayerController)machine.owner;
             owner.platform = platform;
             owner.transform.position = platform.position;
-            if (platform.TryGetComponent(out PlatformRotator plat))
+            if (platform.TryGetComponent(out FixedPlatform plat))
                 plat.hasPlayer = true;
             
             machine.ChangeState("idle", null);
