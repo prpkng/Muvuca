@@ -8,9 +8,6 @@ namespace Muvuca.Systems
     {
         Neutral,
         Fire,
-        Water,
-        Earth,
-        Air
     }
     public class LevelManager : MonoBehaviour
     {

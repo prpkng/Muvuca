@@ -19,6 +19,12 @@ namespace Muvuca.Player
 
         public static PlayerController Instance;
 
+        public void SetDirection(Vector2 direction)
+        {
+            machine.ChangeState("moving", new string[] { Util.SerializeVector3Array(new Vector3[] { direction }) });
+            transform.up = direction;
+        }
+
         private void OnDisable()
         {
             machine.currentState?.Exit();
