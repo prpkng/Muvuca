@@ -10,11 +10,12 @@ namespace Muvuca.Effects
         public float beatForce;
         public float returnSpeed;
 
-        private Camera cam;
+        private UnityEngine.Camera cam;
 
         private float startZoom;
 
-        public void Beat() {
+        public void Beat()
+        {
             cam.orthographicSize = startZoom + beatForce;
         }
 
@@ -24,15 +25,17 @@ namespace Muvuca.Effects
 
         void Awake()
         {
-            cam = GetComponent<Camera>();
+            cam = GetComponent<UnityEngine.Camera>();
             startZoom = cam.orthographicSize;
         }
 
-        private void OnEnable() {
+        private void OnEnable()
+        {
             _BeatEvent += Beat;
         }
-        
-        private void OnDisable() {
+
+        private void OnDisable()
+        {
             _BeatEvent -= Beat;
         }
 

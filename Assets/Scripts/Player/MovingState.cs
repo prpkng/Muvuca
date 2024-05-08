@@ -44,14 +44,14 @@ namespace Muvuca.Player
             owner.transform.position = platform.position;
             if (platform.TryGetComponent(out FixedPlatform plat))
                 plat.hasPlayer = true;
-            
+
             machine.ChangeState("idle", null);
         }
 
-        public override void FixedUpdate()
+        public override void Update()
         {
             var owner = (PlayerController)machine.owner;
-            owner.transform.position += direction * owner.movingSpeed * Time.deltaTime;
+            owner.transform.position += owner.movingSpeed * Time.deltaTime * direction;
         }
     }
 }
