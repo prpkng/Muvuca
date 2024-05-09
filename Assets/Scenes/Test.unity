@@ -1119,10 +1119,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 949211724773215982, guid: de01eeb62dd1ef04f958397095e02598, type: 3}
-      propertyPath: startEnabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1392051661559621390, guid: de01eeb62dd1ef04f958397095e02598, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.75
@@ -1166,14 +1162,6 @@ PrefabInstance:
     - target: {fileID: 1975769417725167653, guid: de01eeb62dd1ef04f958397095e02598, type: 3}
       propertyPath: m_Name
       value: Rotating Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 2149596396478059255, guid: de01eeb62dd1ef04f958397095e02598, type: 3}
-      propertyPath: maxAngle
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2149596396478059255, guid: de01eeb62dd1ef04f958397095e02598, type: 3}
-      propertyPath: minAngle
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
