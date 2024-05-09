@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+
 namespace Muvuca.Effects
 {
     public class CameraBPM : MonoBehaviour
@@ -10,13 +12,13 @@ namespace Muvuca.Effects
         public float beatForce;
         public float returnSpeed;
 
-        private UnityEngine.Camera cam;
+        private CinemachineVirtualCamera vCam;
 
         private float startZoom;
 
         public void Beat()
         {
-            cam.orthographicSize = startZoom + beatForce;
+            vCam.m_Lens.OrthographicSize = startZoom + beatForce;
         }
 
 
@@ -25,8 +27,8 @@ namespace Muvuca.Effects
 
         void Awake()
         {
-            cam = GetComponent<UnityEngine.Camera>();
-            startZoom = cam.orthographicSize;
+            vCam = GetComponent<CinemachineVirtualCamera>();
+            startZoom = vCam.m_Lens.OrthographicSize;
         }
 
         private void OnEnable()
@@ -41,7 +43,7 @@ namespace Muvuca.Effects
 
         void Update()
         {
-            cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, startZoom, Time.deltaTime * returnSpeed);
+            vCam.m_Lens.OrthographicSize = Mathf.Lerp(vCam.m_Lens.OrthographicSize, startZoom, Time.deltaTime * returnSpeed);
         }
     }
 }

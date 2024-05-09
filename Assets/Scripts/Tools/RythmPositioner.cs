@@ -8,7 +8,7 @@ namespace Muvuca.Tools
         public float directionDegrees = 0;
         public float BPM = 100;
         [Range(1, 4)]
-        public int beatCount;
+        public float beatCount;
         public float movementSpeed = 10; // In seconds
         private static readonly Color dimWhite = Color.white - Color.black / 2;
 
@@ -40,13 +40,17 @@ namespace Muvuca.Tools
             for (int i = 1; i < 5; i++)
             {
                 Gizmos.color = dimWhite;
-                if (i == beatCount)
-                    Gizmos.color = Color.green;
                 var pos = transform.position + i * movementPerBeat * (Vector3)dir;
                 Vector3 perpDir = Vector2.Perpendicular(dir) / 2;
 
                 Gizmos.DrawLine(pos - perpDir, pos + perpDir);
             }
+
+            var _pos = transform.position + beatCount * movementPerBeat * (Vector3)dir;
+            Gizmos.color = Color.green;
+            Vector3 _perpDir = Vector2.Perpendicular(dir) / 2;
+
+            Gizmos.DrawLine(_pos - _perpDir, _pos + _perpDir);
         }
     }
 }

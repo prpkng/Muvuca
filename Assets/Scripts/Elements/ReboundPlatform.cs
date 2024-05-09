@@ -41,6 +41,7 @@ namespace Muvuca.Elements
             if (!distanceChecker.IsInRange) return;
             var angle = Mathf.Deg2Rad * newDirection;
             var dir = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle));
+            PlayerController.Instance.transform.position = transform.position;
             PlayerController.Instance.SetDirection(dir);
 
             CameraBPM.TriggerBeat();
