@@ -46,6 +46,22 @@ MonoBehaviour:
     m_Localized: Autores
     m_Metadata:
       m_Items: []
+  - m_Id: 314893718814720
+    m_Localized: "Portugu\xEAs"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 315714766405632
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 316729238519808
+    m_Localized: "Resolu\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 317172639367168
+    m_Localized: Qualidade
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

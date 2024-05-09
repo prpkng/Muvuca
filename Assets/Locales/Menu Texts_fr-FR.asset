@@ -46,6 +46,22 @@ MonoBehaviour:
     m_Localized: Auteurs
     m_Metadata:
       m_Items: []
+  - m_Id: 314893718814720
+    m_Localized: "Fran\xE7ais"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 315714766405632
+    m_Localized: Langue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 316729238519808
+    m_Localized: "R\xE9solution "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 317172639367168
+    m_Localized: "Qualit\xE9"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

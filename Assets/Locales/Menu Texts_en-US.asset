@@ -46,6 +46,22 @@ MonoBehaviour:
     m_Localized: Authors
     m_Metadata:
       m_Items: []
+  - m_Id: 314893718814720
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 315714766405632
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 316729238519808
+    m_Localized: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 317172639367168
+    m_Localized: Quality
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -49,6 +49,24 @@ MonoBehaviour:
 '
     m_Metadata:
       m_Items: []
+  - m_Id: 314893718814720
+    m_Key: 'LanguageName
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 315714766405632
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 316729238519808
+    m_Key: Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 317172639367168
+    m_Key: Quality
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
