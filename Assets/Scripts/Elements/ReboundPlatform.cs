@@ -8,7 +8,7 @@ namespace Muvuca.Elements
 
     public class ReboundPlatform : MonoBehaviour, IEnablable
     {
-        private DistanceChecker distanceChecker;
+        private HitboxChecker distanceChecker;
         [Range(0, 360)]
         public float newDirection;
 
@@ -22,8 +22,7 @@ namespace Muvuca.Elements
 
         private void Start()
         {
-            distanceChecker = GetComponent<DistanceChecker>();
-            distanceChecker.target = PlayerController.Instance.transform;
+            distanceChecker = GetComponent<HitboxChecker>();
         }
 
         private void OnEnable()

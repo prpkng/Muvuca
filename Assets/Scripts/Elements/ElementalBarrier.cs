@@ -11,12 +11,11 @@ namespace Muvuca.Elements
     public class ElementalBarrier : MonoBehaviour, IEnablable
     {
         [SerializeField] private Element element;
-        private DistanceChecker distanceChecker;
+        private HitboxChecker distanceChecker;
 
         private void Start()
         {
-            distanceChecker = GetComponent<DistanceChecker>();
-            distanceChecker.target = PlayerController.Instance.transform;
+            distanceChecker = GetComponent<HitboxChecker>();
         }
 
         private void OnEnable()
@@ -34,6 +33,7 @@ namespace Muvuca.Elements
             if (!distanceChecker.IsInRange) return;
             if (LevelManager.Instance.activeElement != element) return;
             CameraBPM.TriggerBeat();
+            LevelManager.Instance.activeElement = Element.Neutral;
             Disable();
         }
 
@@ -49,7 +49,8 @@ namespace Muvuca.Elements
             LevelManager.Instance.disabledElements.Add(this);
         }
 
-        private void Update() {
+        private void Update()
+        {
             transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (distanceChecker.IsInRange ? 1.5f : 1f), Time.deltaTime * 8f);
         }
     }

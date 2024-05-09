@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 662017006604274852}
   - component: {fileID: 415087523636717762}
   - component: {fileID: 4318659339166552444}
-  - component: {fileID: 4098044844872910835}
+  - component: {fileID: 4254144124060874416}
   m_Layer: 6
   m_Name: Moving Platform
   m_TagString: Platform
@@ -111,12 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ca84b942263b94092ab5c2ec1a5428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkFrequency: 0.1
-  distance: 1.5
-  target: {fileID: 0}
-  isRunning: 0
---- !u!58 &4098044844872910835
-CircleCollider2D:
+  isRunning: 1
+--- !u!61 &4254144124060874416
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,8 +145,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 2, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &4055953325903330187
 GameObject:
   m_ObjectHideFlags: 0

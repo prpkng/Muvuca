@@ -11,14 +11,13 @@ namespace Muvuca.Elements
     public class PlatformReacher : MonoBehaviour
     {
         [SerializeField] private bool startEnabled = true;
-        private DistanceChecker distanceChecker;
+        private HitboxChecker distanceChecker;
 
         private void Start()
         {
-            distanceChecker = GetComponent<DistanceChecker>();
+            distanceChecker = GetComponent<HitboxChecker>();
             if (!startEnabled)
                 distanceChecker.Disable();
-            distanceChecker.target = PlayerController.Instance.transform;
         }
 
         private void OnEnable()
@@ -38,7 +37,8 @@ namespace Muvuca.Elements
             PlayerController.Instance.EnteredPlatform(transform);
         }
 
-        private void Update() {
+        private void Update()
+        {
             if (!distanceChecker.isRunning) return;
             transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (distanceChecker.IsInRange ? 1.5f : 1f), Time.deltaTime * 8f);
         }

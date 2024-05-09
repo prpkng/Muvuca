@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3099715889989045886}
   - component: {fileID: 6795301703300152914}
   - component: {fileID: 7960887124819607206}
+  - component: {fileID: 7196231227405299230}
   m_Layer: 0
   m_Name: ElementalBarrier
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8148709628722620674}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.9239447, w: -0.38252616}
+  m_LocalRotation: {x: 0, y: -0, z: 0.9239464, w: -0.382522}
   m_LocalPosition: {x: 2.9811773, y: -1.3928566, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 40e259a3a409ead419f3a8f4d0d840f8, type: 3}
-  m_Color: {r: 0.32694018, g: 0.6004927, b: 0.8773585, a: 1}
+  m_Color: {r: 1, g: 0.54949003, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,10 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ca84b942263b94092ab5c2ec1a5428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkFrequency: 0.1
-  distance: 1.5
-  target: {fileID: 0}
-  isRunning: 0
+  isRunning: 1
 --- !u!114 &6795301703300152914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3f3f0fd480a4c43a9bcab2579981d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 2
+  element: 1
 --- !u!114 &7960887124819607206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,10 +127,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cd2a740d4782784cb01144529540319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directionDegrees: -45
+  directionDegrees: 281.929
   BPM: 240
-  beatCount: 3
+  beatCount: 2
   movementSpeed: 10
+--- !u!61 &7196231227405299230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148709628722620674}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 0.64}
+    newSize: {x: 2.56, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1001 &8326597701500901022
 PrefabInstance:
   m_ObjectHideFlags: 0

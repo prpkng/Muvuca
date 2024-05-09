@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2149596396478059255}
   - component: {fileID: 949211724773215982}
   - component: {fileID: 639840535489388089}
-  - component: {fileID: 5157163686233595278}
+  - component: {fileID: 2989132235422638279}
   m_Layer: 6
   m_Name: Rotating Platform
   m_TagString: Platform
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fcd4a91a9a01144ba6317fa154c3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startEnabled: 1
+  startEnabled: 0
 --- !u!114 &639840535489388089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,12 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ca84b942263b94092ab5c2ec1a5428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkFrequency: 0.1
-  distance: 1.5
-  target: {fileID: 0}
-  isRunning: 0
---- !u!58 &5157163686233595278
-CircleCollider2D:
+  isRunning: 1
+--- !u!61 &2989132235422638279
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -200,8 +197,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 2, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1001 &6552448155546259045
 PrefabInstance:
   m_ObjectHideFlags: 0
