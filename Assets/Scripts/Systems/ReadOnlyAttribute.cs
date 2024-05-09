@@ -7,6 +7,7 @@ namespace Muvuca.Systems
 
     using UnityEditor;
 
+    [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
     public class ReadOnlyEditor : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

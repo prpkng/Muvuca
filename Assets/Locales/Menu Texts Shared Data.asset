@@ -29,6 +29,26 @@ MonoBehaviour:
     m_Key: ExitButton
     m_Metadata:
       m_Items: []
+  - m_Id: 277863416758272
+    m_Key: GameSection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 278258679578624
+    m_Key: 'SoundSection
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279289865994240
+    m_Key: DisplaySection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280384763887616
+    m_Key: 'AuthorsSection
+
+'
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

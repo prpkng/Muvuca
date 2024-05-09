@@ -30,6 +30,22 @@ MonoBehaviour:
     m_Localized: Salir
     m_Metadata:
       m_Items: []
+  - m_Id: 277863416758272
+    m_Localized: Juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 278258679578624
+    m_Localized: Sonidos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279289865994240
+    m_Localized: Pantalla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 280384763887616
+    m_Localized: Autores
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
