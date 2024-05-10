@@ -19,8 +19,79 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 223ee5d509f801d4e98ff2866dc77ee8, type: 2}
   - {fileID: 11400000, guid: 028a7c23cfddb0b459c8b3bf14ddf3d1, type: 2}
   - {fileID: 11400000, guid: f2e7767ea593c1f42849c2b14afc7526, type: 2}
-  m_Extensions: []
+  m_Extensions:
+  - rid: 1020232665484231014
+  - rid: 1020232665484231028
   m_Group: String Table
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1020232665484231014
+      type: {class: CsvExtension, ns: UnityEditor.Localization.Plugins.CSV, asm: Unity.Localization.Editor}
+      data:
+        m_Collection: {fileID: 11400000}
+        m_ColumnsList:
+        - rid: 1020232665484231015
+        - rid: 1020232665484231016
+        - rid: 1020232665484231017
+        - rid: 1020232665484231018
+        - rid: 1020232665484231019
+        - rid: 1020232665484231020
+        m_ConnectedFile: C:/Users/guiej/Downloads/Localization CSV - Menu Texts.csv
+    - rid: 1020232665484231015
+      type: {class: KeyIdColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_IncludeId: 1
+        m_IncludeSharedComments: 1
+        m_KeyFieldName: Key
+        m_IdFieldName: Id
+        m_CommentFieldName: Shared Comments
+    - rid: 1020232665484231016
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: en-US
+        m_FieldName: English (United States)(en-US)
+        m_CommentFieldName: English (United States)(en-US) Comments
+        m_IncludeComments: 1
+    - rid: 1020232665484231017
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: pt-BR
+        m_FieldName: Portuguese (Brazil)(pt-BR)
+        m_CommentFieldName: Portuguese (Brazil)(pt-BR) Comments
+        m_IncludeComments: 1
+    - rid: 1020232665484231018
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: es
+        m_FieldName: Spanish(es)
+        m_CommentFieldName: Spanish(es) Comments
+        m_IncludeComments: 1
+    - rid: 1020232665484231019
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: ja-JP
+        m_FieldName: Japanese (Japan)(ja-JP)
+        m_CommentFieldName: Japanese (Japan)(ja-JP) Comments
+        m_IncludeComments: 1
+    - rid: 1020232665484231020
+      type: {class: LocaleColumns, ns: UnityEditor.Localization.Plugins.CSV.Columns, asm: Unity.Localization.Editor}
+      data:
+        m_LocaleIdentifier:
+          m_Code: fr-FR
+        m_FieldName: French (France)(fr-FR)
+        m_CommentFieldName: French (France)(fr-FR) Comments
+        m_IncludeComments: 1
+    - rid: 1020232665484231028
+      type: {class: GoogleSheetsExtension, ns: UnityEditor.Localization.Plugins.Google, asm: Unity.Localization.Editor}
+      data:
+        m_Collection: {fileID: 11400000}
+        m_SheetsServiceProvider: {fileID: 11400000, guid: 4588a81fe28c6b444b5f3f352df8edba, type: 2}
+        m_SpreadsheetId: 
+        m_SheetId: 0
+        m_Columns: []
+        m_RemoveMissingPulledKeys: 1
