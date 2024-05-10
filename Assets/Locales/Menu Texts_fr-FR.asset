@@ -70,6 +70,26 @@ MonoBehaviour:
     m_Localized: Appliquer
     m_Metadata:
       m_Items: []
+  - m_Id: 343659438440448
+    m_Localized: Programmeur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634752
+    m_Localized: Artiste 2D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634753
+    m_Localized: Animateur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634754
+    m_Localized: Designer sonore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634755
+    m_Localized: Game Designer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

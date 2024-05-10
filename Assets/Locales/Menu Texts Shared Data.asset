@@ -75,6 +75,26 @@ MonoBehaviour:
     m_Key: Apply
     m_Metadata:
       m_Items: []
+  - m_Id: 343659438440448
+    m_Key: Programming
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634752
+    m_Key: 2DArtist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634753
+    m_Key: Animator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634754
+    m_Key: SoundDesigner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 343659442634755
+    m_Key: GameDesigner
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
