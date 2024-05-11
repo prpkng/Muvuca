@@ -10,9 +10,9 @@ namespace Muvuca.UI.Settings
         public static bool VSyncEnabled;
 
 
-        public string onText;
+        public string onText = "";
         public void SetOnText(string x) { onText = x; UpdateText(); } 
-        public string offText;
+        public string offText = "";
         public void SetOffText(string x) { offText = x; UpdateText(); } 
         
         private void OnEnable()
@@ -27,6 +27,7 @@ namespace Muvuca.UI.Settings
 
         public void UpdateText()
         {
+            if (tmp is null) return;
             tmp.text = VSyncEnabled ? onText : offText;
         }
 
