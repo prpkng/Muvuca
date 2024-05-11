@@ -90,6 +90,26 @@ MonoBehaviour:
     m_Localized: Game Designer
     m_Metadata:
       m_Items: []
+  - m_Id: 742498620178432
+    m_Localized: Modo de Janela
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499968
+    m_Localized: Tela Cheia|Exclusivo|Janela
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499969
+    m_Localized: "Sincroniza\xE7\xE3o Vertical"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338624
+    m_Localized: Ligado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338625
+    m_Localized: Desligado
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

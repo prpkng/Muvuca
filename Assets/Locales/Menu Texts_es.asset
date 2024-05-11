@@ -90,6 +90,26 @@ MonoBehaviour:
     m_Localized: Game Designer
     m_Metadata:
       m_Items: []
+  - m_Id: 742498620178432
+    m_Localized: Modo de ventana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499968
+    m_Localized: Pantalla Completa|Exclusivo|Ventana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499969
+    m_Localized: "Sincronizaci\xF3n Vertical"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338624
+    m_Localized: Prendido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338625
+    m_Localized: Apagado
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

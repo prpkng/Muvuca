@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
+using FMODUnity;
 using Muvuca.Systems;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,7 +28,7 @@ namespace Muvuca.UI
 
         private void SelectionChanged()
         {
-            for (int i = 0; i < textButtons.Length; i++)
+            for (var i = 0; i < textButtons.Length; i++)
                 textButtons[i].selected = selection == i;
 
             transform.DOLocalMoveY(startY + (selection - 1) * 15, 0.4f).SetEase(Ease.OutCubic);

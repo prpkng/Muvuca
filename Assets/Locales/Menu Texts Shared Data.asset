@@ -95,6 +95,26 @@ MonoBehaviour:
     m_Key: GameDesigner
     m_Metadata:
       m_Items: []
+  - m_Id: 742498620178432
+    m_Key: WindowMode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499968
+    m_Key: FullscreenModes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499969
+    m_Key: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338624
+    m_Key: On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338625
+    m_Key: Off
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

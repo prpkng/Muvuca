@@ -63,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 330111412895744
-    m_Localized: Back
+    m_Localized: Return
     m_Metadata:
       m_Items: []
   - m_Id: 332272989405184
@@ -88,6 +88,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 343659442634755
     m_Localized: Game Designer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498620178432
+    m_Localized: Window Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499968
+    m_Localized: Fullscreen|Exclusive|Windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499969
+    m_Localized: V-Sync
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338624
+    m_Localized: On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338625
+    m_Localized: Off
     m_Metadata:
       m_Items: []
   references:

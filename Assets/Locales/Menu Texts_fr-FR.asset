@@ -90,6 +90,26 @@ MonoBehaviour:
     m_Localized: Game Designer
     m_Metadata:
       m_Items: []
+  - m_Id: 742498620178432
+    m_Localized: "Mode Fen\xEAtr\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499968
+    m_Localized: "Plein \xC9cran|Exclusif|Fen\xEAtre"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 742498972499969
+    m_Localized: Synchronisation Verticale
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338624
+    m_Localized: Sur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743836909338625
+    m_Localized: "D\xE9sactiv\xE9"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
