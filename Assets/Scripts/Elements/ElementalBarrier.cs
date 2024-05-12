@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Muvuca.Elements
 {
-    public class ElementalBarrier : MonoBehaviour, IEnablable
+    public class ElementalBarrier : MonoBehaviour
     {
         [SerializeField] private Element element;
         private HitboxChecker distanceChecker;
@@ -34,19 +34,6 @@ namespace Muvuca.Elements
             if (LevelManager.Instance.activeElement != element) return;
             CameraBPM.TriggerBeat();
             LevelManager.Instance.activeElement = Element.Neutral;
-            Disable();
-        }
-
-        public void Enable()
-        {
-            gameObject.SetActive(true);
-        }
-
-        public void Disable()
-        {
-            gameObject.SetActive(false);
-            distanceChecker.Disable();
-            LevelManager.Instance.disabledElements.Add(this);
         }
 
         private void Update()

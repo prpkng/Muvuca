@@ -21,9 +21,9 @@ namespace Muvuca.Player
         {
             var owner = (PlayerController)machine.owner;
             machine.ChangeState("moving",
-                new string[] { Util.SerializeVector3Array(new Vector3[] { owner.platform.up }) });
+                new[] { Util.SerializeVector3Array(new[] { owner.platform.up }) });
 
-            if (owner.platform.TryGetComponent(out FixedPlatform plat))
+            if (owner.platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = false;
         }
 
@@ -40,7 +40,6 @@ namespace Muvuca.Player
             var owner = (PlayerController)machine.owner;
             owner.lineRenderer.enabled = false;
 
-            if (owner.platform.TryGetComponent(out FixedPlatform plat)) plat.Disable();
             InputManager.JumpPressed -= JumpPressed;
             CameraBPM.TriggerBeat();
 

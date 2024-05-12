@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Muvuca.Player
 {
-    public class PlayerController : MonoBehaviour, IEnablable
+    public class PlayerController : MonoBehaviour
     {
         public float movingSpeed;
 
@@ -35,13 +35,13 @@ namespace Muvuca.Player
             Instance = this;
         }
 
-        void Start()
+        private void Start()
         {
             machine.AddState("idle", new IdleState());
             machine.AddState("moving", new MovingState());
             machine.owner = this;
             machine.ChangeState("idle", new string[] { });
-            if (platform.TryGetComponent(out FixedPlatform plat))
+            if (platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = true;
 
             LevelManager.Instance.startingPlatform = platform;
@@ -57,24 +57,6 @@ namespace Muvuca.Player
             machine.FixedUpdate();
         }
 
-        public void Enable()
-        {
-            platform = LevelManager.Instance.startingPlatform;
-            gameObject.SetActive(true);
-
-            if (platform.TryGetComponent(out FixedPlatform plat))
-                plat.hasPlayer = true;
-
-            transform.position = platform.position;
-        }
-
-        public void Disable()
-        {
-            if (platform.TryGetComponent(out FixedPlatform plat)) plat.Disable();
-            LevelManager.Instance.disabledElements.Add(this);
-            machine.ChangeState("idle");
-        }
-
-        public Action<Transform> EnteredPlatform;
+        public Action<Transform> enteredPlatform;
     }
 }

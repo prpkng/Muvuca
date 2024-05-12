@@ -1,16 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using Muvuca.Effects;
 using Muvuca.Input;
-using Muvuca.Player;
 using Muvuca.Systems;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Muvuca
+namespace Muvuca.Elements
 {
 
-    public class ElementalEnemy : MonoBehaviour, IEnablable
+    public class ElementalEnemy : MonoBehaviour
     {
         [SerializeField] private Element element;
         private HitboxChecker distanceChecker;
@@ -35,19 +31,6 @@ namespace Muvuca
             if (!distanceChecker.IsInRange) return;
             LevelManager.Instance.activeElement = element;
             CameraBPM.TriggerBeat();
-            Disable();
-        }
-
-        public void Enable()
-        {
-            gameObject.SetActive(true);
-        }
-
-        public void Disable()
-        {
-            gameObject.SetActive(false);
-            distanceChecker.Disable();
-            LevelManager.Instance.disabledElements.Add(this);
         }
 
         private void Update()

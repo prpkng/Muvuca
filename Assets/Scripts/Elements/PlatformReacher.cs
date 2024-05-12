@@ -16,8 +16,6 @@ namespace Muvuca.Elements
         private void Start()
         {
             distanceChecker = GetComponent<HitboxChecker>();
-            if (!startEnabled)
-                distanceChecker.Disable();
         }
 
         private void OnEnable()
@@ -33,8 +31,7 @@ namespace Muvuca.Elements
         private void JumpPressed()
         {
             if (!distanceChecker.IsInRange) return;
-            distanceChecker.Disable();
-            PlayerController.Instance.EnteredPlatform(transform);
+            PlayerController.Instance.enteredPlatform?.Invoke(transform);
         }
 
         private void Update()

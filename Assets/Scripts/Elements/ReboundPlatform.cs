@@ -6,7 +6,7 @@ namespace Muvuca.Elements
     using Muvuca.Systems;
     using UnityEngine;
 
-    public class ReboundPlatform : MonoBehaviour, IEnablable
+    public class ReboundPlatform : MonoBehaviour
     {
         private HitboxChecker distanceChecker;
         [Range(0, 360)]
@@ -44,21 +44,7 @@ namespace Muvuca.Elements
             PlayerController.Instance.SetDirection(dir);
 
             CameraBPM.TriggerBeat();
-            Disable();
         }
-
-        public void Enable()
-        {
-            gameObject.SetActive(true);
-        }
-
-        public void Disable()
-        {
-            gameObject.SetActive(false);
-            distanceChecker.Disable();
-            LevelManager.Instance.disabledElements.Add(this);
-        }
-
         private void Update()
         {
             transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (distanceChecker.IsInRange ? 1.5f : 1f), Time.deltaTime * 8f);

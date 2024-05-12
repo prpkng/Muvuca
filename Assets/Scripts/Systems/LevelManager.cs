@@ -1,6 +1,7 @@
 using Muvuca.Player;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Muvuca.Systems
 {
@@ -22,17 +23,11 @@ namespace Muvuca.Systems
         public Element activeElement = Element.Neutral;
 
         public Transform startingPlatform;
-        public List<IEnablable> disabledElements = new();
 
         public static void Reset()
         {
             Instance.activeElement = Element.Neutral;
-            print("Reset");
-            PlayerController.Instance.Disable();
-            foreach (var item in Instance.disabledElements)
-            {
-                item.Enable();
-            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

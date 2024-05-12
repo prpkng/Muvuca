@@ -19,7 +19,7 @@ namespace Muvuca.Player
             direction = Util.DeserializeVector3Array(data[0])[0];
 
             var owner = (PlayerController)machine.owner;
-            owner.EnteredPlatform += EnteredPlatform;
+            owner.enteredPlatform += EnteredPlatform;
 
             InputManager.AttackPressed += AttackPressed;
         }
@@ -33,7 +33,7 @@ namespace Muvuca.Player
 
         public override void Exit()
         {
-            ((PlayerController)machine.owner).EnteredPlatform -= EnteredPlatform;
+            ((PlayerController)machine.owner).enteredPlatform -= EnteredPlatform;
             InputManager.AttackPressed -= AttackPressed;
         }
 
@@ -42,7 +42,7 @@ namespace Muvuca.Player
             var owner = (PlayerController)machine.owner;
             owner.platform = platform;
             owner.transform.position = platform.position;
-            if (platform.TryGetComponent(out FixedPlatform plat))
+            if (platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = true;
 
             machine.ChangeState("idle", null);
