@@ -231,11 +231,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: maximumAngle
-      value: 210.6
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: minimumAngle
-      value: -33.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name
@@ -426,6 +426,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
+      propertyPath: maximumAngle
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name
       value: Launch Platform (7)
@@ -485,11 +489,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: maximumAngle
-      value: 122.2
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: minimumAngle
-      value: -21.87
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name
@@ -550,11 +554,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: maximumAngle
-      value: 0
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: minimumAngle
-      value: -131.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name
@@ -689,6 +693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 971192790}
+  - component: {fileID: 971192791}
   m_Layer: 0
   m_Name: Basic Music Player
   m_TagString: Untagged
@@ -711,6 +716,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &971192791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971192789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -646093397
+      Data2: 1220314303
+      Data3: -657015391
+      Data4: -1489982732
+    Path: event:/Songs/Kmillo - Cosmos
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1369189234
 GameObject:
   m_ObjectHideFlags: 3
@@ -807,6 +843,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
+      propertyPath: maximumAngle
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name
       value: Launch Platform (3)
@@ -866,11 +906,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: maximumAngle
-      value: 80
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: minimumAngle
-      value: -80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name
@@ -929,6 +969,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
+      propertyPath: maximumAngle
+      value: 360
+      objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name
       value: Launch Platform (6)
@@ -1187,11 +1231,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: maximumAngle
-      value: 217.2
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 5902244224356367723, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: minimumAngle
-      value: 52.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6964894265226719788, guid: 39356688f0cca894aada067e276d277d, type: 3}
       propertyPath: m_Name

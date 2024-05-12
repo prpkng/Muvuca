@@ -110,6 +110,18 @@ MonoBehaviour:
     m_Localized: Desligado
     m_Metadata:
       m_Items: []
+  - m_Id: 1127780003643392
+    m_Localized: Geral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1127780095918080
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1127780095918081
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

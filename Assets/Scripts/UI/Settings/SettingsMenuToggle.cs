@@ -1,3 +1,5 @@
+using Muvuca.Systems;
+
 namespace Muvuca.UI.Settings
 {
     using DG.Tweening;
@@ -19,6 +21,7 @@ namespace Muvuca.UI.Settings
             canvasGroup.DOFade(1f, showDuration).SetEase(showEase);
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
+            DOTween.To(f => MainMenuController.BGMMuffle = f, 0f, 1f, showDuration);
         }
 
         public void Hide()
@@ -27,6 +30,7 @@ namespace Muvuca.UI.Settings
             canvasGroup.DOFade(0f, hideDuration).SetEase(hideEase);
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
+            DOTween.To(f => MainMenuController.BGMMuffle = f, 1f, 0f, hideDuration);
         }
     }
 }

@@ -110,6 +110,18 @@ MonoBehaviour:
     m_Localized: "D\xE9sactiv\xE9"
     m_Metadata:
       m_Items: []
+  - m_Id: 1127780003643392
+    m_Localized: "G\xE9n\xE9ral"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1127780095918080
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1127780095918081
+    m_Localized: Musique
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
