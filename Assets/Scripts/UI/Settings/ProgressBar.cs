@@ -16,6 +16,7 @@ namespace Muvuca.UI.Settings
         
         private bool isHolding;
         [SerializeField] private RectTransform progressBarRect;
+        [SerializeField] private RectTransform progressBarDragger;
 
         private RectTransform rectTransform;
         [SerializeField] private string playerPrefsKey = "GeneralVolume";
@@ -23,12 +24,15 @@ namespace Muvuca.UI.Settings
         private void Awake()
         {
             rectTransform = GetComponent<RectTransform>();
-            if (PlayerPrefs.HasKey(playerPrefsKey))
-                progressBarRect.localScale = new Vector3(PlayerPrefs.GetFloat(playerPrefsKey), 1f);
+            if (!PlayerPrefs.HasKey(playerPrefsKey)) return;
+            var keyValue = PlayerPrefs.GetFloat(playerPrefsKey);
+            progressBarDragger.anchoredPosition = progressBarRect.rect.width * keyValue * Vector2.right;
+            progressBarRect.localScale = new Vector3(keyValue, 1f);
         }
 
         private void Update()
         {
+            
             if (!isHolding) return;
             RectTransformUtility.ScreenPointToWorldPointInRectangle(
                 (RectTransform)canvas.transform,
@@ -40,6 +44,7 @@ namespace Muvuca.UI.Settings
             mouseX = Mathf.Clamp(mouseX, 0, rectTransform.rect.width) / rectTransform.rect.width;
             var value = Mathf.Round(mouseX * (1f / step)) * step;
             valueChanged.Invoke(value);
+            progressBarDragger.anchoredPosition = progressBarRect.rect.width * value * Vector2.right;
             progressBarRect.localScale = new Vector3(value, 1f);
         }
 

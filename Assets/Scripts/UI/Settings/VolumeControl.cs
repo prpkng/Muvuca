@@ -11,7 +11,7 @@ namespace Muvuca.UI.Settings
         private static Bus _musicBus;
         
         
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         private static void SetupVolume()
         {
             _masterBus = FMODUnity.RuntimeManager.GetBus("bus:/");

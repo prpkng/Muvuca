@@ -9,6 +9,7 @@ namespace Muvuca.Elements
     public class LaunchPlatform : MonoBehaviour
     {
         public bool hasPlayer;
+        private bool hadPlayer;
         
         public float rotateSpeed = 24f;
         private void DrawGizmoToAngle(float angle) =>
@@ -35,16 +36,20 @@ namespace Muvuca.Elements
 
         private void Update()
         {
-            if (!hasPlayer) return;
+            if (!hasPlayer)
+            {
+                hadPlayer = hasPlayer;
+                return;
+            }
             var mousePos = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             var mouseDir = (mousePos - transform.position).normalized;
             var mouseAngle = Mathf.Rad2Deg * Mathf.Atan2(mouseDir.y, mouseDir.x);
 
 
-            var t = (Vector2.Distance(mousePos, transform.position) / 20f);
+            var t = Vector2.Distance(mousePos, transform.position) / 20f;
             var range = Mathf.Lerp(aimAssistRange, 0, t);
 
-            for (int i = 0; i < 5; i++)
+            for (var i = 0; i < 5; i++)
             {
                 var lineAngle = Mathf.LerpAngle(mouseAngle - range, mouseAngle + range, i / 5f) * Mathf.Deg2Rad;
 
@@ -65,8 +70,10 @@ namespace Muvuca.Elements
             
             
             var euler = transform.eulerAngles;
-            euler.z = Mathf.LerpAngle(euler.z, mouseAngle - 90f, Time.deltaTime * rotateSpeed);
+            euler.z = Mathf.LerpAngle(euler.z, mouseAngle - 90f, hadPlayer ? Time.deltaTime * rotateSpeed : 1);
             transform.eulerAngles = euler;
+            
+            hadPlayer = hasPlayer;
         }
         
         
