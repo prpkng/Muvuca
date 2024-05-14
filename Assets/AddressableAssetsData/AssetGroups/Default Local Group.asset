@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7144eba6c25e5e94eb70346fa47cbda0
+    m_Address: Assets/Art/Materials/Shockwave
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f61b38a26198a4943b2f3cc181234c7a, type: 2}
   m_SchemaSet:
