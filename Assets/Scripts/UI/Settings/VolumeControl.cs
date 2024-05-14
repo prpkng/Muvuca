@@ -19,26 +19,29 @@ namespace Muvuca.UI.Settings
             _musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Music");
             
             if (PlayerPrefs.HasKey("GeneralVolume"))
-                _SetGeneralVolume(PlayerPrefs.GetFloat("GeneralVolume"));    
+                _masterBus.setVolume(PlayerPrefs.GetFloat("GeneralVolume"));    
+            else
+                _SetGeneralVolume(0.5f);
             if (PlayerPrefs.HasKey("SfxVolume"))
-                _SetSfxVolume(PlayerPrefs.GetFloat("SfxVolume"));
+                _sfxBus.setVolume(PlayerPrefs.GetFloat("SfxVolume"));
+            else
+                _SetSfxVolume(0.5f);
             if (PlayerPrefs.HasKey("MusicVolume"))
-                _SetMusicVolume(PlayerPrefs.GetFloat("MusicVolume"));
+                _musicBus.setVolume(PlayerPrefs.GetFloat("MusicVolume"));
+            else
+                _SetMusicVolume(0.5f);
         }
 
-        public void SetGeneralVolume(float v) => _SetGeneralVolume(v);
         public static void _SetGeneralVolume(float v) 
         {
             PlayerPrefs.SetFloat("GeneralVolume", v);
             _masterBus.setVolume(v);
         }
-        public void SetSfxVolume(float v) => _SetSfxVolume(v);        
         public static void _SetSfxVolume(float v) 
         {
             PlayerPrefs.SetFloat("SfxVolume", v);
             _sfxBus.setVolume(v);
         }
-        public void SetMusicVolume(float v) => _SetMusicVolume(v);        
         public static void _SetMusicVolume(float v) 
         {
             PlayerPrefs.SetFloat("MusicVolume", v);

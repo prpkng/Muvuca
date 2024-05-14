@@ -18,13 +18,14 @@ namespace Muvuca.Systems
         {
             if (!isRunning || !other.gameObject.CompareTag("Player"))
                 return;
-            print("Entered");
+            entered?.Invoke();
             IsInRange = true;
         }
         private void OnTriggerExit2D(Collider2D other)
         {
             if (!isRunning || !other.gameObject.CompareTag("Player"))
                 return;
+            exited?.Invoke();
             IsInRange = false;
         }
 

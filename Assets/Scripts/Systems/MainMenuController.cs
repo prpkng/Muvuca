@@ -18,6 +18,7 @@ namespace Muvuca.Systems
             if (SceneManager.GetActiveScene().name != "Main Menu")
                 return;
             #endif
+            _isPlayingMenuBGM = true;
             _mainMenuBGMEvent = RuntimeManager.CreateInstance("event:/Songs/Kmillo_Menu");
             _mainMenuBGMEvent?.start();
             RuntimeManager.StudioSystem.update();

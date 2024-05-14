@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: e4919bc07ebc2d54fb34aeafd91d0276
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: eb55d4eee54417a46996d095d6bd7996
+    m_Address: Assets/UI/cursor_default.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f61b38a26198a4943b2f3cc181234c7a, type: 2}
   m_SchemaSet:

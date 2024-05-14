@@ -23,10 +23,11 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: 726493765257906121}
   MinDistance: 1
   MaxDistance: 20
-  Length: 24000
+  Length: 32000
 --- !u!114 &-7570457008994830337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +43,7 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638510619037033234
+  lastModified: 638512209498911305
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -131,8 +132,32 @@ MonoBehaviour:
   - {fileID: -7570457008994830337}
   StringsBanks:
   - {fileID: 1605689255618091503}
-  cacheTime: 638510699170535542
+  cacheTime: 638512209503457266
   cacheVersion: 131617
+--- !u!114 &726493765257906121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Kmillo_Menu/Muffle
+  m_EditorClassIdentifier: 
+  Name: Muffle
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2174956372
+    data2: 1357833151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &1057993130490083641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,10 +173,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638510619039602239
+  lastModified: 638512209503457266
   FileSizes:
   - Name: Desktop
-    Value: 640000
+    Value: 10720
   Exists: 1
 --- !u!114 &1171127933016853360
 MonoBehaviour:
@@ -188,10 +213,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638510619037058538
+  lastModified: 638512209498941320
   FileSizes:
   - Name: Desktop
-    Value: 1252
+    Value: 1300
   Exists: 1
 --- !u!114 &3177233370605276383
 MonoBehaviour:
@@ -240,9 +265,9 @@ MonoBehaviour:
     Data4: -1874270436
   Banks:
   - {fileID: 1057993130490083641}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -262,10 +287,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Songs.bank
   Name: Songs
   StudioPath: bank:/Songs
-  lastModified: 638510699170535542
+  lastModified: 638512209502432940
   FileSizes:
   - Name: Desktop
-    Value: 4100928
+    Value: 4102112
   Exists: 1
 --- !u!114 &7643541336137928333
 MonoBehaviour:

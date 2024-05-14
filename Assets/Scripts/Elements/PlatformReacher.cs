@@ -33,11 +33,5 @@ namespace Muvuca.Elements
             if (!distanceChecker.IsInRange) return;
             PlayerController.Instance.enteredPlatform?.Invoke(transform);
         }
-
-        private void Update()
-        {
-            if (!distanceChecker.isRunning) return;
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * (distanceChecker.IsInRange ? 1.5f : 1f), Time.deltaTime * 8f);
-        }
     }
 }
