@@ -22,11 +22,8 @@ namespace Muvuca.Systems
 
         public Element activeElement = Element.Neutral;
 
-        public Transform startingPlatform;
-
         public static void Reset()
         {
-            Instance.activeElement = Element.Neutral;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }

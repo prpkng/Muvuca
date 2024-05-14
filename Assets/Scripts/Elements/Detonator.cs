@@ -47,6 +47,7 @@ namespace Muvuca.Elements
         {
             shockwaveMaterial?.Result.SetFloat("_Size", shockwaveStartSize);
             shockwaveMaterial?.Result.DOFloat(shockwaveDestSize, "_Size", shockwaveDuration).SetEase(shockwaveEase);
+            Exited();
             Destroy(this);
             Destroy(detonatorTransform.gameObject);
         }

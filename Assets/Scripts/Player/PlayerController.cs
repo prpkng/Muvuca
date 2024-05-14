@@ -43,8 +43,6 @@ namespace Muvuca.Player
             machine.ChangeState("idle", new string[] { });
             if (platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = true;
-
-            LevelManager.Instance.startingPlatform = platform;
         }
 
         void Update()

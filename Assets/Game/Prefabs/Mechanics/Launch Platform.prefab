@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasPlayer: 0
-  rotateSpeed: 24
+  rotateSpeed: 36
   platformLayer:
     serializedVersion: 2
     m_Bits: 64
