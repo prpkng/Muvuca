@@ -6,9 +6,11 @@ namespace Muvuca.UI
     public class AutonomeBracket : MonoBehaviour
     {
         private SelectionBracket bracket;
+        private float startBracketsDistance;
         private void Awake()
         {
             bracket = GetComponent<SelectionBracket>();
+            startBracketsDistance = bracket.bracketsDistance;
             gameObject.SetActive(false);
         }
 
@@ -22,7 +24,10 @@ namespace Muvuca.UI
             bracket.transform.DOKill();
             bracket.transform.DOMove(target.position, selectorMoveDuration).SetEase(Ease.OutCubic);
             bracket.DOKill(true);
+            
             var dist = bracket.bracketsDistance;
+            if (target is RectTransform rect)
+                dist = rect.rect.width / 2f + 10;
             bracket.bracketsDistance -= selectorSizeAnimForce;
             DOTween.To(() => bracket.bracketsDistance, s => bracket.bracketsDistance = s, dist, selectorSizeAnimDuration).SetTarget(bracket).SetEase(Ease.OutCubic);
         }
@@ -30,6 +35,7 @@ namespace Muvuca.UI
         public void UnselectAll()
         {
             bracket.gameObject.SetActive(false);
+            bracket.bracketsDistance = startBracketsDistance;
         }
     }
 }
