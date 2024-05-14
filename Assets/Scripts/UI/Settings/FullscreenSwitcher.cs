@@ -42,6 +42,7 @@ namespace Muvuca.UI.Settings
 
         public void UpdateText()
         {
+            if (!tmp) return;
             tmp.text = FullscreenModeToString(CurrentFullScreenMode);
         }
         

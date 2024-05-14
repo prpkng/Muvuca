@@ -44,12 +44,13 @@ namespace Muvuca.Systems
             
             PlayBGM();
             _isPlayingMenuBGM = true;
-            RuntimeManager.AttachInstanceToGameObject(_mainMenuBGMEvent.Value, transform);
+            
+            if (_mainMenuBGMEvent != null)
+                RuntimeManager.AttachInstanceToGameObject(_mainMenuBGMEvent.Value, transform);
         }
 
         private void OnDisable()
         {
-            print("STOP");
             _mainMenuBGMEvent?.stop(STOP_MODE.IMMEDIATE);
             RuntimeManager.StudioSystem.update();
             _isPlayingMenuBGM = false;
