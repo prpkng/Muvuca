@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Muvuca
+namespace Muvuca.Effects
 {
     public class Parallax : MonoBehaviour
     {

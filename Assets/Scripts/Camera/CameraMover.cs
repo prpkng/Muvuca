@@ -1,9 +1,9 @@
-namespace Muvuca.Systems
-{
-    using System;
-    using DG.Tweening;
-    using UnityEngine;
+using System;
+using DG.Tweening;
+using UnityEngine;
 
+namespace Muvuca.Camera
+{
     public class CameraMover : MonoBehaviour
     {
         public static void MoveTo(Vector2 dest, float duration, Ease ease) => OnMoveTo?.Invoke(dest, duration, ease);

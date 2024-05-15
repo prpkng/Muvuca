@@ -1,12 +1,9 @@
 using Muvuca.Input;
 using Muvuca.Player;
 using Muvuca.Systems;
-using System.Collections;
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Scripting;
 
-namespace Muvuca.Elements
+namespace Muvuca.Elements.Platform
 {
     public class PlatformReacher : MonoBehaviour
     {

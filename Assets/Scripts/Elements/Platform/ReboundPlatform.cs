@@ -1,11 +1,11 @@
-namespace Muvuca.Elements
-{
-    using Muvuca.Effects;
-    using Muvuca.Input;
-    using Muvuca.Player;
-    using Muvuca.Systems;
-    using UnityEngine;
+using Muvuca.Effects;
+using Muvuca.Input;
+using Muvuca.Player;
+using Muvuca.Systems;
+using UnityEngine;
 
+namespace Muvuca.Elements.Platform
+{
     public class ReboundPlatform : MonoBehaviour
     {
         private HitboxChecker distanceChecker;
