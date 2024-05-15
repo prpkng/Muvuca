@@ -7,28 +7,22 @@ namespace Muvuca.Elements.Platform
 {
     public class PlatformReacher : MonoBehaviour
     {
-        [SerializeField] private bool startEnabled = true;
         private HitboxChecker distanceChecker;
 
-        private void Start()
+        private void Entered()
         {
-            distanceChecker = GetComponent<HitboxChecker>();
+            PlayerController.Instance.enteredPlatform?.Invoke(transform);
         }
 
         private void OnEnable()
         {
-            InputManager.JumpPressed += JumpPressed;
+            distanceChecker = GetComponent<HitboxChecker>();
+            distanceChecker.entered += Entered;
         }
 
         private void OnDisable()
         {
-            InputManager.JumpPressed -= JumpPressed;
-        }
-
-        private void JumpPressed()
-        {
-            if (!distanceChecker.IsInRange) return;
-            PlayerController.Instance.enteredPlatform?.Invoke(transform);
+            distanceChecker.entered -= Entered;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Muvuca.Player
 
         public override void Enter(string[] data = null)
         {
-            direction = Util.DeserializeVector3Array(data[0])[0];
+            direction = data is { Length: <= 0 } ? Vector3.zero : Util.DeserializeVector3Array(data[0])[0];
 
             var owner = (PlayerController)machine.owner;
             owner.enteredPlatform += EnteredPlatform;

@@ -43,7 +43,6 @@ namespace Muvuca.Elements.Platform
             PlayerController.Instance.transform.position = transform.position;
             PlayerController.Instance.SetDirection(dir);
 
-            CameraBPM.TriggerBeat();
         }
         private void Update()
         {

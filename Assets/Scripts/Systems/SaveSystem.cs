@@ -70,7 +70,12 @@ namespace Muvuca.Systems
             Debug.LogError($"No save file at path: {SaveFilePath}");
         }
 
-        public static IEntry Get(string key, IEntry @default = null)
+        public static bool Has(string key)
+        {
+            return SaveData.ContainsKey(key);
+        }
+        
+        private static IEntry Get(string key, IEntry @default = null)
         {
             if (SaveData.TryGetValue(key, out var value))
                 return value;
@@ -80,27 +85,11 @@ namespace Muvuca.Systems
             SaveData[key] = @default;
             return @default;
         }
+        public static bool TryGetInt(string key, out int value) => Get(key).TryGetInt(out value);
 
-        public static int GetInt(string key)
-        {
-            if (Get(key).TryGetInt(out var i))
-                return i;
-            throw new KeyNotFoundException($"Key '{key}' not found in save file '{SaveFilePath}'");
-        }
+        public static bool TryGetFloat(string key, out float value) => Get(key).TryGetFloat(out value);
 
-        public static float GetFloat(string key)
-        {
-            if (Get(key).TryGetFloat(out var f))
-                return f;
-            throw new KeyNotFoundException($"Key '{key}' not found in save file '{SaveFilePath}'");
-        }
-
-        public static string GetString(string key)
-        {
-            if (Get(key).TryGetString(out var s))
-                return s;
-            throw new KeyNotFoundException($"Key '{key}' not found in save file '{SaveFilePath}'");
-        }
+        public static bool TryGetString(string key, out string value) => Get(key).TryGetString(out value);
 
 
         public static void Set(string key, float value) =>

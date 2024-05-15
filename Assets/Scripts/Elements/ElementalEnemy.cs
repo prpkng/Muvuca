@@ -30,7 +30,6 @@ namespace Muvuca.Elements
         {
             if (!distanceChecker.IsInRange) return;
             LevelManager.Instance.activeElement = element;
-            CameraBPM.TriggerBeat();
         }
 
         private void Update()

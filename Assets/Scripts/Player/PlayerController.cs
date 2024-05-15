@@ -3,6 +3,7 @@ using Muvuca.Systems;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Muvuca.Effects;
 using Muvuca.Elements.Platform;
 using UnityEngine;
 
@@ -10,16 +11,25 @@ namespace Muvuca.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController Instance;
+        
         public float movingSpeed;
-
-        public Transform platform;
-
-        private StateMachine machine = new();
-
         public LineRenderer lineRenderer;
 
-        public static PlayerController Instance;
+        private StateMachine machine = new();
+        [ReadOnly] public Transform platform;
+        [ReadOnly] public HealthSystem health;
 
+        public static Action PlayerGotHit;
+        
+        public void DamagePlayer(int amount = 0)
+        {
+            CameraShaker.TriggerShake();
+            health.DoDamage(amount);
+            PlayerGotHit?.Invoke();
+            print("Damaged player!");
+        }
+        
         public void SetDirection(Vector2 direction)
         {
             machine.ChangeState("moving", new string[] { Util.SerializeVector3Array(new Vector3[] { direction }) });
@@ -34,6 +44,7 @@ namespace Muvuca.Player
         private void Awake()
         {
             Instance = this;
+            health = GetComponent<HealthSystem>();
         }
 
         private void Start()
@@ -41,9 +52,10 @@ namespace Muvuca.Player
             machine.AddState("idle", new IdleState());
             machine.AddState("moving", new MovingState());
             machine.owner = this;
-            machine.ChangeState("idle", new string[] { });
-            if (platform.TryGetComponent(out LaunchPlatform plat))
-                plat.hasPlayer = true;
+            machine.ChangeState("moving", new string[] { });
+
+            if (SaveSystem.TryGetString(SaveSystemKeyNames.PlayerSpawnPos, out var s))
+                transform.position = Util.DeserializeVector2(s);
         }
 
         void Update()

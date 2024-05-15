@@ -178,3 +178,4 @@ MonoBehaviour:
   shockwaveDestSize: 2.25
   shockwaveDuration: 1
   shockwaveEase: 6
+  shockwaveMaterial: {fileID: 2100000, guid: 7144eba6c25e5e94eb70346fa47cbda0, type: 2}

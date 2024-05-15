@@ -14,7 +14,6 @@ namespace Muvuca.Player
         {
             ((PlayerController)machine.owner).lineRenderer.enabled = true;
             InputManager.JumpPressed += JumpPressed;
-            CameraBPM.TriggerBeat();
 
         }
 
@@ -42,8 +41,6 @@ namespace Muvuca.Player
             owner.lineRenderer.enabled = false;
 
             InputManager.JumpPressed -= JumpPressed;
-            CameraBPM.TriggerBeat();
-
         }
     }
 }

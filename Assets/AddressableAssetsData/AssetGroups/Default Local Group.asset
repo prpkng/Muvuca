@@ -17,13 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e4919bc07ebc2d54fb34aeafd91d0276
   m_SerializeEntries:
-  - m_GUID: eb55d4eee54417a46996d095d6bd7996
-    m_Address: Assets/UI/cursor_default.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7144eba6c25e5e94eb70346fa47cbda0
-    m_Address: Assets/Art/Materials/Shockwave
+    m_Address: Assets/Art/Materials/Shockwave.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

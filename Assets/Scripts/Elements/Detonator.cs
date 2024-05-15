@@ -29,24 +29,22 @@ namespace Muvuca.Elements
             checker.exited -= Exited;
         }
 
-        private AsyncOperationHandle<Material>? shockwaveMaterial;
+        [SerializeField] private Material shockwaveMaterial;
         
         private void Entered()
         {
             InputManager.AttackPressed += ActivateDetonator;
-            shockwaveMaterial = Addressables.LoadAssetAsync<Material>("Assets/Art/Materials/Shockwave");
         }
 
         private void Exited()
         {
             InputManager.AttackPressed -= ActivateDetonator;
-            shockwaveMaterial = null;
         }
 
         private async void ActivateDetonator()
         {
-            shockwaveMaterial?.Result.SetFloat("_Size", shockwaveStartSize);
-            shockwaveMaterial?.Result.DOFloat(shockwaveDestSize, "_Size", shockwaveDuration).SetEase(shockwaveEase);
+            shockwaveMaterial.SetFloat("_Size", shockwaveStartSize);
+            shockwaveMaterial.DOFloat(shockwaveDestSize, "_Size", shockwaveDuration).SetEase(shockwaveEase);
             Exited();
             Destroy(this);
             Destroy(detonatorTransform.gameObject);
