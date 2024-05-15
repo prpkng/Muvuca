@@ -1,9 +1,8 @@
 using Muvuca.Effects;
-using Muvuca.Elements;
-using Muvuca.Input;
 using Muvuca.Systems;
 using System.Collections.Generic;
-using Muvuca.Elements.Platform;
+using Muvuca.Core;
+using Muvuca.Entities.Platform;
 using UnityEngine;
 namespace Muvuca.Player
 {
