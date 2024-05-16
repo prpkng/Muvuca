@@ -1,0 +1,79 @@
+<drawingAnimations>
+ <drawingAnimation spritesheet="sheet_Top" name="Rg_Kamilo_idle_teste_Top">
+  <drawing node="Kamilo_Cabeca_1" name="11-Cabeca" drwId="1">
+   <drw skinId="0" frame="1" repeat="60" name="11-Cabeca-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_Capacete" name="10-Capacete" drwId="2">
+   <drw skinId="0" frame="1" repeat="60" name="10-Capacete-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_Capacete_Behind" name="13-Capacete_Behind" drwId="3">
+   <drw skinId="0" frame="1" repeat="60" name="13-Capacete_Behind-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_hand" name="4-R_hand" drwId="4">
+   <drw skinId="0" frame="1" repeat="60" name="4-R_hand-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_antbraco" name="2-R_antbraco" drwId="5">
+   <drw skinId="0" frame="1" repeat="60" name="2-R_antbraco-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_arm" name="3-R_arm" drwId="6">
+   <drw skinId="0" frame="1" repeat="60" name="3-R_arm-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_,mochila_arm" name="9-R_,mochila_arm" drwId="7">
+   <drw skinId="0" frame="1" repeat="60" name="9-R_,mochila_arm-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_hand_1" name="4-R_hand" drwId="8">
+   <drw skinId="0" frame="1" repeat="60" name="4-R_hand-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_antbraco_1" name="2-R_antbraco" drwId="9">
+   <drw skinId="0" frame="1" repeat="60" name="2-R_antbraco-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_arm_1" name="3-R_arm" drwId="10">
+   <drw skinId="0" frame="1" repeat="60" name="3-R_arm-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_R_,mochila_arm_1" name="9-R_,mochila_arm" drwId="11">
+   <drw skinId="0" frame="1" repeat="60" name="9-R_,mochila_arm-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_Torso" name="8-Torso" drwId="12">
+   <drw skinId="0" frame="1" repeat="60" name="8-Torso-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_Rabo" name="17-Rabo" drwId="13">
+   <drw skinId="0" frame="1" repeat="60" name="17-Rabo-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_meio_rabo" name="18-meio_rabo" drwId="14">
+   <drw skinId="0" frame="1" repeat="60" name="18-meio_rabo-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_Ponta_rabo" name="16-Ponta_rabo" drwId="15">
+   <drw skinId="0" frame="1" repeat="60" name="16-Ponta_rabo-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_Tail_3_Line" name="14-Tail_3_Line" drwId="16">
+   <drw skinId="0" frame="1" repeat="60" name="14-Tail_3_Line-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_pe" name="12-pe" drwId="17">
+   <drw skinId="0" frame="1" repeat="60" name="12-pe-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_canela" name="5-canela" drwId="18">
+   <drw skinId="0" frame="1" repeat="60" name="5-canela-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_coxa" name="6-coxa" drwId="19">
+   <drw skinId="0" frame="1" repeat="60" name="6-coxa-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_joelho" name="7-joelho" drwId="20">
+   <drw skinId="0" frame="1" repeat="60" name="7-joelho-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_pe_1" name="12-pe" drwId="21">
+   <drw skinId="0" frame="1" repeat="60" name="12-pe-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_canela_1" name="5-canela" drwId="22">
+   <drw skinId="0" frame="1" repeat="60" name="5-canela-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_coxa_1" name="6-coxa" drwId="23">
+   <drw skinId="0" frame="1" repeat="60" name="6-coxa-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_joelho_1" name="7-joelho" drwId="24">
+   <drw skinId="0" frame="1" repeat="60" name="7-joelho-1.png"/>
+  </drawing>
+  <drawing node="Kamilo_Tail_2_Fill" name="15-Tail_2_Fill" drwId="25">
+   <drw skinId="0" frame="1" repeat="60" name="15-Tail_2_Fill-1.png"/>
+  </drawing>
+ </drawingAnimation>
+</drawingAnimations>

@@ -573,9 +573,29 @@ PrefabInstance:
       propertyPath: platform
       value: 
       objectReference: {fileID: 1342795922}
+    - target: {fileID: 1189193365343871979, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 459683e483e91c84b9e54f31e0fef25b, type: 2}
     - target: {fileID: 3370765259537907348, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760687429434885575, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173612489118047423, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685322296487907729, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916344143417021711, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9160852446796859030, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
       propertyPath: m_LocalPosition.x

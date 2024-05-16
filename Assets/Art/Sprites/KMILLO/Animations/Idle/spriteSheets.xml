@@ -1,0 +1,41 @@
+<!DOCTYPE spritesheets>
+<spritesheets>
+ <spritesheet resolution="Desktop" width="2048" height="2048" name="sheet_Top" filename="spriteSheets/sheet_Top-Desktop.png">
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="1299,1046,727,523" offsetX="0" offsetY="0" name="11-Cabeca-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="646,1046,653,523" offsetX="0.150854" offsetY="-0.150854" name="10-Capacete-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="24,1046,622,523" offsetX="0" offsetY="0" name="12-pe-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="12,1046,12,12" offsetX="0" offsetY="0" name="14-Tail_3_Line-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="0,1046,12,12" offsetX="0" offsetY="0" name="15-Tail_2_Fill-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="1503,523,523,523" offsetX="0" offsetY="0" name="7-joelho-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="980,523,523,523" offsetX="0" offsetY="0" name="9-R_,mochila_arm-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="496,523,484,523" offsetX="0.475836" offsetY="0" name="4-R_hand-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="44,523,452,523" offsetX="0.270899" offsetY="-0.270899" name="8-Torso-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="1623,0,403,523" offsetX="0.392037" offsetY="-0.392037" name="3-R_arm-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="1260,0,363,523" offsetX="0.505929" offsetY="0" name="5-canela-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="913,0,347,523" offsetX="0" offsetY="-0.456328" name="6-coxa-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="594,0,319,523" offsetX="0" offsetY="0" name="2-R_antbraco-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="344,0,250,523" offsetX="0" offsetY="-0.160301" name="13-Capacete_Behind-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="234,0,110,90" offsetX="-441.708" offsetY="-64.0843" name="18-meio_rabo-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="112,0,122,82" offsetX="-510.513" offsetY="-64.9152" name="17-Rabo-1.png" scaleX="0.00046875"/>
+  <sprite scaleY="0.00046875" angleDegrees="0" rect="20,0,92,77" offsetX="-433.498" offsetY="-17.0848" name="16-Ponta_rabo-1.png" scaleX="0.00046875"/>
+ </spritesheet>
+ <spritesheet resolution="Web" width="2048" height="1024" name="sheet_Top" filename="spriteSheets/sheet_Top-Web.png">
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1675,267,369,267" offsetX="0" offsetY="0" name="11-Cabeca-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1343,267,332,267" offsetX="0.0754272" offsetY="-0.0754272" name="10-Capacete-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1026,267,317,267" offsetX="0" offsetY="0" name="12-pe-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="759,267,267,267" offsetX="0" offsetY="0" name="7-joelho-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="492,267,267,267" offsetX="0" offsetY="0" name="9-R_,mochila_arm-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="244,267,248,267" offsetX="0.237918" offsetY="0" name="4-R_hand-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="12,267,232,267" offsetX="0.13545" offsetY="-0.13545" name="8-Torso-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="0,267,12,12" offsetX="0" offsetY="0" name="14-Tail_3_Line-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1837,0,207,267" offsetX="0.196018" offsetY="-0.196018" name="3-R_arm-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1650,0,187,267" offsetX="0.252964" offsetY="0" name="5-canela-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1471,0,179,267" offsetX="0" offsetY="-0.228164" name="6-coxa-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1306,0,165,267" offsetX="0" offsetY="0" name="2-R_antbraco-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1175,0,131,267" offsetX="0" offsetY="-0.0801503" name="13-Capacete_Behind-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1114,0,61,51" offsetX="-220.854" offsetY="-32.0421" name="18-meio_rabo-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="1047,0,67,47" offsetX="-255.257" offsetY="-32.4576" name="17-Rabo-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="995,0,52,44" offsetX="-216.749" offsetY="-8.5424" name="16-Ponta_rabo-1.png" scaleX="0.0009375"/>
+  <sprite scaleY="0.0009375" angleDegrees="0" rect="983,0,12,12" offsetX="0" offsetY="0" name="15-Tail_2_Fill-1.png" scaleX="0.0009375"/>
+ </spritesheet>
+</spritesheets>
