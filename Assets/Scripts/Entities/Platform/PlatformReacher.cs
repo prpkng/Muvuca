@@ -1,3 +1,4 @@
+using System;
 using Muvuca.Core;
 using Muvuca.Systems;
 using UnityEngine;
@@ -7,6 +8,10 @@ namespace Muvuca.Entities.Platform
     public class PlatformReacher : MonoBehaviour
     {
         private HitboxChecker distanceChecker;
+
+        [SerializeField] private float preRotateStartDistance;
+
+        [SerializeField] private float preRotateSpeed;
 
         private void Entered()
         {
@@ -22,6 +27,15 @@ namespace Muvuca.Entities.Platform
         private void OnDisable()
         {
             distanceChecker.entered -= Entered;
+        }
+
+        private void Update()
+        {
+            if (distanceChecker.IsInRange)
+                return;
+            if (Vector2.Distance(PlayerController.Instance.transform.position, transform.position) > preRotateStartDistance)
+                return;
+            transform.up = Vector3.Lerp(transform.up, (PlayerController.Instance.transform.position - transform.position).normalized, Time.deltaTime * preRotateSpeed);
         }
     }
 }

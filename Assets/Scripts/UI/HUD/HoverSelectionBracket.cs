@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using DG.Tweening;
+using Muvuca.Effects;
 using UnityEngine;
 
 namespace Muvuca.UI.HUD
@@ -18,6 +19,7 @@ namespace Muvuca.UI.HUD
         {
             set
             {
+                CustomCursor.IsHovering = !Mathf.Approximately(value, -1);
                 if (!Mathf.Approximately(_bracketsDistance, value))
                     _changedBracketsDistance?.Invoke(value);
                 _bracketsDistance = value;
@@ -49,7 +51,7 @@ namespace Muvuca.UI.HUD
             {
                 foreach (var b in brackets)
                     b.gameObject.SetActive(false);
-
+                
                 return;
             }
             foreach (var b in brackets)
