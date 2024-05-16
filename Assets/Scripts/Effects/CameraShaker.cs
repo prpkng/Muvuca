@@ -19,16 +19,11 @@ namespace Muvuca.Effects
         public float angleShakeDuration;
         public int angleVibrato = 10;
         public float angleRandomness =90;
-        private CinemachineFramingTransposer transposer;
+        [SerializeField] private CinemachineCameraOffset offset;
 
 
         public static void TriggerShake() => shakeEvent?.Invoke();
         private static event Action shakeEvent;
-
-        private void Awake()
-        {
-            transposer = GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>();
-        }
 
         private void OnEnable()
         {
@@ -42,20 +37,17 @@ namespace Muvuca.Effects
 
         private void OnShake()
         {
+            this.DOKill(true);
             DOTween.Shake(
-                () => new Vector3(transposer.m_ScreenX, transposer.m_ScreenY),
-                v =>
-                {
-                    transposer.m_ScreenX = v.x;
-                    transposer.m_ScreenY = v.y;
-                },
+                () => offset.m_Offset,
+                v => offset.m_Offset = v,
                 shakeDuration,
                 shakeForce,
                 vibrato,
                 randomness
-            );
+            ).SetTarget(this);
 
-            transform.DOShakeRotation(angleShakeDuration, angleShakeForce, angleVibrato, angleRandomness);
+            transform.DOShakeRotation(angleShakeDuration, angleShakeForce * Vector3.forward, angleVibrato, angleRandomness);
         }
         
     }

@@ -17,7 +17,7 @@ namespace Muvuca.Effects
         public RectTransform canvasRect;
         private RectTransform rect;
         
-        private UnityEngine.Camera cam;
+        private Camera cam;
         public Image cursorImage;
         public Sprite defaultCursor;
         public Sprite hoverCursor;
@@ -34,7 +34,7 @@ namespace Muvuca.Effects
         {
             IsHovering = false;
             rect = (RectTransform)transform;
-            cam = UnityEngine.Camera.main;
+            cam = Camera.main;
             Cursor.visible = false;
         }
 

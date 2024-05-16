@@ -4,6 +4,7 @@ namespace Muvuca.Entities
 {
     public class FollowObject : MonoBehaviour
     {
+        public void SetTarget(Transform trans) => target = trans;
         [SerializeField] private Transform target;
         [SerializeField] private float moveSpeed;
         public float moveSpeedMultiplier;

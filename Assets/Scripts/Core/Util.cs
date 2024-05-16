@@ -41,7 +41,7 @@ namespace Muvuca.Core
             {
                 string[] values = vectors[i].Split(' ');
                 if (values.Length != 3)
-                    throw new System.FormatException("component count mismatch. Expected 3 components but got " + values.Length);
+                    throw new FormatException("component count mismatch. Expected 3 components but got " + values.Length);
                 result.Add(new Vector3(float.Parse(values[0]), float.Parse(values[1]), float.Parse(values[2])));
             }
             return result.ToArray();

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Muvuca.Core;
 using Muvuca.Systems;
@@ -7,6 +8,7 @@ namespace Muvuca.Entities
 {
     public class Detonator : MonoBehaviour
     {
+        [SerializeField] private float shockwaveTravelSpeed;
         [SerializeField] private Transform detonatorTransform;
         [SerializeField] private float shockwaveStartSize;
         [SerializeField] private float shockwaveDestSize;
@@ -45,6 +47,14 @@ namespace Muvuca.Entities
             Exited();
             Destroy(this);
             Destroy(detonatorTransform.gameObject);
+
+            var bossController = BossController.CurrentInstance;
+            if (bossController == null) return;
+
+            await UniTask.WaitForSeconds(Vector2.Distance(bossController.transform.position, transform.position) /
+                                         shockwaveTravelSpeed);
+            
+            bossController.HitBoss();
         }
     }
 }

@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9160852446796859030}
   - component: {fileID: 1126470193330607762}
+  - component: {fileID: 4899601620595919030}
   - component: {fileID: 8365036512854769473}
   - component: {fileID: 15584380551253325}
+  - component: {fileID: 3603592150894512840}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -49,9 +51,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9d5031eec8955468022fcb2c9d2a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 14
-  platform: {fileID: 0}
+  movingSpeed: 20
   lineRenderer: {fileID: 5225451081152630984}
+  platform: {fileID: 0}
+  health: {fileID: 0}
+--- !u!114 &4899601620595919030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370765259537907348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f63b4d5c8194af5aec67ef1384ff044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3603592150894512840}
+        m_TargetAssemblyTypeName: Muvuca.UI.SimpleActions.ChangeScene, Assembly-CSharp
+        m_MethodName: Change
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  col: {fileID: 8365036512854769473}
+  hitCooldown: 100
+  currentHealthPoints: 3
 --- !u!58 &8365036512854769473
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -114,6 +150,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &3603592150894512840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370765259537907348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8453d8f5ecb11448d1d9e92bb572a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneReference:
+    asset: {fileID: 102900000, guid: fcee748758048604292a76b41ccb7a30, type: 3}
+    guid: fcee748758048604292a76b41ccb7a30
 --- !u!1 &6579370766959861715
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 6579370766959861715}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

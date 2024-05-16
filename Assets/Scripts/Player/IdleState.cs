@@ -3,6 +3,7 @@ using Muvuca.Systems;
 using System.Collections.Generic;
 using Muvuca.Core;
 using Muvuca.Entities.Platform;
+using Muvuca.UI.HUD;
 using UnityEngine;
 namespace Muvuca.Player
 {
@@ -36,6 +37,7 @@ namespace Muvuca.Player
 
         public override void Exit()
         {
+            HoverSelectionBracket.BracketsDistance = -1;
             var owner = (PlayerController)machine.owner;
             owner.lineRenderer.enabled = false;
 
