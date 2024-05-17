@@ -14,9 +14,12 @@ namespace Muvuca.Core
         public float movingSpeed;
         public LineRenderer lineRenderer;
 
-        private StateMachine machine = new();
+        
+        private readonly StateMachine machine = new();
+        
         [ReadOnly] public Transform platform;
         [ReadOnly] public HealthSystem health;
+        public Animator animator;
 
         public static Action PlayerGotHit;
         
@@ -67,5 +70,11 @@ namespace Muvuca.Core
         }
 
         public Action<Transform> enteredPlatform;
+
+        public void PlayAnimation(string id)
+        {
+            print($"Played {id}");
+            animator.Play(id);
+        }
     }
 }

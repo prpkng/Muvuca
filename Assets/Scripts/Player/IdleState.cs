@@ -7,39 +7,39 @@ using Muvuca.UI.HUD;
 using UnityEngine;
 namespace Muvuca.Player
 {
-    public class IdleState : State
+    public class IdleState : PlayerState
     {
 
         public override void Enter(string[] data = null)
         {
-            ((PlayerController)machine.owner).lineRenderer.enabled = true;
+            player.lineRenderer.enabled = true;
             InputManager.JumpPressed += JumpPressed;
-
+            Debug.Log("Entered idle");
+            player.PlayAnimation("idle");
         }
 
         public void JumpPressed()
         {
-            var owner = (PlayerController)machine.owner;
-            machine.ChangeState("moving",
-                new[] { Util.SerializeVector3Array(new[] { owner.platform.up }) });
+            player.PlayAnimation("jump");
 
-            if (owner.platform.TryGetComponent(out LaunchPlatform plat))
+            machine.ChangeState("moving",
+                new[] { Util.SerializeVector3Array(new[] { player.platform.up }) });
+
+            if (player.platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = false;
         }
 
 
         public override void Update()
         {
-            var owner = (PlayerController)machine.owner;
-            owner.transform.up = owner.platform.up;
-            owner.transform.position = owner.platform.position;
+            player.transform.up = player.platform.up;
+            player.transform.position = player.platform.position;
         }
 
         public override void Exit()
         {
             HoverSelectionBracket.BracketsDistance = -1;
-            var owner = (PlayerController)machine.owner;
-            owner.lineRenderer.enabled = false;
+            player.lineRenderer.enabled = false;
 
             InputManager.JumpPressed -= JumpPressed;
         }

@@ -1323,6 +1323,125 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7255659025558265821, guid: 39356688f0cca894aada067e276d277d, type: 3}
   m_PrefabInstance: {fileID: 1079936932}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1168768114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168768116}
+  - component: {fileID: 1168768117}
+  - component: {fileID: 1168768118}
+  m_Layer: 0
+  m_Name: Path
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1168768116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168768114}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 164.08, y: 16.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1168768117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168768114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorData:
+    _bezierPath:
+      points:
+      - {x: -0.18873596, y: -1.2744255, z: 0}
+      - {x: 2.4528198, y: -8.899895, z: 0}
+      - {x: 11.472839, y: -21.450876, z: 0}
+      - {x: 34.197647, y: -25.355097, z: 0}
+      - {x: 56.922455, y: -29.259317, z: 0}
+      - {x: 66.2372, y: -14.845311, z: 0}
+      - {x: 69.91051, y: -5.4579306, z: 0}
+      - {x: 73.58382, y: 3.92945, z: 0}
+      - {x: 74.19606, y: 19.132921, z: 0}
+      - {x: 66.03311, y: 28.010118, z: 0}
+      - {x: 57.870163, y: 36.887314, z: 0}
+      - {x: 50.319458, y: 42.907486, z: 0}
+      - {x: 34.503754, y: 43.213593, z: 0}
+      - {x: 18.68805, y: 43.5197, z: 0}
+      - {x: 6.1375427, y: 38.417866, z: 0}
+      - {x: 1.852005, y: 25.76531, z: 0}
+      - {x: -2.4335327, y: 13.112755, z: 0}
+      - {x: -2.8302917, y: 6.3510437, z: 0}
+      isClosed: 1
+      space: 1
+      controlMode: 1
+      autoControlLength: 0.3
+      boundsUpToDate: 0
+      bounds:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 2, y: 0.14433756, z: 0}
+      perAnchorNormalsAngle:
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0
+      globalNormalsAngle: 0
+      flipNormals: 0
+    vertexPathUpToDate: 0
+    vertexPathMaxAngleError: 0.3
+    vertexPathMinVertexSpacing: 0.01
+    showTransformTool: 0
+    showPathBounds: 0
+    showPerSegmentBounds: 0
+    displayAnchorPoints: 1
+    displayControlPoints: 1
+    bezierHandleScale: 1
+    globalDisplaySettingsFoldout: 0
+    keepConstantHandleSize: 1
+    showNormalsInVertexMode: 0
+    showBezierPathInVertexMode: 0
+    showDisplayOptions: 1
+    showPathOptions: 1
+    showVertexPathDisplayOptions: 0
+    showVertexPathOptions: 1
+    showNormals: 1
+    showNormalsHelpInfo: 0
+    tabIndex: 0
+  initialized: 1
+--- !u!114 &1168768118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168768114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d43773ddadb2492093001c82090b7f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: {fileID: 1168768117}
+  asteroidCount: 100
+  asteroidGameObject: {fileID: 3822165064070945974, guid: b70c68a1d77be4f4e97ecc5425d4a06b, type: 3}
 --- !u!1001 &1231124818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2596,3 +2715,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2086192576}
+  - {fileID: 1168768116}

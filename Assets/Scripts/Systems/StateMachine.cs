@@ -18,6 +18,7 @@ namespace Muvuca.Systems
 
         public Object owner;
         public State currentState;
+        public System.Action<string> stateChanged;
 
         public void AddState(string name, State state)
         {
@@ -32,7 +33,7 @@ namespace Muvuca.Systems
                 Debug.LogError($"Key '{nextState}' not found in dictionary!");
                 return;
             }
-
+            stateChanged?.Invoke(nextState);
             currentState?.Exit();
             currentState = states[nextState];
             currentState?.Enter(data);

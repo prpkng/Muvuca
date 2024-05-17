@@ -13,7 +13,7 @@ namespace Muvuca.Systems
         {
             if (!other.CompareTag("Player"))
                 return;
-            SceneManager.LoadSceneAsync(regionScene.BuildIndex, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(regionScene.BuildIndex, LoadSceneMode.Additive).priority = -10;
         }
         private void OnTriggerExit2D(Collider2D other)
         {
