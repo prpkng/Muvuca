@@ -13,6 +13,7 @@ namespace Muvuca.Player
         public override void Enter(string[] data = null)
         {
             player.lineRenderer.enabled = true;
+            player.hasPlatform = true;
             InputManager.JumpPressed += JumpPressed;
             Debug.Log("Entered idle");
             player.PlayAnimation("idle");
@@ -40,6 +41,7 @@ namespace Muvuca.Player
         {
             HoverSelectionBracket.BracketsDistance = -1;
             player.lineRenderer.enabled = false;
+            player.hasPlatform = false;
 
             InputManager.JumpPressed -= JumpPressed;
         }

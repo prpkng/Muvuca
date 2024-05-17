@@ -15,8 +15,9 @@ namespace Muvuca.Core
         public LineRenderer lineRenderer;
 
         
-        private readonly StateMachine machine = new();
-        
+        public readonly StateMachine machine = new();
+
+        [ReadOnly] public bool hasPlatform;
         [ReadOnly] public Transform platform;
         [ReadOnly] public HealthSystem health;
         public Animator animator;
