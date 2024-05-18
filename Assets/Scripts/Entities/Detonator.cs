@@ -15,7 +15,7 @@ namespace Muvuca.Entities
         [SerializeField] private float shockwaveDuration;
         [SerializeField] private Ease shockwaveEase;
         private HitboxChecker checker;
-        private void Awake() => checker = GetComponent<HitboxChecker>();
+        private void Awake() => checker = GetComponentInParent<HitboxChecker>();
 
         private void OnEnable()
         {
@@ -45,8 +45,7 @@ namespace Muvuca.Entities
             shockwaveMaterial.SetFloat("_Size", shockwaveStartSize);
             shockwaveMaterial.DOFloat(shockwaveDestSize, "_Size", shockwaveDuration).SetEase(shockwaveEase);
             Exited();
-            Destroy(this);
-            Destroy(detonatorTransform.gameObject);
+            Destroy(gameObject);
 
             var bossController = BossController.CurrentInstance;
             if (bossController == null) return;

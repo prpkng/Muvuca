@@ -1,4 +1,6 @@
+using System.Linq;
 using Muvuca.Core;
+using Muvuca.Entities.Platform;
 using Muvuca.Systems;
 using UnityEngine;
 
@@ -11,6 +13,8 @@ namespace Muvuca.Entities
         [SerializeField] private Collider2D col;
         [SerializeField] private float offsetForce;
         [SerializeField] private bool returnPlayer;
+        [SerializeField] private bool returnToNearest;
+        [SerializeField] private float playerReturnMinimumRange = 1;
         
         private void OnEnable()
         {
@@ -38,7 +42,18 @@ namespace Muvuca.Entities
         protected virtual void Damage()
         {
             PlayerController.Instance.DamagePlayer(1);
-            if (returnPlayer) PlayerController.Instance.machine.ChangeState("return");
+            if (!returnPlayer) return;
+            PlayerController.Instance.machine.ChangeState("return");
+            if (!returnToNearest || LaunchPlatform.availablePlatforms.Count == 0) return;
+                //Find nearest platform in range
+            var pos = transform.position;
+            var playerPos = PlayerController.Instance.transform.position;
+            var platform = LaunchPlatform.availablePlatforms
+                .Where(p => Vector2.Distance(p.transform.position, playerPos) > playerReturnMinimumRange)
+                .OrderBy(p => Vector2.Distance(p.transform.position, playerPos))
+                .ElementAt(0);
+            PlayerController.Instance.platform = platform.transform;
+
         }
         
 

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Muvuca.Core;
 using Muvuca.Entities.Platform;
 using Muvuca.Systems;
@@ -11,6 +12,7 @@ namespace Muvuca.Entities
     {
         public static BossController CurrentInstance;
 
+        public GameObject detonatorGameObject;
         
         private void Awake()
         {
@@ -38,7 +40,10 @@ namespace Muvuca.Entities
         public void HitBoss()
         {
             bossHealth.DoDamage();
-            print("Boss hit");
+            if (possibleDetonatorPlatforms.Length == 0) return;
+            var platforms = possibleDetonatorPlatforms
+                .OrderBy(p => Vector2.Distance(p.transform.position, PlayerController.Instance.transform.position));
+            Instantiate(detonatorGameObject, platforms.ElementAt(0).transform);
         }
         
         [SerializeField] private HealthSystem bossHealth;

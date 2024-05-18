@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Muvuca.Core;
 using Muvuca.Player;
 using Muvuca.Systems;
@@ -10,6 +11,11 @@ namespace Muvuca.Entities.Platform
 {
     public class LaunchPlatform : MonoBehaviour
     {
+        public static List<LaunchPlatform> availablePlatforms = new();
+
+        private void OnEnable() => availablePlatforms.Add(this);
+
+        private void OnDisable() => availablePlatforms.Remove(this);
 
         public const float CameraLensOrthoSize = 12f;
 

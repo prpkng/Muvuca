@@ -10,6 +10,7 @@ namespace Muvuca.Systems.Editor
         public override VisualElement CreateInspectorGUI()
         {
             var element = new VisualElement();
+            InspectorElement.FillDefaultInspector(element, serializedObject, this);
             var button = new Button(() => ((SpawnAlongPathUtility)target).Spawn())
             {
                 text = "Spawn!"
@@ -20,7 +21,11 @@ namespace Muvuca.Systems.Editor
                 text = "Generate Collision!"
             };
             element.Add(button);
-            InspectorElement.FillDefaultInspector(element, serializedObject, this);
+            button = new Button(() => ((SpawnAlongPathUtility)target).GenerateLines())
+            {
+                text = "Generate Lines!"
+            };
+            element.Add(button);
             return element;
         }
     }

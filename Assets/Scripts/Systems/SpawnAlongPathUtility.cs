@@ -18,6 +18,7 @@ namespace Muvuca.Systems
         public int objectCount = 100;
         [SerializeField] private GameObject objectPrefab;
         [SerializeField] private EdgeCollider2D edgeCollider;
+        [SerializeField] private LineRenderer lineRenderer;
         public int edgeColliderPointCount = 100;
         
         public void Spawn()
@@ -44,11 +45,22 @@ namespace Muvuca.Systems
             var points = new List<Vector2>();
             for (var i = 0; i < edgeColliderPointCount+1; i++)
             {
-                var pos = path.path.GetPointAtTime(1f / objectCount * i);
+                var pos = path.path.GetPointAtTime(1f / edgeColliderPointCount * i);
                 points.Add(pos - transform.position);
             }
 
             edgeCollider.points = points.ToArray();
+        }
+        public void GenerateLines()
+        {
+            var points = new List<Vector3>();
+            for (var i = 0; i < edgeColliderPointCount+1; i++)
+            {
+                var pos = path.path.GetPointAtTime(1f / edgeColliderPointCount * i);
+                points.Add(pos - transform.position);
+            }
+
+            lineRenderer.SetPositions(points.ToArray());
         }
     }
 }

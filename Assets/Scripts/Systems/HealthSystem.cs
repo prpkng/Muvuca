@@ -17,8 +17,8 @@ namespace Muvuca.Systems
         
         public async void DoDamage(int amount = 1)
         {
-            onDamage.Invoke(amount);
             currentHealthPoints -= amount;
+            onDamage.Invoke(amount);
             if (currentHealthPoints <= 0)
                 onDie.Invoke();
             
