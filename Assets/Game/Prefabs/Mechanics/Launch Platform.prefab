@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fcd4a91a9a01144ba6317fa154c3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preRotateStartDistance: 4
-  preRotateSpeed: 4
+  preRotateStartDistance: 8
+  preRotateSpeed: 12
 --- !u!114 &8232665704403065716
 MonoBehaviour:
   m_ObjectHideFlags: 0

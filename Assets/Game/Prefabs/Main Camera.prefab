@@ -60,7 +60,6 @@ GameObject:
   - component: {fileID: 8656325227463757680}
   - component: {fileID: 5701957497075659653}
   - component: {fileID: 2575070006431694510}
-  - component: {fileID: 459003625635018350}
   - component: {fileID: 4326468663752352178}
   - component: {fileID: 6727504774054478900}
   m_Layer: 0
@@ -124,11 +123,11 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 12
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 255
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -184,18 +183,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &459003625635018350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4301765222569218059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7999188695cf5c54e95f51acdabf121f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4326468663752352178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +299,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 25
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -390,7 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3992318174292284463}
   - component: {fileID: 2424885500687253533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -406,7 +393,7 @@ Transform:
   m_GameObject: {fileID: 7642423591556201433}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 200}
   m_LocalScale: {x: 64, y: 36, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

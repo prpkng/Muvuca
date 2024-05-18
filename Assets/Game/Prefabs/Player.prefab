@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8365036512854769473}
   - component: {fileID: 15584380551253325}
   - component: {fileID: 3603592150894512840}
+  - component: {fileID: 6365489653982678172}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -53,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingSpeed: 20
   lineRenderer: {fileID: 5225451081152630984}
+  hasPlatform: 0
   platform: {fileID: 0}
   health: {fileID: 0}
   animator: {fileID: 777357773203325883}
@@ -123,7 +125,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.25
 --- !u!50 &15584380551253325
 Rigidbody2D:
   serializedVersion: 4
@@ -166,6 +168,19 @@ MonoBehaviour:
   sceneReference:
     asset: {fileID: 102900000, guid: fcee748758048604292a76b41ccb7a30, type: 3}
     guid: fcee748758048604292a76b41ccb7a30
+--- !u!114 &6365489653982678172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370765259537907348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381f00aeee514c64943b043c937a3c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bufferingTime: 0.5
 --- !u!1 &7381766253110169340
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 7381766253110169340}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -394,6 +409,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9160852446796859030}
     m_Modifications:
+    - target: {fileID: 629985309384027907, guid: d70aa3ba0c5c48c48a808498d91b9b2b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 371209301abb64c4d88d86903739b80e, type: 3}
     - target: {fileID: 1521909705454449480, guid: d70aa3ba0c5c48c48a808498d91b9b2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

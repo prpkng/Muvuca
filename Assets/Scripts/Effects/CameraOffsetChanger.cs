@@ -13,7 +13,12 @@ namespace Muvuca.Effects
         {
             if (!other.CompareTag("Player"))
                 return;
-            
+
+            Change();
+        }
+
+        public void Change()
+        {
             CameraOffsetApplier.ChangeOffset(offset, duration, ease);
         }
     }

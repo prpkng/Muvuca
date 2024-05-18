@@ -16,7 +16,9 @@ namespace Muvuca.Player
             player.hasPlatform = true;
             InputManager.JumpPressed += JumpPressed;
             Debug.Log("Entered idle");
-            player.PlayAnimation("idle");
+            player.PlayAnimation("land");
+            frameCount = 0;
+
         }
 
         public void JumpPressed()
@@ -30,11 +32,18 @@ namespace Muvuca.Player
                 plat.hasPlayer = false;
         }
 
-
+        private int frameCount;
+        
         public override void Update()
         {
             player.transform.up = player.platform.up;
             player.transform.position = player.platform.position;
+
+            frameCount++;
+            
+            if (PlayerInputBuffering.BufferedPosition == null || frameCount < 3) return;
+            JumpPressed();
+            PlayerInputBuffering.BufferedPosition = null;
         }
 
         public override void Exit()

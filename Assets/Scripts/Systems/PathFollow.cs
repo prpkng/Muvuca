@@ -9,19 +9,20 @@ namespace Muvuca.Systems
     {
         public PathCreator pathCreator;
 
+        public bool followNormal;
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
-        private float distanceTravelled;
-
+        private float startDistance;
         private void Start()
         {
-            distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
+            startDistance = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
 
         private void Update()
         {
-            distanceTravelled += speed * Time.deltaTime;
-            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
+            transform.position = pathCreator.path.GetPointAtDistance(startDistance + speed * Time.time, endOfPathInstruction);
+            if (followNormal) transform.right =
+                pathCreator.path.GetNormalAtDistance(startDistance + speed * Time.time, endOfPathInstruction);
         }
     }
 }
