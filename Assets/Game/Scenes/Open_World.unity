@@ -402,7 +402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &30765474
 Transform:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ LineRenderer:
   - {x: 21.8152, y: -4.554714, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -2852,11 +2852,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9160852446796859030, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 202.6
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 9160852446796859030, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.1
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 9160852446796859030, guid: 0f076b4a38d2c76409b1fd4d836bc4e8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12456,11 +12456,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8656325227463757680, guid: 6422ffb53be79ae49b4f0685ecb6a169, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 202.6
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8656325227463757680, guid: 6422ffb53be79ae49b4f0685ecb6a169, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.1
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 8656325227463757680, guid: 6422ffb53be79ae49b4f0685ecb6a169, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14712,7 +14712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1416252858
 Transform:
   m_ObjectHideFlags: 0
@@ -14797,7 +14797,7 @@ MonoBehaviour:
       - 0
       globalNormalsAngle: 0
       flipNormals: 1
-    vertexPathUpToDate: 1
+    vertexPathUpToDate: 0
     vertexPathMaxAngleError: 0.3
     vertexPathMinVertexSpacing: 0.01
     showTransformTool: 0
@@ -14913,7 +14913,7 @@ LineRenderer:
   - {x: 14.2252655, y: -17.099714, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -23346,7 +23346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2004932828
 Transform:
   m_ObjectHideFlags: 0
@@ -23877,11 +23877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2488196353613819499, guid: 202f3ce7d027fc44786738084feb2dc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 202.6
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 2488196353613819499, guid: 202f3ce7d027fc44786738084feb2dc2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.1
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2488196353613819499, guid: 202f3ce7d027fc44786738084feb2dc2, type: 3}
       propertyPath: m_LocalPosition.z

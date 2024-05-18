@@ -11,6 +11,7 @@ namespace Muvuca.Systems
 {
     public class SpawnAlongPathUtility : MonoBehaviour
     {
+        #if UNITY_EDITOR
         public PathCreator path;
 
         public Vector3 randomOffsetValue;
@@ -20,7 +21,6 @@ namespace Muvuca.Systems
         [SerializeField] private EdgeCollider2D edgeCollider;
         [SerializeField] private LineRenderer lineRenderer;
         public int edgeColliderPointCount = 100;
-        
         public void Spawn()
         {
             foreach (Transform child in transform) DestroyImmediate(child.gameObject);
@@ -62,5 +62,6 @@ namespace Muvuca.Systems
 
             lineRenderer.SetPositions(points.ToArray());
         }
+        #endif
     }
 }
