@@ -10,7 +10,7 @@ namespace Muvuca.Entities
         private HitboxChecker distanceChecker;
         [SerializeField] private Collider2D col;
         [SerializeField] private float offsetForce;
-        
+        [SerializeField] private bool returnPlayer;
         
         private void OnEnable()
         {
@@ -27,11 +27,18 @@ namespace Muvuca.Entities
 
         protected virtual void Entered()
         {
+            Damage();
         }
 
         protected virtual void Exited()
         {
+            
+        }
+
+        protected virtual void Damage()
+        {
             PlayerController.Instance.DamagePlayer(1);
+            if (returnPlayer) PlayerController.Instance.machine.ChangeState("return");
         }
         
 

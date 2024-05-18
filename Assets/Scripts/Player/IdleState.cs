@@ -12,7 +12,7 @@ namespace Muvuca.Player
 
         public override void Enter(string[] data = null)
         {
-            player.lineRenderer.enabled = true;
+            player.lineRenderer.gameObject.SetActive(true);
             player.hasPlatform = true;
             InputManager.JumpPressed += JumpPressed;
             Debug.Log("Entered idle");
@@ -49,7 +49,7 @@ namespace Muvuca.Player
         public override void Exit()
         {
             HoverSelectionBracket.BracketsDistance = -1;
-            player.lineRenderer.enabled = false;
+            player.lineRenderer.gameObject.SetActive(false);
             player.hasPlatform = false;
 
             InputManager.JumpPressed -= JumpPressed;

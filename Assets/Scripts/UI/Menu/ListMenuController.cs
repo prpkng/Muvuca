@@ -17,7 +17,7 @@ namespace Muvuca.UI.Menu
 
         private void Awake()
         {
-            startY = transform.position.y;
+            startY = transform.localPosition.y;
             var transforms = new List<Transform>();
             foreach (Transform child in transform) transforms.Add(child);
             textButtons = transforms.Select(t => t.GetComponent<MenuTextButton>()).ToArray();
@@ -29,7 +29,7 @@ namespace Muvuca.UI.Menu
             for (var i = 0; i < textButtons.Length; i++)
                 textButtons[i].selected = selection == i;
 
-            transform.DOLocalMoveY(startY + (selection - 1) * 15, 0.4f).SetEase(Ease.OutCubic);
+            transform.DOLocalMoveY(startY + (selection - 1) * 15, 0.4f).SetEase(Ease.OutExpo);
         }
 
         public void MouseEntered(int index)

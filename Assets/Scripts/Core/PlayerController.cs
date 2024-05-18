@@ -12,6 +12,7 @@ namespace Muvuca.Core
         public static PlayerController Instance;
         
         public float movingSpeed;
+        public float returnSpeed;
         public LineRenderer lineRenderer;
 
         
@@ -29,7 +30,6 @@ namespace Muvuca.Core
             CameraShaker.TriggerShake();
             health.DoDamage(amount);
             PlayerGotHit?.Invoke();
-            print("Damaged player!");
         }
         
         public void SetDirection(Vector2 direction)
@@ -53,6 +53,7 @@ namespace Muvuca.Core
         {
             machine.AddState("idle", new IdleState());
             machine.AddState("moving", new MovingState());
+            machine.AddState("return", new ReturnState());
             machine.owner = this;
             machine.ChangeState("moving", new string[] { });
 

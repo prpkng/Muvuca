@@ -8,15 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Main Menu.unity
     guid: b6edd7cce4d317241a5579360faee2a2
-  - enabled: 0
-    path: Assets/Game/Scenes/Test.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Game/Scenes/World/Open_World.unity
+    path: Assets/Game/Scenes/Open_World.unity
     guid: fcee748758048604292a76b41ccb7a30
-  - enabled: 1
-    path: Assets/Game/Scenes/World/Boss_1.unity
-    guid: 31bea82cbc41aa348be30c14c50d89e6
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: d9081be6ae5f6344583f92535e17a55d, type: 2}
     com.unity.localization.addressable-group-rules: {fileID: 11400000, guid: a6ba1fabfb078a24ea68383830e25880, type: 2}

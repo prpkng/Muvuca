@@ -55,11 +55,11 @@ MonoBehaviour:
   m_Name: UniversalBlurFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  passMaterial: {fileID: 2100000, guid: 9850a4d8fa91d463f97c9078274547d0, type: 2}
+  passMaterial: {fileID: 2100000, guid: e6e275e38970fb547805c6df276645a9, type: 2}
   passIndex: 0
   injectionPoint: 600
   intensity: 1
-  downsample: 1
+  downsample: 1.79
   scale: 0.5
   iterations: 10
 --- !u!114 &-4138069186830355295

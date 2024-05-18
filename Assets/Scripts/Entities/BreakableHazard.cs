@@ -19,7 +19,7 @@ namespace Muvuca.Entities
 
         protected override void Exited()
         {
-            base.Exited();
+            Damage();
             InputManager.AttackPressed -= AttackPressed;
         }
     }
