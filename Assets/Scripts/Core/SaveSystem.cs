@@ -54,10 +54,11 @@ namespace Muvuca.Core
                 var json = JObject.Parse(text);
                 foreach (var prop in json.Properties())
                 {
-                    if (((float?)prop).HasValue)
-                        Set(prop.Name, (float)prop);
-                    else if (((int?)prop).HasValue)
-                        Set(prop.Name, (string)prop);
+                    Debug.Log(prop);
+                    if (float.TryParse((string)prop, out var f))
+                        Set(prop.Name, f);
+                    else if (int.TryParse((string)prop, out var i))
+                        Set(prop.Name, i);
                     else
                         Set(prop.Name, prop.Value.ToString());
                 }

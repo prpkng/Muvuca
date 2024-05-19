@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Muvuca.Core;
 using Muvuca.Systems;
+using Muvuca.UI.HUD;
 using UnityEngine;
 
 namespace Muvuca.Entities
@@ -45,6 +46,7 @@ namespace Muvuca.Entities
             shockwaveMaterial.SetFloat("_Size", shockwaveStartSize);
             shockwaveMaterial.DOFloat(shockwaveDestSize, "_Size", shockwaveDuration).SetEase(shockwaveEase);
             Exited();
+            ArrowIndicator.Target = null;
             Destroy(gameObject);
 
             var bossController = BossController.CurrentInstance;

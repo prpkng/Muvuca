@@ -8,8 +8,8 @@ namespace Muvuca.UI.Settings
     public class ResolutionCycle : MonoBehaviour
     {
         private static Resolution gameStartResolution;
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
-        private static void SetGameStartResolution()
+
+        public static void SetGameStartResolution()
         {
             gameStartResolution = Screen.currentResolution;
 
@@ -24,32 +24,53 @@ namespace Muvuca.UI.Settings
         private void Awake()
         {
             resolutionsText = GetComponent<TMP_Text>();
+            currentResolution = Screen.currentResolution;
+            var currentSize = new Vector2(currentResolution.width, currentResolution.height);
+            var resolutions = Screen.resolutions;
+            var currentDistance = Mathf.Infinity;
+            for (var i = 0; i < resolutions.Length; i++)
+            {
+                var item = resolutions[i];
+                var resSize = new Vector2(item.width, item.height);
+                var dist = Vector2.Distance(resSize, currentSize);
+                if (dist >= currentDistance)
+                    continue;
+                currentDistance = dist;
+                currentResolutionIndex = i;
+            }
+            
+            resolutionsText.text = $"{currentResolution.width}x{currentResolution.height}";
+            print(resolutions[currentResolutionIndex]);
         }
-        private int currentResolution;
+        private int currentResolutionIndex;
+        private Resolution currentResolution;
 
 
 
+        
         public void IncreaseDecreaseRes(int by)
         {
-            currentResolution += by;
-            var resolutions = Screen.resolutions.Where(r => r.refreshRateRatio.value == gameStartResolution.refreshRateRatio.value).ToArray();
-            if (currentResolution >= resolutions.Length)
-                currentResolution = 0;
-            else if (currentResolution < 0)
-                currentResolution = resolutions.Length - 1;
+            var resolutions = Screen.resolutions;
 
-            var currentRes = resolutions[currentResolution];
+            currentResolutionIndex += by;
+            if (currentResolutionIndex >= resolutions.Length)
+                currentResolutionIndex = 0;
+            else if (currentResolutionIndex < 0)
+                currentResolutionIndex = resolutions.Length - 1;
+            
+            currentResolution = resolutions[currentResolutionIndex];
+            print($"Switching to resolution: {currentResolution}");
 
             applier.AddSetting(() =>
             {
-                Screen.SetResolution(currentRes.width, currentRes.height, Screen.fullScreenMode);
-                PlayerPrefs.SetInt("WindowWidth", currentRes.width);
-                PlayerPrefs.SetInt("WindowHeigth", currentRes.height);
+                Screen.SetResolution(currentResolution.width, currentResolution.height, Screen.fullScreenMode);
+                PlayerPrefs.SetInt("WindowWidth", currentResolution.width);
+                PlayerPrefs.SetInt("WindowHeigth", currentResolution.height);
 
             }, typeof(ResolutionCycle));
 
 
-            resolutionsText.text = $"{currentRes.width}x{currentRes.height}";
+            resolutionsText.text = $"{currentResolution.width}x{currentResolution.height}";
         }
     }
 }

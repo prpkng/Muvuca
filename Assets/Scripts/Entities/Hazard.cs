@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Muvuca.Core;
 using Muvuca.Entities.Platform;
@@ -39,6 +40,12 @@ namespace Muvuca.Entities
             
         }
 
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, playerReturnMinimumRange);
+        }
+
         protected virtual void Damage()
         {
             PlayerController.Instance.DamagePlayer(1);
@@ -49,7 +56,7 @@ namespace Muvuca.Entities
             var pos = transform.position;
             var playerPos = PlayerController.Instance.transform.position;
             var platform = LaunchPlatform.availablePlatforms
-                .Where(p => Vector2.Distance(p.transform.position, playerPos) > playerReturnMinimumRange)
+                .Where(p => Vector2.Distance(p.transform.position, transform.position) > playerReturnMinimumRange)
                 .OrderBy(p => Vector2.Distance(p.transform.position, playerPos))
                 .ElementAt(0);
             PlayerController.Instance.platform = platform.transform;

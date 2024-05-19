@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Muvuca.Effects;
 using Muvuca.Player;
 using Muvuca.Systems;
@@ -14,7 +15,10 @@ namespace Muvuca.Core
         public float movingSpeed;
         public float returnSpeed;
         public LineRenderer lineRenderer;
-
+        [SerializeField] public PlayerSpriteFlipping flipping;
+        public AnimationCurve distanceSpeedCurve;
+        
+        [SerializeField] private float playerInvulnerabilityTime = 2f; 
         
         public readonly StateMachine machine = new();
 
@@ -22,14 +26,16 @@ namespace Muvuca.Core
         [ReadOnly] public Transform platform;
         [ReadOnly] public HealthSystem health;
         public Animator animator;
-
+        public Flashing flashing;
+        
         public static Action PlayerGotHit;
         
-        public void DamagePlayer(int amount = 0)
+        public async void DamagePlayer(int amount = 0)
         {
             CameraShaker.TriggerShake();
             health.DoDamage(amount);
             PlayerGotHit?.Invoke();
+            flashing.Play();
         }
         
         public void SetDirection(Vector2 direction)
@@ -75,7 +81,6 @@ namespace Muvuca.Core
 
         public void PlayAnimation(string id)
         {
-            print($"Played {id}");
             animator.Play(id);
         }
     }

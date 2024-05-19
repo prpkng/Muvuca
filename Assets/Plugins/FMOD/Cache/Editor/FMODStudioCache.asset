@@ -43,7 +43,7 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638512209498911305
+  lastModified: 638516583999662137
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -127,12 +127,13 @@ MonoBehaviour:
   - {fileID: -7775622633042892379}
   - {fileID: -1043171929147488334}
   - {fileID: 3177233370605276383}
+  - {fileID: 8945915943742072373}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7570457008994830337}
   StringsBanks:
   - {fileID: 1605689255618091503}
-  cacheTime: 638512209503457266
+  cacheTime: 638516592498265837
   cacheVersion: 131617
 --- !u!114 &726493765257906121
 MonoBehaviour:
@@ -193,10 +194,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638510497764852347
+  lastModified: 638516592498265837
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 876672
   Exists: 1
 --- !u!114 &1605689255618091503
 MonoBehaviour:
@@ -213,10 +214,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638512209498941320
+  lastModified: 638516584000242271
   FileSizes:
   - Name: Desktop
-    Value: 1300
+    Value: 1358
   Exists: 1
 --- !u!114 &3177233370605276383
 MonoBehaviour:
@@ -319,3 +320,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8945915943742072373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sun_Burning
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Sun_Burning
+  Guid:
+    Data1: -811909386
+    Data2: 1195822871
+    Data3: -921807454
+    Data4: -471596988
+  Banks:
+  - {fileID: 1171127933016853360}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 107513

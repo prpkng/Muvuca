@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ca84b942263b94092ab5c2ec1a5428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRunning: 1
 --- !u!114 &1523620507781608765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 5493590626892849324}
   offsetForce: -1.5
+  returnPlayer: 1
+  returnToNearest: 0
+  playerReturnMinimumRange: 1
 --- !u!58 &5493590626892849324
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -96,7 +98,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.25
 --- !u!1 &9129389496644640819
 GameObject:
   m_ObjectHideFlags: 0

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89cac09e7674239948f187d704a11c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shockwaveTravelSpeed: 50
+  shockwaveTravelSpeed: 75
   detonatorTransform: {fileID: 1327647490333033774}
   shockwaveStartSize: -0.25
   shockwaveDestSize: 2.25

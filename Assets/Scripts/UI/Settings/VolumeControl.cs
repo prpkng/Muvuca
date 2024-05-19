@@ -9,10 +9,9 @@ namespace Muvuca.UI.Settings
         private static Bus _masterBus;
         private static Bus _sfxBus;
         private static Bus _musicBus;
-        
-        
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void SetupVolume()
+
+
+        public static void SetupFMODVolume()
         {
             _masterBus = FMODUnity.RuntimeManager.GetBus("bus:/");
             _sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/SFX");

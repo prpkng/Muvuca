@@ -14,7 +14,7 @@ namespace Muvuca.UI.Menu
             var current = controller.textButtons[controller.selection].transform.position;
             if (!followX) current.x = transform.position.x;
             if (!followY) current.y = transform.position.y;
-            transform.position = Vector3.Lerp(transform.position, current, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, current, moveSpeed * Time.unscaledDeltaTime);
         }
     }
 }

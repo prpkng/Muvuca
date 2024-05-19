@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Muvuca.Systems
 {
@@ -13,13 +14,13 @@ namespace Muvuca.Systems
 
         public int hitCooldown = 500;
         
-        public int currentHealthPoints;
+        [FormerlySerializedAs("currentHealthPoints")] public int currentHp;
         
         public async void DoDamage(int amount = 1)
         {
-            currentHealthPoints -= amount;
+            currentHp -= amount;
             onDamage.Invoke(amount);
-            if (currentHealthPoints <= 0)
+            if (currentHp <= 0)
                 onDie.Invoke();
             
             col.enabled = false;

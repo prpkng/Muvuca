@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using Muvuca.Core;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Muvuca.Systems
 {
@@ -9,21 +11,18 @@ namespace Muvuca.Systems
         public Action entered;
         public Action exited;
 
-        public bool IsInRange { get; private set; }
+        public bool IsInRange { get; protected set; }
 
-        [HideInInspector] public bool isRunning = true;
-
-
-        private void OnTriggerEnter2D(Collider2D other)
+        protected virtual void OnTriggerEnter2D(Collider2D other)
         {
-            if (!isRunning || !other.gameObject.CompareTag("Player"))
+            if (!other.gameObject.CompareTag("Player"))
                 return;
             entered?.Invoke();
             IsInRange = true;
         }
-        private void OnTriggerExit2D(Collider2D other)
+        protected virtual void OnTriggerExit2D(Collider2D other)
         {
-            if (!isRunning || !other.gameObject.CompareTag("Player"))
+            if (!other.gameObject.CompareTag("Player"))
                 return;
             exited?.Invoke();
             IsInRange = false;

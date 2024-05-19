@@ -23,7 +23,8 @@ namespace Muvuca.Systems
         public int edgeColliderPointCount = 100;
         public void Spawn()
         {
-            foreach (Transform child in transform) DestroyImmediate(child.gameObject);
+            for(var i = transform.childCount - 1; i >= 0; i--)
+                DestroyImmediate(transform.GetChild(i).gameObject);
             for (var i = 0; i < objectCount; i++)
             {
                 var pos = path.path.GetPointAtTime(1f / objectCount * i);

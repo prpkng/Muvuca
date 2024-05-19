@@ -18,20 +18,20 @@ namespace Muvuca.UI.Settings
         public void Show()
         {
             transform.localScale = Vector3.one * 1.1f;
-            transform.DOScale(1f, showDuration).SetEase(showEase);
-            canvasGroup.DOFade(1f, showDuration).SetEase(showEase);
+            transform.DOScale(1f, showDuration).SetEase(showEase).SetUpdate(true);
+            canvasGroup.DOFade(1f, showDuration).SetEase(showEase).SetUpdate(true);
             canvasGroup.interactable = true;
             canvasGroup.blocksRaycasts = true;
-            DOTween.To(f => MainMenuController.BGMMuffle = f, 0f, 1f, showDuration);
+            DOTween.To(f => MainMenuController.BGMMuffle = f, 0f, 1f, showDuration).SetUpdate(true);
         }
 
         public void Hide()
         {
-            transform.DOScale(1.1f, hideDuration).SetEase(hideEase);
-            canvasGroup.DOFade(0f, hideDuration).SetEase(hideEase);
+            transform.DOScale(1.1f, hideDuration).SetEase(hideEase).SetUpdate(true);
+            canvasGroup.DOFade(0f, hideDuration).SetEase(hideEase).SetUpdate(true);
             canvasGroup.interactable = false;
             canvasGroup.blocksRaycasts = false;
-            DOTween.To(f => MainMenuController.BGMMuffle = f, 1f, 0f, hideDuration);
+            DOTween.To(f => MainMenuController.BGMMuffle = f, 1f, 0f, hideDuration).SetUpdate(true);
         }
     }
 }

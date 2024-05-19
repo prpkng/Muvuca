@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Muvuca.Core
 {
@@ -52,5 +54,14 @@ namespace Muvuca.Core
         {
             return (value - fromSource) / (toSource - fromSource) * (toTarget - fromTarget) + fromTarget;
         }
+
+        public static T PickRandom<T>(this IEnumerable<T> array)
+        {
+            var enumerable = array as T[] ?? array.ToArray();
+            return enumerable.ElementAt(Random.Range(0, enumerable.Length));
+        }
+
+        public static bool Compare(this LayerMask mask, int layer)
+            => mask.value == (mask.value | (1 << layer));
     }
 }

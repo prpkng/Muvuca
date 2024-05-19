@@ -35,6 +35,7 @@ namespace Muvuca.Systems
 
         private void Update()
         {
+            if (Time.timeScale == 0) return;
             targetPosition = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
             var hit = Physics2D.CircleCast(targetPosition, selectionRange,

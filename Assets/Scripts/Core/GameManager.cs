@@ -1,4 +1,6 @@
 using Muvuca.Tools;
+using Muvuca.UI.Menu;
+using Muvuca.UI.Settings;
 using UnityEngine;
 
 namespace Muvuca.Core
@@ -15,28 +17,22 @@ namespace Muvuca.Core
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterAssembliesLoaded)]
         public static void SetupGameManager()
         {
+            Cursor.lockState = CursorLockMode.Confined;
             GameObject gameManager = new("GameManager");
             Instance = gameManager.AddComponent<GameManager>();
             DontDestroyOnLoad(gameManager);
 
+            VolumeControl.SetupFMODVolume();
+            
+            // Fix framerate cap
+            Application.targetFrameRate = 0;
 
-            // Get platform info
-
-            var platform = Application.platform;
-            switch (platform)
-            {
-                case RuntimePlatform.Android:
-                case RuntimePlatform.IPhonePlayer:
-                    Instance.isRunningOnMobile = true;
-                    Debug.Log("Mobile Player!");
-                    break;
-                case RuntimePlatform.WebGLPlayer:
-                    Debug.Log("WebGL Player!");
-                    break;
-                default:
-                    Debug.Log("Desktop Player!");
-                    break;
-            }
+            // Disable saving for this build!!!!
+            // SaveSystem.LoadFromDisk();
+            
+            ResolutionCycle.SetGameStartResolution();
+            
+            MainMenuController.PlayBGM();
 
 
         }

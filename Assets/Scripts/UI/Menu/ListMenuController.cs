@@ -29,7 +29,7 @@ namespace Muvuca.UI.Menu
             for (var i = 0; i < textButtons.Length; i++)
                 textButtons[i].selected = selection == i;
 
-            transform.DOLocalMoveY(startY + (selection - 1) * 15, 0.4f).SetEase(Ease.OutExpo);
+            transform.DOLocalMoveY(startY + (selection - 1) * 15, 0.4f).SetEase(Ease.OutExpo).SetUpdate(true);
         }
 
         public void MouseEntered(int index)

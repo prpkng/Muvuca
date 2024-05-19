@@ -26,17 +26,28 @@ namespace Muvuca.Effects
         private void Awake()
         {
             DontDestroyOnLoad(transform.parent);
-            SceneManager.sceneLoaded += (_, _) => Loaded();
-            Loaded();
+            Load();
         }
 
-        private void Loaded()
+        private void Load()
         {
             IsHovering = false;
             rect = (RectTransform)transform;
             cam = Camera.main;
             Cursor.visible = false;
         }
+
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += Loaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= Loaded;
+        }
+
+        private void Loaded(Scene _1, LoadSceneMode _2) => Load();
 
 
         private void Update()

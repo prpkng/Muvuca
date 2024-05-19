@@ -12,6 +12,7 @@ namespace Muvuca.Player
     public class MovingState : PlayerState
     {
 
+        private float counter;
         public Vector3 direction;
 
         public override void Enter(string[] data = null)
@@ -21,6 +22,7 @@ namespace Muvuca.Player
             player.enteredPlatform += EnteredPlatform;
 
             InputManager.AttackPressed += AttackPressed;
+            counter = 0;
         }
 
         private void AttackPressed()
@@ -46,7 +48,14 @@ namespace Muvuca.Player
 
         public override void Update()
         {
-            player.transform.position += player.movingSpeed * Time.deltaTime * direction;
+            counter += Time.deltaTime;
+            var speed = player.distanceSpeedCurve.Evaluate(counter) * player.movingSpeed;
+            if (speed <= 0)
+            {
+                machine.ChangeState("return");
+                return;
+            }
+            player.transform.position += speed * Time.deltaTime * direction;
         }
     }
 }

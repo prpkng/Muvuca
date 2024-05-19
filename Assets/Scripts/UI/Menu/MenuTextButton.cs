@@ -18,7 +18,7 @@ namespace Muvuca.UI.Menu
         }
 
         private void Update() {
-            tmp.fontSize = Mathf.Lerp(tmp.fontSize, selected ? selectedFontSize : unselectedFontSize, Time.deltaTime * scalingSpeed);
+            tmp.fontSize = Mathf.Lerp(tmp.fontSize, selected ? selectedFontSize : unselectedFontSize, Time.unscaledDeltaTime * scalingSpeed);
         }
     }
 }

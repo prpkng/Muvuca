@@ -11,10 +11,12 @@ namespace Muvuca.Core
 
         private void Awake()
         {
+            Cursor.lockState = CursorLockMode.Confined;
             JumpPressed = null;
             AttackPressed = null;
             playerInput = GetComponent<PlayerInput>();
             playerInput.onActionTriggered += OnActionTriggered;
+            IsMouseBlocked = false;
         }
 
         public static Action JumpPressed;
@@ -22,8 +24,13 @@ namespace Muvuca.Core
 
         private static Vector2 TouchPos = Vector2.zero;
 
+        public static bool IsMouseBlocked;
+
         private void OnActionTriggered(InputAction.CallbackContext obj)
         {
+            if (IsMouseBlocked) 
+                return;
+            
             switch (obj.action.name)
             {
                 case "Jump":

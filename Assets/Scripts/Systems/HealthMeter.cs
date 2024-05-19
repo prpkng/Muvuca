@@ -16,7 +16,7 @@ namespace Muvuca.Systems
         }
 
         private void OnDamage(int amount) {
-            if (health.currentHealthPoints > healthPoint)
+            if (health.currentHp > healthPoint)
                 return;
             fire.Invoke();
             Destroy(this);

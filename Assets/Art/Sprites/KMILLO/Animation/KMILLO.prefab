@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1521909705454449480}
   - component: {fileID: 629985309384027907}
   - component: {fileID: 7563716026993924208}
+  - component: {fileID: 5422171744268033480}
   m_Layer: 0
   m_Name: KMILLO
   m_TagString: Untagged
@@ -106,3 +107,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5422171744268033480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115852932452521854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74292aa793d9408691ad25e932cee0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviour: {fileID: 0}
+  renderer: {fileID: 629985309384027907}
+  enabledInterval: 0.25
+  disabledInterval: 0.15
+  stopOnSeconds: 1
+  playOnAwake: 0

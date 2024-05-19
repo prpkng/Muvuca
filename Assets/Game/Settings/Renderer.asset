@@ -59,8 +59,8 @@ MonoBehaviour:
   passIndex: 0
   injectionPoint: 600
   intensity: 1
-  downsample: 1.79
-  scale: 0.5
+  downsample: 2.5
+  scale: 1
   iterations: 10
 --- !u!114 &-4138069186830355295
 MonoBehaviour:

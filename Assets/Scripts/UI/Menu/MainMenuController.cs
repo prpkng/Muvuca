@@ -10,7 +10,6 @@ namespace Muvuca.UI.Menu
     {
         private static EventInstance? _mainMenuBGMEvent = null;
         private static bool _isPlayingMenuBGM;
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
         public static void PlayBGM()
         {
             #if UNITY_EDITOR

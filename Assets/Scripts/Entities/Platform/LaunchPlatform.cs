@@ -37,7 +37,6 @@ namespace Muvuca.Entities.Platform
         {
             if (!hasPlayer) return;
             
-            
             var targetPos = PlayerInputBuffering.BufferedPosition ?? PlatformSelector.Instance.targetPosition;
             var targetDir = (PlatformSelector.Instance.targetPosition - transform.position).normalized;
             var angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;

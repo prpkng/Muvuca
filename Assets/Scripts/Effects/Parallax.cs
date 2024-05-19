@@ -17,7 +17,7 @@ namespace Muvuca.Effects
         
         [SerializeField] private float parallaxSpeed;
 
-        private void Update()
+        private void LateUpdate()
         {
             transform.position = startPos + target.position * parallaxSpeed;
         }
