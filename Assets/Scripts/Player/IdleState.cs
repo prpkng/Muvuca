@@ -59,6 +59,8 @@ namespace Muvuca.Player
             HoverSelectionBracket.BracketsDistance = -1;
             player.lineRenderer.gameObject.SetActive(false);
             player.hasPlatform = false;
+            
+            player.jumpSound.Play();
 
             InputManager.JumpPressed -= JumpPressed;
         }

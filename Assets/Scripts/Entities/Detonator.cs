@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using FMODUnity;
 using Muvuca.Core;
 using Muvuca.Systems;
 using Muvuca.UI.HUD;
@@ -41,8 +42,12 @@ namespace Muvuca.Entities
             InputManager.AttackPressed -= ActivateDetonator;
         }
 
+        public StudioEventEmitter detonatorSfx;
+        
         private async void ActivateDetonator()
         {
+            detonatorSfx.Play();
+            detonatorSfx.SetParameter("EQEffect", 1f);
             shockwaveMaterial.SetFloat("_Size", shockwaveStartSize);
             shockwaveMaterial.DOFloat(shockwaveDestSize, "_Size", shockwaveDuration).SetEase(shockwaveEase);
             Exited();

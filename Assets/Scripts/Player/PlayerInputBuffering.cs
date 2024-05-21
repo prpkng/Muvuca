@@ -28,9 +28,8 @@ namespace Muvuca.Player
         {
             if (PlayerController.Instance.hasPlatform) return;
             BufferedPosition = PlatformSelector.Instance.targetPosition;
-            StopAllCoroutines();            
+            StopAllCoroutines();
             StartCoroutine(Deactivate());
-            
         }
 
         private IEnumerator Deactivate()

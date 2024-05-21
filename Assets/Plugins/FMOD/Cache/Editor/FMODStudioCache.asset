@@ -43,11 +43,38 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638516583999662137
+  lastModified: 638517530708803815
   FileSizes:
   - Name: Desktop
-    Value: 1486
+    Value: 5376
   Exists: 1
+--- !u!114 &-3921872455373758525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jump
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Jump
+  Guid:
+    Data1: 740629471
+    Data2: 1325476940
+    Data3: 1957810057
+    Data4: -1144652568
+  Banks:
+  - {fileID: 1171127933016853360}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 156
 --- !u!114 &-1043171929147488334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,13 +155,46 @@ MonoBehaviour:
   - {fileID: -1043171929147488334}
   - {fileID: 3177233370605276383}
   - {fileID: 8945915943742072373}
-  EditorParameters: []
+  - {fileID: -3921872455373758525}
+  - {fileID: 6269285434893936040}
+  - {fileID: 292808375472563728}
+  - {fileID: 4141726883710136458}
+  - {fileID: 2304503018799575464}
+  EditorParameters:
+  - {fileID: 4015261263243129060}
   MasterBanks:
   - {fileID: -7570457008994830337}
   StringsBanks:
   - {fileID: 1605689255618091503}
-  cacheTime: 638516592498265837
+  cacheTime: 638517530709258565
   cacheVersion: 131617
+--- !u!114 &292808375472563728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/dialogue-kmillo
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/dialogue-kmillo
+  Guid:
+    Data1: 646799715
+    Data2: 1260792527
+    Data3: -1506659919
+    Data4: 1099568744
+  Banks:
+  - {fileID: 1171127933016853360}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 135
 --- !u!114 &726493765257906121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +217,30 @@ MonoBehaviour:
     data2: 1357833151
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &950542650165076639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/detonator/EQEffect
+  m_EditorClassIdentifier: 
+  Name: EQEffect
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2582757104
+    data2: 1076674523
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &1057993130490083641
@@ -194,10 +278,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638516592498265837
+  lastModified: 638517530709258565
   FileSizes:
   - Name: Desktop
-    Value: 876672
+    Value: 933568
   Exists: 1
 --- !u!114 &1605689255618091503
 MonoBehaviour:
@@ -214,11 +298,38 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638516584000242271
+  lastModified: 638517530708823863
   FileSizes:
   - Name: Desktop
-    Value: 1358
+    Value: 1636
   Exists: 1
+--- !u!114 &2304503018799575464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/dialogue-central
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/dialogue-central
+  Guid:
+    Data1: -815492832
+    Data2: 1189828639
+    Data3: 1118772127
+    Data4: -1796503588
+  Banks:
+  - {fileID: 1171127933016853360}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 135
 --- !u!114 &3177233370605276383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +384,58 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4015261263243129060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/EQEffect
+  m_EditorClassIdentifier: 
+  Name: EQEffect
+  StudioPath: parameter:/EQEffect
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2582757104
+    data2: 1076674523
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4141726883710136458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/detonator
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/detonator
+  Guid:
+    Data1: 17335149
+    Data2: 1153039463
+    Data3: 1403769515
+    Data4: 1953214019
+  Banks:
+  - {fileID: 1171127933016853360}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 950542650165076639}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1178
 --- !u!114 &4656208068388154771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +456,34 @@ MonoBehaviour:
   - Name: Desktop
     Value: 4102112
   Exists: 1
+--- !u!114 &6269285434893936040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Hit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Hit
+  Guid:
+    Data1: 1674495198
+    Data2: 1240083974
+    Data3: -222861167
+    Data4: 1149738432
+  Banks:
+  - {fileID: -7570457008994830337}
+  - {fileID: 1171127933016853360}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 115
 --- !u!114 &7643541336137928333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +535,6 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 15
+  MaxDistance: 150
   Length: 107513

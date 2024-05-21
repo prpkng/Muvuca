@@ -18,6 +18,7 @@ namespace Muvuca.Systems
 
         public Object owner;
         public State currentState;
+        public string currentStateName { get; private set; }
         public System.Action<string> stateChanged;
 
         public void AddState(string name, State state)
@@ -37,6 +38,7 @@ namespace Muvuca.Systems
             currentState?.Exit();
             currentState = states[nextState];
             currentState?.Enter(data);
+            currentStateName = nextState;
         }
 
         public void Update() { currentState?.Update(); }

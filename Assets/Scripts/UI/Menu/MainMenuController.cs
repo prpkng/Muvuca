@@ -1,5 +1,7 @@
 using FMOD.Studio;
 using FMODUnity;
+using Muvuca.Core;
+using Muvuca.Systems.DialogueSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
@@ -37,6 +39,9 @@ namespace Muvuca.UI.Menu
 
         private void Awake()
         {
+            DialogueRunner.AlreadyPlayed = false;
+            SaveSystem.Reset();
+            
             if (_isPlayingMenuBGM)
                 return;
             

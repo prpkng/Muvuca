@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using DG.Tweening;
+using FMODUnity;
 using Muvuca.Core;
 using Muvuca.Entities.Platform;
 using Muvuca.Systems;
@@ -11,7 +13,18 @@ using UnityEngine.Serialization;
 namespace Muvuca.Entities
 {
     public class BossController : MonoBehaviour
-    {
+    { 
+        [SerializeField] private Material shockwaveMaterial;
+        public void PlayShockwave()
+        {
+            RuntimeManager.StudioSystem.setParameterByName("EQEffect", 1f);
+            shockwaveMaterial.SetFloat("_Size", -.25f);
+            shockwaveMaterial.DOFloat(2.25f, "_Size", 1f).SetEase(Ease.OutQuad);
+        }
+        public void Die()
+        {
+            Destroy(gameObject);
+        }
         public static BossController CurrentInstance;
 
         public GameObject detonatorGameObject;
@@ -27,6 +40,9 @@ namespace Muvuca.Entities
             CurrentInstance = this;
         }
 
+        [SerializeField] private FollowObjectRigidbody follow;
+        [SerializeField] private float hitSpeedFactor;
+        
         [SerializeField] private string savingKey;
         public static bool IsFightingBoss;
         
@@ -47,6 +63,7 @@ namespace Muvuca.Entities
 
         public void HitBoss()
         {
+            follow.moveSpeedMultiplier += hitSpeedFactor;
             bossHealth.DoDamage();
             if (possibleDetonatorPlatforms.Length == 0) return;
             var platforms = possibleDetonatorPlatforms

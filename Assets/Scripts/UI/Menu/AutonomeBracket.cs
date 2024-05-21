@@ -23,13 +23,17 @@ namespace Muvuca.UI.Menu
             bracket.gameObject.SetActive(true);
             bracket.transform.DOKill();
             bracket.transform.DOMove(target.position, selectorMoveDuration).SetEase(Ease.OutCubic);
+            
+            
             bracket.DOKill(true);
             
             var dist = bracket.bracketsDistance;
             if (target is RectTransform rect)
                 dist = rect.rect.width / 2f + 10;
             bracket.bracketsDistance -= selectorSizeAnimForce;
-            DOTween.To(() => bracket.bracketsDistance, s => bracket.bracketsDistance = s, dist, selectorSizeAnimDuration).SetTarget(bracket).SetEase(Ease.OutCubic);
+            DOTween.To(() => bracket.bracketsDistance, s => bracket.bracketsDistance = s, dist, selectorSizeAnimDuration)
+                .SetTarget(bracket)
+                .SetEase(Ease.OutCubic);
         }
 
         public void UnselectAll()

@@ -11,6 +11,7 @@ namespace Muvuca.Entities.Platform
 {
     public class LaunchPlatform : MonoBehaviour
     {
+        public bool followMouse = true;
         public static List<LaunchPlatform> availablePlatforms = new();
 
         private void OnEnable() => availablePlatforms.Add(this);
@@ -35,7 +36,7 @@ namespace Muvuca.Entities.Platform
 
         private void Update()
         {
-            if (!hasPlayer) return;
+            if (!hasPlayer || !followMouse) return;
             
             var targetPos = PlayerInputBuffering.BufferedPosition ?? PlatformSelector.Instance.targetPosition;
             var targetDir = (PlatformSelector.Instance.targetPosition - transform.position).normalized;

@@ -1,5 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
+using FMOD.Studio;
+using FMODUnity;
 using Muvuca.Effects;
 using Muvuca.Player;
 using Muvuca.Systems;
@@ -25,6 +27,11 @@ namespace Muvuca.Core
         [ReadOnly] public bool hasPlatform;
         [ReadOnly] public Transform platform;
         [ReadOnly] public HealthSystem health;
+
+        [Header("Sounds")] 
+        public StudioEventEmitter jumpSound;
+        public StudioEventEmitter hitSound;
+        
         public Animator animator;
         public Flashing flashing;
         
@@ -32,10 +39,14 @@ namespace Muvuca.Core
         
         public async void DamagePlayer(int amount = 0)
         {
+            if (machine.currentStateName != "idle") 
+                PlayAnimation("damage");
             CameraShaker.TriggerShake();
             health.DoDamage(amount);
             PlayerGotHit?.Invoke();
             flashing.Play();
+            hitSound.Play();
+            
         }
         
         public void SetDirection(Vector2 direction)
@@ -63,12 +74,16 @@ namespace Muvuca.Core
             machine.owner = this;
             machine.ChangeState("moving", new string[] { });
 
+            
+            PlayAnimation("idle");
+            
             if (SaveSystem.TryGetString(SaveSystemKeyNames.PlayerSpawnPos, out var s))
                 transform.position = Util.DeserializeVector2(s);
         }
 
         void Update()
         {
+            if (Time.timeScale == 0) return;
             machine.Update();
         }
 

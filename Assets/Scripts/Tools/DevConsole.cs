@@ -14,7 +14,7 @@ namespace Muvuca.Tools
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static async void SpawnDevConsole()
         {
-            if (!Application.isEditor && !Application.isPlaying && !Debug.isDebugBuild) return;
+            if (!Application.isEditor) return;
             var devConsoleHandle = Addressables.LoadAssetAsync<GameObject>(DevConsolePath);
             print("Loading dev console...");
             await devConsoleHandle.Task;

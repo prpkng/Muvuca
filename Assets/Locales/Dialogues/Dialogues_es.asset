@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 20b7ccef7b915434391cc4eca5f2a7d4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 295262257152
+    m_Localized: "    Mensagem para o agente KMILL-0:  Sua miss\xE3o foi designada,
+      e os detalhes j\xE1 foram discutidos, c\xE2mbio?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12711169654784
+    m_Localized: "    Estaremos marcando no seu visor, se apresse! \nC\xE2mbio, desligo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11463049641984
+    m_Localized: "   Mensagem recebida, partindo para a miss\xE3o, mas onde era o
+      objetivo mesmo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106758936756224
+    m_Localized: "    Temos apenas informa\xE7\xE3o do primeiro deles.\nC\xE2mbio,
+      desligo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 106416773824512
+    m_Localized: "    Bom trabalho, sua miss\xE3o agora \xE9 ativar todos os detonadores."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123456943325184
+    m_Localized: '   Esse foi o primeiro de muitos, K-MILL0'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123242404675584
+    m_Localized: '    Ufa! finalmente acabou.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123528477179904
+    m_Localized: "    Se prepare para sua pr\xF3xima miss\xE3o"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

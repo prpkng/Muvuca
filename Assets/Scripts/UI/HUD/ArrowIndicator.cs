@@ -27,13 +27,15 @@ namespace Muvuca.UI.HUD
             transform.localScale = Vector3.one * (Target.HasValue ? 1 : 0);
             if (!Target.HasValue) return;
             
-            transform.position = (Vector3)Target.Value + (transform.parent.position - (Vector3)Target.Value).normalized 
-                * targetDistance;
+            transform.position = (Vector3)Target.Value + (Vector3)(((Vector2)transform.parent.position - Target.Value)
+                                                                   .normalized
+                                                                   * targetDistance);
             var localPos = transform.localPosition;
             localPos.x = Mathf.Clamp(localPos.x, -width / 2, width / 2);
             localPos.y = Mathf.Clamp(localPos.y, -height / 2, height / 2);
+            localPos.z = 0;
             transform.localPosition = localPos;
-            transform.up = ((Vector3)Target.Value - transform.parent.position).normalized;
+            transform.up = (new Vector3(Target.Value.x, Target.Value.y, transform.position.z) - transform.position).normalized;
         }
     }
 }

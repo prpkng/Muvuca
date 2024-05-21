@@ -11,6 +11,7 @@ namespace Muvuca.UI.SimpleActions
         public void Change()
         {
             SceneManager.LoadScene(sceneReference.BuildIndex);
+            Time.timeScale = 1f;
         }
     }
 }

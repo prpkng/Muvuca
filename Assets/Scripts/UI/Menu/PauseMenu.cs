@@ -24,14 +24,14 @@ namespace Muvuca.UI.Menu
                 .onComplete += () =>
             {
                 paused = false;
-                InputManager.IsMouseBlocked = false;
+                InputManager.IgnoringMouse = false;
             };
         }
 
         private void Update()
         {
             if (paused) 
-                InputManager.IsMouseBlocked = true;
+                InputManager.IgnoringMouse = true;
         }
     }
 }

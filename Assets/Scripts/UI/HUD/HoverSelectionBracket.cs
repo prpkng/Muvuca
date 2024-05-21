@@ -20,7 +20,7 @@ namespace Muvuca.UI.HUD
         {
             set
             {
-                if (!InputManager.IsMouseBlocked) 
+                if (!InputManager.IgnoringMouse) 
                     CustomCursor.IsHovering = !Mathf.Approximately(value, -1);
                 if (!Mathf.Approximately(_bracketsDistance, value))
                     _changedBracketsDistance?.Invoke(value);
@@ -68,14 +68,15 @@ namespace Muvuca.UI.HUD
         public Ease ease;
         
         public float spacing = 2f;
+        public float spacingMultiplier = .5f;
 
         private void Update()
         {
             transform.position = HoverSelectionDestination;            
-            brackets[0].localPosition = new Vector3(-spacing, spacing);
-            brackets[1].localPosition = new Vector3(spacing, spacing);
-            brackets[2].localPosition = new Vector3(-spacing, -spacing);
-            brackets[3].localPosition = new Vector3(spacing, -spacing);
+            brackets[0].localPosition = new Vector3(-spacing, spacing) * spacingMultiplier;
+            brackets[1].localPosition = new Vector3(spacing, spacing) * spacingMultiplier;
+            brackets[2].localPosition = new Vector3(-spacing, -spacing) * spacingMultiplier;
+            brackets[3].localPosition = new Vector3(spacing, -spacing) * spacingMultiplier;
         }
     }
 }

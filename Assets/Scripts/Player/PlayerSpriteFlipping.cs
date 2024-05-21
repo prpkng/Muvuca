@@ -1,4 +1,5 @@
 using System;
+using Muvuca.Core;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ namespace Muvuca.Player
 
         private void Update()
         {
+            if (InputManager.IgnoringMouse) return;
             var mousePos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             spr.flipX = mousePos.x < transform.position.x;
         }
