@@ -19,38 +19,57 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 295262257152
-    m_Localized: "    Mensagem para o agente KMILL-0:  Sua miss\xE3o foi designada,
-      e os detalhes j\xE1 foram discutidos, c\xE2mbio?"
+    m_Localized: "Mensagem para el agente KMILL-0: Su <color=#ff356c>misi\xF3n<color=black>
+      ha sido asignada y los detalles ya han sido discutidos, \xBFcambio?"
     m_Metadata:
       m_Items: []
   - m_Id: 12711169654784
-    m_Localized: "    Estaremos marcando no seu visor, se apresse! \nC\xE2mbio, desligo."
+    m_Localized: "Lo marcaremos en tu <color=#ff356c>visor<color=black>, \xA1apres\xFArate!
+      Cambio, fuera."
     m_Metadata:
       m_Items: []
   - m_Id: 11463049641984
-    m_Localized: "   Mensagem recebida, partindo para a miss\xE3o, mas onde era o
-      objetivo mesmo?"
+    m_Localized: "Mensaje recibido, partiendo para la <color=#ff356c>misi\xF3n<color=black>,
+      \xBFpero d\xF3nde era el <color=#ff356c>objetivo<color=black> exactamente?"
     m_Metadata:
       m_Items: []
   - m_Id: 106758936756224
-    m_Localized: "    Temos apenas informa\xE7\xE3o do primeiro deles.\nC\xE2mbio,
-      desligo"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 106416773824512
-    m_Localized: "    Bom trabalho, sua miss\xE3o agora \xE9 ativar todos os detonadores."
+    m_Localized: "Solo tenemos informaci\xF3n sobre el primero de ellos. Ser\xE1n
+      marcados en tu <color=#ff356c>visor<color=black>. Cambio, fuera."
     m_Metadata:
       m_Items: []
   - m_Id: 123456943325184
-    m_Localized: '   Esse foi o primeiro de muitos, K-MILL0'
+    m_Localized: Ese fue el primero de <color=#ff356c>muchos<color=black>, K-MILL0.
     m_Metadata:
       m_Items: []
   - m_Id: 123242404675584
-    m_Localized: '    Ufa! finalmente acabou.'
+    m_Localized: "\xA1Uf! Finalmente ha terminado."
     m_Metadata:
       m_Items: []
   - m_Id: 123528477179904
-    m_Localized: "    Se prepare para sua pr\xF3xima miss\xE3o"
+    m_Localized: "Prep\xE1rate para tu <color=#ff356c>pr\xF3xima misi\xF3n<color=black>.
+      Cambio, fuera."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1571719974256640
+    m_Localized: "Buen trabajo, ahora te adentrar\xE1s en una zona <color=#ff356c>peligrosa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1571720217526272
+    m_Localized: "Debes activar los <color=#ff356c>9 detonadores<color=black>. Puedes
+      hacerlo presionando el <color=#ff356c>bot\xF3n derecho del rat\xF3n <sprite=\"buttons\"
+      index=1>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1582174100815872
+    m_Localized: "\xA1Una cosa m\xE1s, usa el <sprite=\"buttons\" index=0> <color=#ff356c>bot\xF3n
+      izquierdo del rat\xF3n<color=black> para saltar a otra <color=#ff356c>plataforma!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1582174167924736
+    m_Localized: "\xA1Usa el bot\xF3n <sprite=\"buttons\" index=1> <color=#ff356c>derecho
+      del rat\xF3n<color=black> para destruir un <color=#ff356c>asteroide<color=black>
+      en el aire!"
     m_Metadata:
       m_Items: []
   references:

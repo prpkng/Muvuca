@@ -1,5 +1,6 @@
 Shader "Unify/UniversalBlurForUI"
 {
+    
     Properties
     {
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}

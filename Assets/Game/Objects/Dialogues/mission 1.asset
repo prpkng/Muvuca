@@ -16,7 +16,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:20b7ccef7b915434391cc4eca5f2a7d4
     m_TableEntryReference:
-      m_KeyId: 106758936756224
+      m_KeyId: 1571719974256640
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -30,8 +30,8 @@ MonoBehaviour:
       Data3: 1118772127
       Data4: -1796503588
     Path: event:/SFX/dialogue-central
-  finalize: 1
-  next: {fileID: 0}
+  finalize: 0
+  next: {fileID: 11400000, guid: f0b38b414f8ab3745875db5c6ff56c87, type: 2}
   references:
     version: 2
     RefIds: []

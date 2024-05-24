@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Default Local Group
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
-  m_Data:
-    m_SerializedData: []
   m_GUID: e4919bc07ebc2d54fb34aeafd91d0276
   m_SerializeEntries:
   - m_GUID: 7144eba6c25e5e94eb70346fa47cbda0
@@ -24,6 +22,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 629e6217376231d4cb688d4f3a1ed9e1
     m_Address: Assets/Game/Utils/DevConsole.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd137431b91a09643a1ff646ade40e7f
+    m_Address: Assets/Game/Prefabs/UI/Dialogue System.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

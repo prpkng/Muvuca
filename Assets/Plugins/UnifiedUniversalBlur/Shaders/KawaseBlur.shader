@@ -47,6 +47,7 @@ Shader "Unified/KawaseBlur"
                 col.rgb += tex2D(blurTexture, saturate(uv + float2(-i, i) * res)).rgb;
                 col.rgb += tex2D(blurTexture, saturate(uv + float2(-i, -i) * res)).rgb;
                 col.rgb /= 5.0f;
+                
 
                 col.a = 1;
 

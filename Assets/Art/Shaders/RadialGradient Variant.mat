@@ -30,6 +30,7 @@ Material:
     - _From: {r: 1, g: 0.8757578, b: 0, a: 1}
     - _To: {r: 0.97647053, g: 0.45834136, b: 0.06274507, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &6432963281143418443
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -42,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 7
+  version: 9

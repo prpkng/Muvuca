@@ -19,38 +19,57 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 295262257152
-    m_Localized: "    Mensagem para o agente KMILL-0:  Sua miss\xE3o foi designada,
-      e os detalhes j\xE1 foram discutidos, c\xE2mbio?"
+    m_Localized: "Mensagem para o agente KMILL-0:  Sua <color=#ff356c>miss\xE3o<color=black>
+      foi designada, e os detalhes j\xE1 foram discutidos, c\xE2mbio?"
     m_Metadata:
       m_Items: []
   - m_Id: 11463049641984
-    m_Localized: "   Mensagem recebida, partindo para a miss\xE3o, mas onde era o
-      objetivo mesmo?"
+    m_Localized: "Mensagem recebida, partindo para a <color=#ff356c>miss\xE3o<color=black>,
+      mas onde era o <color=#ff356c>objetivo<color=black> mesmo? c\xE2mbio."
     m_Metadata:
       m_Items: []
   - m_Id: 12711169654784
-    m_Localized: "    Estaremos marcando no seu visor, se apresse! \nC\xE2mbio, desligo."
+    m_Localized: "Estaremos marcando no seu <color=#ff356c>visor<color=black>, se
+      apresse! \nC\xE2mbio, desligo."
     m_Metadata:
       m_Items: []
   - m_Id: 106758936756224
-    m_Localized: "    Temos apenas informa\xE7\xE3o do primeiro deles.\nSer\xE3o
-      marcados no visor.     C\xE2mbio, desligo"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 106416773824512
-    m_Localized: "    Bom trabalho, sua miss\xE3o agora \xE9 ativar todos os detonadores."
+    m_Localized: "Temos apenas informa\xE7\xE3o do primeiro deles.\nSer\xE3o marcados
+      no <color=#ff356c>visor<color=black>. C\xE2mbio, desligo"
     m_Metadata:
       m_Items: []
   - m_Id: 123242404675584
-    m_Localized: '    Ufa! finalmente acabou.'
+    m_Localized: Ufa! finalmente acabou.
     m_Metadata:
       m_Items: []
   - m_Id: 123456943325184
-    m_Localized: '   Esse foi o primeiro de muitos, K-MILL0'
+    m_Localized: Esse foi o primeiro de <color=#ff356c>muitos<color=black>, K-MILL0
     m_Metadata:
       m_Items: []
   - m_Id: 123528477179904
-    m_Localized: "    Se prepare para sua pr\xF3xima miss\xE3o"
+    m_Localized: "Se prepare para sua <color=#ff356c>pr\xF3xima miss\xE3o<color=black>.
+      \nC\xE2mbio, desligo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1571719974256640
+    m_Localized: "Bom trabalho, agora voc\xEA estar\xE1 entrando em uma \xE1rea <color=#ff356c>perigosa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1571720217526272
+    m_Localized: "Voc\xEA deve ativar todos os <color=#ff356c>9 detonadores<color=black>.
+      Pode fazer isso pressionando o <color=#ff356c>bot\xE3o direito do mouse <sprite=\"buttons\"
+      index=1>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1582174100815872
+    m_Localized: "Mais uma coisa! Use o <sprite=\"buttons\" index=0> <color=#ff356c>bot\xE3o
+      esquerdo do mouse<color=black> para pular para outra <color=#ff356c>plataforma!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1582174167924736
+    m_Localized: "Use o <sprite=\"buttons\" index=1> <color=#ff356c>bot\xE3o direito
+      do mouse<color=black> para destruir um <color=#ff356c>aster\xF3ide<color=black>
+      no ar"
     m_Metadata:
       m_Items: []
   references:

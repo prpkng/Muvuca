@@ -19,38 +19,59 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 295262257152
-    m_Localized: "    Mensagem para o agente KMILL-0:  Sua miss\xE3o foi designada,
-      e os detalhes j\xE1 foram discutidos, c\xE2mbio?"
+    m_Localized: 'Message to agent KMILL-0:  Your <color=#ff356c>mission<color=black>
+      was delivered, the details were already discussed, over?'
     m_Metadata:
       m_Items: []
   - m_Id: 11463049641984
-    m_Localized: "   Mensagem recebida, partindo para a miss\xE3o, mas onde era o
-      objetivo mesmo?"
+    m_Localized: Roger that, leaving for the <color=#ff356c>mission<color=black>,
+      but where exactly was my <color=#ff356c>goal<color=black>? over.
     m_Metadata:
       m_Items: []
   - m_Id: 12711169654784
-    m_Localized: "    Estaremos marcando no seu visor, se apresse! \nC\xE2mbio, desligo."
-    m_Metadata:
-      m_Items: []
-  - m_Id: 106416773824512
-    m_Localized: "    Bom trabalho, sua miss\xE3o agora \xE9 ativar todos os detonadores."
+    m_Localized: 'We''re gonna be marking on your <color=#ff356c>screen<color=black>,
+      hurry up!
+
+      Out!'
     m_Metadata:
       m_Items: []
   - m_Id: 106758936756224
-    m_Localized: "    Temos apenas informa\xE7\xE3o do primeiro deles.\nSer\xE3o
-      marcados no visor.     C\xE2mbio, desligo"
+    m_Localized: 'We only got information about the first of them
+
+      They''ll
+      be marked on your <color=#ff356c>screen<color=black>. Out!'
     m_Metadata:
       m_Items: []
   - m_Id: 123456943325184
-    m_Localized: '   Esse foi o primeiro de muitos, K-MILL0'
+    m_Localized: This was the first of <color=#ff356c>many<color=black>, K-MILL0.
     m_Metadata:
       m_Items: []
   - m_Id: 123242404675584
-    m_Localized: '    Ufa! finalmente acabou.'
+    m_Localized: Phew! It's finally over.
     m_Metadata:
       m_Items: []
   - m_Id: 123528477179904
-    m_Localized: "    Se prepare para sua pr\xF3xima miss\xE3o"
+    m_Localized: Get ready for your <color=#ff356c>next mission<color=black>. Over.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1571719974256640
+    m_Localized: Good job, now you're gonna be entering a <color=#ff356c>danger<color=black>
+      area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1571720217526272
+    m_Localized: You need to activate all the <color=#ff356c>9 detonators<color=black>,
+      you can do that by pressing the right button <sprite="buttons" index=1>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1582174100815872
+    m_Localized: One more thing! Use the <sprite="buttons" index=0> <color=#ff356c>left
+      mouse button<color=black> to jump to another <color=#ff356c>platform!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1582174167924736
+    m_Localized: Use the <sprite="buttons" index=1><color=#ff356c>right mouse button<color=black>
+      to destroy an <color=#ff356c>asteroid in the air
     m_Metadata:
       m_Items: []
   references:

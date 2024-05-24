@@ -6,13 +6,17 @@ namespace Muvuca.UI.HUD
 {
     public class ArrowIndicator : MonoBehaviour
     {
-        [SerializeField] private float width;
-        [SerializeField] private float height;
+        private float Height => cam.orthographicSize - padding;
+        private float Width => cam.orthographicSize / 9f * 16f - padding ;
         [SerializeField] private float targetDistance;
+        [SerializeField] private float padding = 2f;
         public static Vector2? Target;
+
+        private Camera cam;
 
         private void Awake()
         {
+            cam = Camera.main;
             Target = null;
         }
 
@@ -31,8 +35,8 @@ namespace Muvuca.UI.HUD
                                                                    .normalized
                                                                    * targetDistance);
             var localPos = transform.localPosition;
-            localPos.x = Mathf.Clamp(localPos.x, -width / 2, width / 2);
-            localPos.y = Mathf.Clamp(localPos.y, -height / 2, height / 2);
+            localPos.x = Mathf.Clamp(localPos.x, -Width / 2, Width / 2);
+            localPos.y = Mathf.Clamp(localPos.y, -Height / 2, Height / 2);
             localPos.z = 0;
             transform.localPosition = localPos;
             transform.up = (new Vector3(Target.Value.x, Target.Value.y, transform.position.z) - transform.position).normalized;

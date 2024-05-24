@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
+using Muvuca.Systems;
 using PathCreation;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
-using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
-namespace Muvuca.Systems
+namespace Muvuca.Tools
 {
     public class SpawnAlongPathUtility : MonoBehaviour
     {

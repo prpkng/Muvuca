@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.Universal;
 
 namespace Unified.Universal.Blur
@@ -55,6 +56,11 @@ namespace Unified.Universal.Blur
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             ExecutePass(m_PassData, ref renderingData, ref context);
+        }
+
+        public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData)
+        {
+            // base.RecordRenderGraph(renderGraph, frameData);
         }
 
         private void ExecutePass(PassData passData, ref RenderingData renderingData, ref ScriptableRenderContext context)

@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
 using Muvuca.Effects;
-using Muvuca.Player;
+using Muvuca.Game.Player;
 using Muvuca.Systems;
 using Muvuca.Tools;
 using UnityEngine;
