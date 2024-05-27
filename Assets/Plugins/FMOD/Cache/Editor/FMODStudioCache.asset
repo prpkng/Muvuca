@@ -43,7 +43,7 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638517530708803815
+  lastModified: 638523627471112072
   FileSizes:
   - Name: Desktop
     Value: 5376
@@ -102,6 +102,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-604277214346215758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Stone_Breaking
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Stone_Breaking
+  Guid:
+    Data1: 1863241050
+    Data2: 1214928940
+    Data3: 88153260
+    Data4: -578165895
+  Banks:
+  - {fileID: 1171127933016853360}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 310
 --- !u!114 &-485903178433212672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,13 +187,14 @@ MonoBehaviour:
   - {fileID: 292808375472563728}
   - {fileID: 4141726883710136458}
   - {fileID: 2304503018799575464}
+  - {fileID: -604277214346215758}
   EditorParameters:
   - {fileID: 4015261263243129060}
   MasterBanks:
   - {fileID: -7570457008994830337}
   StringsBanks:
   - {fileID: 1605689255618091503}
-  cacheTime: 638517530709258565
+  cacheTime: 638523629553057648
   cacheVersion: 131617
 --- !u!114 &292808375472563728
 MonoBehaviour:
@@ -278,10 +306,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638517530709258565
+  lastModified: 638523629553057648
   FileSizes:
   - Name: Desktop
-    Value: 933568
+    Value: 941984
   Exists: 1
 --- !u!114 &1605689255618091503
 MonoBehaviour:
@@ -298,10 +326,10 @@ MonoBehaviour:
   Path: ../../../../Users/guiej/Documents/FMOD Studio/KMILLO/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638517530708823863
+  lastModified: 638523627471133594
   FileSizes:
   - Name: Desktop
-    Value: 1636
+    Value: 1692
   Exists: 1
 --- !u!114 &2304503018799575464
 MonoBehaviour:

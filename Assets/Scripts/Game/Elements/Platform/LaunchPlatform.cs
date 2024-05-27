@@ -33,8 +33,6 @@ namespace Muvuca.Game.Elements.Platform
         private void Update()
         {
             if (!hasPlayer || !followMouse) return;
-            
-            var targetPos = PlayerInputBuffering.BufferedPosition ?? PlatformSelector.Instance.targetPosition;
             var targetDir = (PlatformSelector.Instance.targetPosition - transform.position).normalized;
             var angle = Mathf.Atan2(targetDir.y, targetDir.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle - 90);

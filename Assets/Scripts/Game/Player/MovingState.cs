@@ -1,3 +1,4 @@
+using System.Linq;
 using Muvuca.Core;
 using Muvuca.Game.Elements.Platform;
 using UnityEngine;
@@ -47,6 +48,10 @@ namespace Muvuca.Game.Player
             var speed = player.distanceSpeedCurve.Evaluate(counter) * player.movingSpeed;
             if (speed <= 0)
             {
+                var plat = LaunchPlatform.availablePlatforms.OrderBy(p =>
+                    Vector2.Distance(p.transform.position, player.transform.position)).ElementAt(0).transform;
+                if (Vector2.Distance(plat.position, player.transform.position) < player.minimumReturnDistance)
+                    player.platform = plat;
                 machine.ChangeState("return");
                 return;
             }

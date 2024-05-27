@@ -1,15 +1,18 @@
 using Muvuca.Core;
 using Muvuca.Game.Elements.Platform;
+using Muvuca.Systems;
 using Muvuca.UI.HUD;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Muvuca.Game.Player
 {
     public class IdleState : PlayerState
     {
-
+        private Camera cam;
         public override void Enter(string[] data = null)
         {
+            cam = Camera.main;
             player.lineRenderer.gameObject.SetActive(true);
             player.hasPlatform = true;
             InputManager.JumpPressed += JumpPressed;
@@ -25,10 +28,14 @@ namespace Muvuca.Game.Player
         {
             player.PlayAnimation("jump");
 
+            Vector2 dir = overrideDirection ??
+                          PlatformSelector.Instance.targetPosition - player.transform.position;
+            dir = dir.normalized;
+            
             machine.ChangeState("moving",
-                new[] { Util.SerializeVector3Array(new[] { overrideDirection ?? player.platform.up }) });
+                new[] { Util.SerializeVector3Array(new[] { (Vector3)dir }) });
 
-            player.transform.up = overrideDirection ?? player.platform.up;
+            player.transform.up = dir;
             
             if (player.platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = false;

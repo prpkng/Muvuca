@@ -38,6 +38,8 @@ namespace Muvuca.Systems.DialogueSystem
 
         public StudioEventEmitter voiceEmitter;
 
+        public UnityEvent onFinished;
+        
 
         public async Task RunDialogue(DialogueData current)
         {
@@ -99,7 +101,7 @@ namespace Muvuca.Systems.DialogueSystem
 
                 InputManager.IgnoringMouse = false;
                 Time.timeScale = 1f;
-                Destroy(transform.parent.gameObject);
+                onFinished.Invoke();
                 
                 break;
             }

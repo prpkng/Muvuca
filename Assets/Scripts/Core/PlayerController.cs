@@ -13,7 +13,8 @@ namespace Muvuca.Core
     public class PlayerController : MonoBehaviour
     {
         public static PlayerController Instance;
-        
+
+        public float minimumReturnDistance = 5f;
         public float movingSpeed;
         public float returnSpeed;
         public LineRenderer lineRenderer;

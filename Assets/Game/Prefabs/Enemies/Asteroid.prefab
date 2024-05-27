@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4328431735232924823}
   - component: {fileID: 3674809571925318569}
   - component: {fileID: 1523620507781608765}
+  - component: {fileID: 4758227245266885178}
   - component: {fileID: 5493590626892849324}
   m_Layer: 0
   m_Name: Asteroid
@@ -64,6 +65,38 @@ MonoBehaviour:
   returnPlayer: 1
   returnToNearest: 0
   playerReturnMinimumRange: 1
+  emitter: {fileID: 4758227245266885178}
+--- !u!114 &4758227245266885178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611204744557987734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1863241050
+      Data2: 1214928940
+      Data3: 88153260
+      Data4: -578165895
+    Path: event:/SFX/Stone_Breaking
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!58 &5493590626892849324
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72,6 +105,7 @@ CircleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7611204744557987734}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -95,9 +129,9 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
   m_Radius: 1.25
 --- !u!1 &9129389496644640819
 GameObject:
@@ -159,6 +193,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
