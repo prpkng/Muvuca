@@ -18,7 +18,8 @@ namespace Muvuca.Core
         public static void SetupGameManager()
         {
             Cursor.lockState = CursorLockMode.Confined;
-            GameObject gameManager = new("GameManager");
+            
+            var gameManager = new GameObject("GameManager");
             Instance = gameManager.AddComponent<GameManager>();
             DontDestroyOnLoad(gameManager);
 

@@ -10,7 +10,8 @@ namespace Muvuca.Game.Elements.Enemies
         private StudioEventEmitter emitter;
         private void AttackPressed()
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            LevelManager.onLevelReset += () => gameObject.SetActive(true);
             emitter.Play();
             InputManager.AttackPressed -= AttackPressed;
         }

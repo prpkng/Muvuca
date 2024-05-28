@@ -19,13 +19,15 @@ namespace Muvuca.Core
             Cursor.lockState = CursorLockMode.Confined;
             JumpPressed = null;
             AttackPressed = null;
+            ResetPressed = null;
             playerInput = GetComponent<PlayerInput>();
             playerInput.onActionTriggered += OnActionTriggered;
             IgnoringMouse = false;
         }
 
-        public static Action JumpPressed;
-        public static Action AttackPressed;
+        public static event Action JumpPressed;
+        public static event Action AttackPressed;
+        public static event Action ResetPressed;
 
         private static Vector2 TouchPos = Vector2.zero;
 
@@ -48,7 +50,7 @@ namespace Muvuca.Core
                     break;
                 case "Reset":
                     if (!obj.started) return;
-                    LevelManager.Reset();
+                    ResetPressed?.Invoke();
                     break;
                 case "TouchPos":
                     if (!GameManager.isMobilePlatform) return;

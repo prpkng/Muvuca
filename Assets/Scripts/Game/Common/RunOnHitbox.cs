@@ -12,12 +12,13 @@ namespace Muvuca.Systems
         private void OnEnable()
         {
             checker.entered += Entered;
-            checker.exited += Entered;
+            checker.exited += Exited;
         }
 
         private void OnDisable()
         {
             checker.entered -= Entered;
+            checker.exited -= Exited;
         }
 
         private void Entered()
@@ -26,6 +27,7 @@ namespace Muvuca.Systems
         }
         private void Exited()
         {
+            print("Exited");
             exit.Invoke();
         }
     }

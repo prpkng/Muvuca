@@ -14,11 +14,14 @@ namespace Muvuca.Core
     {
         public static PlayerController Instance;
 
+        public bool isInvulnerable = false;
+        
         public float minimumReturnDistance = 5f;
         public float movingSpeed;
         public float returnSpeed;
-        public LineRenderer lineRenderer;
         [SerializeField] public PlayerSpriteFlipping flipping;
+        
+        public LineRenderer lineRenderer;
         public AnimationCurve distanceSpeedCurve;
         
         [SerializeField] private float playerInvulnerabilityTime = 2f; 
@@ -36,7 +39,9 @@ namespace Muvuca.Core
         public Animator animator;
         public Flashing flashing;
         
-        public static Action PlayerGotHit;
+        public static Action PlayerHealthChanged;
+        
+        
         
         public async void DamagePlayer(int amount = 0)
         {
@@ -44,10 +49,13 @@ namespace Muvuca.Core
                 PlayAnimation("damage");
             CameraShaker.TriggerShake();
             health.DoDamage(amount);
-            PlayerGotHit?.Invoke();
+            PlayerHealthChanged?.Invoke();
             flashing.Play();
             hitSound.Play();
-            
+            isInvulnerable = true;
+            await UniTask.WaitForSeconds(playerInvulnerabilityTime);
+            isInvulnerable = false;
+
         }
         
         public void SetDirection(Vector2 direction)

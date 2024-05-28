@@ -60,12 +60,12 @@ namespace Muvuca.UI.HUD
         [SerializeField] private AnimationCurve scaleEase;
         private void OnEnable()
         {
-            PlayerController.PlayerGotHit += SetHealth;
+            PlayerController.PlayerHealthChanged += SetHealth;
         }
 
         private void OnDisable()
         {
-            PlayerController.PlayerGotHit -= SetHealth;
+            PlayerController.PlayerHealthChanged -= SetHealth;
         }
 
         private void SetHealth()
@@ -100,8 +100,13 @@ namespace Muvuca.UI.HUD
                 clr = Color.HSVToRGB(h, s, v);
                 clr.a = a;
                 healthIndicator.color = clr;
-                if (health == 1 && healthIndicator.TryGetComponent(out Flashing f))
+                
+                if (!healthIndicator.TryGetComponent(out Flashing f)) continue;
+                
+                if (health == 1)
                     f.Play();
+                else
+                    f.Stop();
             }
         }
     }

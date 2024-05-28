@@ -1,4 +1,5 @@
 using System.Linq;
+using JetBrains.Annotations;
 using Muvuca.Core;
 using Muvuca.Game.Elements.Platform;
 using Muvuca.Systems;
@@ -12,9 +13,15 @@ namespace Muvuca.Game.Elements.Enemies
         private HitboxChecker distanceChecker;
         [SerializeField] private Collider2D col;
         [SerializeField] private float offsetForce;
+        [SerializeField] private bool enableOffset;
         [SerializeField] private bool returnPlayer;
         [SerializeField] private bool returnToNearest;
         [SerializeField] private float playerReturnMinimumRange = 1;
+
+        public bool hitOnInvulnerable = false;
+        public bool returnOnInvulnerable = false;
+
+        [SerializeField] private bool selfDestructOnEnter;
         
         private void OnEnable()
         {
@@ -47,8 +54,14 @@ namespace Muvuca.Game.Elements.Enemies
 
         protected virtual void Damage()
         {
-            PlayerController.Instance.DamagePlayer(1);
-            if (!returnPlayer) return;
+            if (!PlayerController.Instance.isInvulnerable || hitOnInvulnerable)
+            {
+                // Running this on the next frame to ensure the player will trigger the return even if returnOnInvulnerable is false
+                Util.InvokeNextFrame(PlayerController.Instance.DamagePlayer, 1);
+                if (selfDestructOnEnter) Destroy(gameObject);
+            }
+            
+            if (!returnPlayer || (PlayerController.Instance.isInvulnerable && !returnOnInvulnerable)) return;
             PlayerController.Instance.machine.ChangeState("return");
             if (!returnToNearest || LaunchPlatform.availablePlatforms.Count == 0) return;
                 //Find nearest platform in range
@@ -66,7 +79,7 @@ namespace Muvuca.Game.Elements.Enemies
         private void Update()
         {
             if (distanceChecker.IsInRange) return;
-            col.offset = (transform.position - PlayerController.Instance.transform.position).normalized * offsetForce;
+            if (enableOffset) col.offset = (transform.position - PlayerController.Instance.transform.position).normalized * offsetForce;
         }
 
     }

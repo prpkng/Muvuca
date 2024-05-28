@@ -41,7 +41,8 @@ namespace Muvuca.Systems
             var hit = Physics2D.CircleCast(targetPosition, selectionRange,
                 Vector2.up, .001f, platformLayer);
 
-            if (hit && Vector2.Distance(targetPosition, PlayerController.Instance.transform.position) > selectionRange+1f)
+            if (hit && 
+                hit.transform != PlayerController.Instance.platform)
             {
                 HoverSelectionBracket.HoverSelectionDestination = hit.transform.position;
                 HoverSelectionBracket.BracketsDistance =

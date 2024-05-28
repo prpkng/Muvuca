@@ -1,36 +1,34 @@
+using System;
 using Muvuca.Core;
 using Muvuca.Systems;
 using UnityEngine;
 
 namespace Muvuca.Game.Elements.Platform
 {
-    public class PlatformReacher : MonoBehaviour
+    public class PlatformReacher : HitboxListener
     {
-        private HitboxChecker distanceChecker;
-
         [SerializeField] private float preRotateStartDistance;
 
         [SerializeField] private float preRotateSpeed;
 
-        private void Entered()
+        protected override void Entered()
         {
             PlayerController.Instance.enteredPlatform?.Invoke(transform);
         }
 
-        private void OnEnable()
+        private void Awake()
         {
-            distanceChecker = GetComponent<HitboxChecker>();
-            distanceChecker.entered += Entered;
+            hitbox = GetComponent<HitboxChecker>();
         }
 
-        private void OnDisable()
+        protected override void OnEnable()
         {
-            distanceChecker.entered -= Entered;
+            base.OnEnable();
         }
 
         private void Update()
         {
-            if (distanceChecker.IsInRange)
+            if (hitbox.IsInRange)
                 return;
             if (Vector2.Distance(PlayerController.Instance.transform.position, transform.position) > preRotateStartDistance)
                 return;

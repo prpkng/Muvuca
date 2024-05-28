@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 namespace Muvuca.Core
@@ -11,6 +13,27 @@ namespace Muvuca.Core
     {
         public static string SerializeVector2(Vector2 vec2) => $"{vec2.x}|{vec2.y}";
 
+        public static async void Invoke(float time, Action action)
+        {
+            await UniTask.WaitForSeconds(time);
+            action?.Invoke();
+        }
+        public static async void Invoke<T>(float time, Action<T> action, T value)
+        {
+            await UniTask.WaitForSeconds(time);
+            action?.Invoke(value);
+        }
+        public static async void InvokeNextFrame(Action action)
+        {
+            await UniTask.WaitForEndOfFrame();
+            action?.Invoke();
+        }
+        public static async void InvokeNextFrame<T>(Action<T> action, T value)
+        {
+            await UniTask.WaitForEndOfFrame();
+            action?.Invoke(value);
+        }
+        
         public static Vector2 DeserializeVector2(string text)
         {
             var numbers = text.Split('|');
@@ -63,5 +86,7 @@ namespace Muvuca.Core
 
         public static bool Compare(this LayerMask mask, int layer)
             => mask.value == (mask.value | (1 << layer));
+
+        public static Vector2 VectorFromAngle(float angle) => new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
     }
 }
