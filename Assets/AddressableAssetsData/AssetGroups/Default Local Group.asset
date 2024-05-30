@@ -15,13 +15,13 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: e4919bc07ebc2d54fb34aeafd91d0276
   m_SerializeEntries:
-  - m_GUID: 7144eba6c25e5e94eb70346fa47cbda0
-    m_Address: Assets/Art/Materials/Shockwave.mat
+  - m_GUID: 629e6217376231d4cb688d4f3a1ed9e1
+    m_Address: Assets/Game/Utils/DevConsole.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 629e6217376231d4cb688d4f3a1ed9e1
-    m_Address: Assets/Game/Utils/DevConsole.prefab
+  - m_GUID: 7144eba6c25e5e94eb70346fa47cbda0
+    m_Address: Assets/Art/Materials/Shockwave.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -34,5 +34,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: f61b38a26198a4943b2f3cc181234c7a, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: cbcd0ba969dddf24fac3edd9f6d9f9d9, type: 2}
     - {fileID: 11400000, guid: 299455dac9c44f64190d83d3b03b5660, type: 2}
+    - {fileID: 11400000, guid: cbcd0ba969dddf24fac3edd9f6d9f9d9, type: 2}

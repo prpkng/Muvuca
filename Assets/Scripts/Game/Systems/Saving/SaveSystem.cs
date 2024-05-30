@@ -11,18 +11,18 @@ namespace Muvuca.Core
     {
         public static int CurrentSaveSlot;
 
-        public static string SaveFilePath => $"{Application.persistentDataPath}/save{CurrentSaveSlot}.dat";
+        public static readonly string SaveFilePath = $"{Application.persistentDataPath}/save{CurrentSaveSlot}.dat";
         
         
         public static Dictionary<string, IEntry> SaveData = new();
         
         
-        public static void SaveToDisk()
+        public static void SaveToDisk(Dictionary<string, IEntry> data)
         {
             var dictionary = new JObject();
-            var keys = SaveData.Keys.ToArray();
-            var values = SaveData.Values.ToArray();
-            for (var index = 0; index < SaveData.Count; index++)
+            var keys = data.Keys.ToArray();
+            var values = data.Values.ToArray();
+            for (var index = 0; index < data.Count; index++)
             {
                 var key = keys[index];
                 var value = values[index];
@@ -33,10 +33,8 @@ namespace Muvuca.Core
                 else if (value.TryGetString(out var s))
                     dictionary.Add(key, s);
             }
-            Debug.Log($"JSON value: {dictionary}");
 
             File.WriteAllTextAsync(SaveFilePath, dictionary.ToString());
-            Debug.Log($"Saved settings to file '{SaveFilePath}'");
         }
 
         public static void Reset()
@@ -91,6 +89,11 @@ namespace Muvuca.Core
         public static bool TryGetFloat(string key, out float value) => Get(key).TryGetFloat(out value);
 
         public static bool TryGetString(string key, out string value) => Get(key).TryGetString(out value);
+        public static int? GetInt(string key) => TryGetInt(key, out var value) ? value : null;
+
+        public static float? GetFloat(string key) => TryGetFloat(key, out var value) ? value : null;
+
+        public static string GetString(string key) => TryGetString(key, out var value) ? value : null;
 
 
         public static void Set(string key, float value) =>

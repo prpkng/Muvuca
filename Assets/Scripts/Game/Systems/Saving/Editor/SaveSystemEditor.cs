@@ -29,7 +29,7 @@ namespace Muvuca.Systems.Editor
         private void OnGUI()
         {
             if (GUILayout.Button("Save to Disk"))
-                SaveSystem.SaveToDisk();
+                SaveSystem.SaveToDisk(SaveSystem.SaveData);
             if (GUILayout.Button("Load from Disk"))
                 SaveSystem.LoadFromDisk();
             if (wantToReset)

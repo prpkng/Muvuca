@@ -10,6 +10,8 @@ namespace Muvuca.Game.Common
         public float duration = 4;
 
         private float counter;
+
+        [SerializeField] private bool faceDir;
         
         private void Update()
         {
@@ -17,6 +19,8 @@ namespace Muvuca.Game.Common
             counter += Time.deltaTime / duration;
             if (counter > 1f)
                 Destroy(gameObject);
+
+            if (faceDir) transform.up = direction;
         }
     }
 }

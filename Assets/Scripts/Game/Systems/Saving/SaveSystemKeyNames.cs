@@ -2,6 +2,6 @@ namespace Muvuca.Systems
 {
     public static class SaveSystemKeyNames
     {
-        public const string PlayerSpawnPos = "lastSpawnLoc";
+        public const string PlayerLives = "player_lives";
     }
 }

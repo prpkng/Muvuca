@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using Muvuca.Core;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -19,8 +20,9 @@ namespace Muvuca.Game.Player
 
         public static Vector2 RespawnPosition;
 
-        public void Respawn()
+        public async void Respawn()
         {
+            PlayerLives.RemoveLife();
             PlayerController.Instance.machine.ChangeState("moving", new string[] { });
             PlayerController.Instance.isInvulnerable = false;
             transform.position = RespawnPosition;

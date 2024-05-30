@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6365489653982678172}
   - component: {fileID: 1563546860996227118}
   - component: {fileID: 5692321216265714128}
+  - component: {fileID: 4762058604701586158}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -55,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInvulnerable: 0
   minimumReturnDistance: 5
-  movingSpeed: 20
+  movingSpeed: 30
   returnSpeed: 5
   flipping: {fileID: 529650582813505343}
   lineRenderer: {fileID: 5225451081152630984}
@@ -72,17 +73,17 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.3848014
-      value: 0.9991634
-      inSlope: -0.0059879823
-      outSlope: -0.0059879823
-      tangentMode: 136
+      time: 0.8026069
+      value: 1.0094187
+      inSlope: 0.038271025
+      outSlope: 0.038271025
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.11142274
     - serializedVersion: 3
-      time: 3.710871
-      value: -0.07861799
+      time: 1.7460321
+      value: -0.0908266
       inSlope: -0.61618143
       outSlope: -0.61618143
       tangentMode: 0
@@ -92,7 +93,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  playerInvulnerabilityTime: 2
+  playerInvulnerabilityTime: 1.5
   hasPlatform: 0
   platform: {fileID: 0}
   health: {fileID: 0}
@@ -100,6 +101,7 @@ MonoBehaviour:
   hitSound: {fileID: 5692321216265714128}
   animator: {fileID: 5388153960294309015}
   flashing: {fileID: 7570070098012248367}
+  col: {fileID: 7543185100549286905}
 --- !u!114 &3826925507850270302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +294,22 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &4762058604701586158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370765259537907348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3004ec9c1122489badd2c74304d49faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingLives: 3
+  gameOverScene:
+    asset: {fileID: 102900000, guid: b6edd7cce4d317241a5579360faee2a2, type: 3}
+    guid: b6edd7cce4d317241a5579360faee2a2
 --- !u!1 &4176968829493587409
 GameObject:
   m_ObjectHideFlags: 0

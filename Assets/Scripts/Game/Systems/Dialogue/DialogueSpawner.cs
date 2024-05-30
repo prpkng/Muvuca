@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
@@ -10,9 +11,11 @@ namespace Muvuca.Systems.DialogueSystem
         [SerializeField] private DialogueData dialogue;
 
         public UnityEvent onFinished;
+        public float delay;
         
         public async void Spawn()
         {
+            await UniTask.WaitForSeconds(delay);
             var prefab = Addressables.LoadAssetAsync<GameObject>(DialogueRunnerPrefabPath);
             await prefab.Task;
             var obj = Instantiate(prefab.Result);

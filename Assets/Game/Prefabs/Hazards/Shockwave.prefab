@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6266284086713858653}
   - component: {fileID: 7169746228545987661}
   - component: {fileID: -1058103787470100099}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 7169746228545987661}
-  growSpeedInSecs: 40
+  growSpeedInSecs: 80
+  growMax: 80
 --- !u!58 &7169746228545987661
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

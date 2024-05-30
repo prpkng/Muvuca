@@ -8,6 +8,7 @@ namespace Muvuca.Game.Elements.Enemies
     {
         public CircleCollider2D col;
         public float growSpeedInSecs;
+        [SerializeField] private float growMax = 200;
         
         private void OnDrawGizmos()
         {
@@ -18,6 +19,7 @@ namespace Muvuca.Game.Elements.Enemies
         private void FixedUpdate()
         {
             col.radius += growSpeedInSecs * Time.fixedDeltaTime;
+            if (col.radius > growMax) Destroy(gameObject);
         }
 
         private void OnTriggerEnter2D(Collider2D other)

@@ -48,10 +48,6 @@ namespace Muvuca.Core
                     if (!obj.started) return;
                     AttackPressed?.Invoke();
                     break;
-                case "Reset":
-                    if (!obj.started) return;
-                    ResetPressed?.Invoke();
-                    break;
                 case "TouchPos":
                     if (!GameManager.isMobilePlatform) return;
                     TouchPos = obj.ReadValue<Vector2>();

@@ -40,7 +40,7 @@ namespace Muvuca.UI.Menu
         private void Awake()
         {
             DialogueRunner.AlreadyPlayed = false;
-            SaveSystem.Reset();
+            SaveSystem.LoadFromDisk();
             
             if (_isPlayingMenuBGM)
                 return;

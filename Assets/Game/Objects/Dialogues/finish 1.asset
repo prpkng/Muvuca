@@ -21,7 +21,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  speakerName: ??????
+  speakerName: K-MILL0
   speakerSprite: {fileID: 21300000, guid: 4f44f87a386657f4c9e5f9fed9db55ba, type: 3}
   speakerVoice:
     Guid:

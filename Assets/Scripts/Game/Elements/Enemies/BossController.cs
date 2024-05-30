@@ -60,14 +60,24 @@ namespace Muvuca.Game.Elements.Enemies
             bossHealth.onDamage.RemoveListener(OnBossAwake);
         }
 
+        private LaunchPlatform lastDetonator;
+        
         public void HitBoss()
         {
             follow.moveSpeedMultiplier += hitSpeedFactor;
             bossHealth.DoDamage();
+            if (bossHealth.currentHp <= 0) return;
             if (possibleDetonatorPlatforms.Length == 0) return;
             var platforms = possibleDetonatorPlatforms
-                .Where(p => Vector2.Distance(p.transform.position, transform.position) > nextDetonatorMinimumRange);
-            ArrowIndicator.Target = Instantiate(detonatorGameObject, platforms.PickRandom().transform).transform.position;
+                .Where(p => Vector2.Distance(p.transform.position, transform.position) > nextDetonatorMinimumRange)
+                .ToArray();
+            
+            var detonator = platforms.PickRandom();
+            while (detonator == lastDetonator) detonator = platforms.PickRandom();
+            lastDetonator = detonator;
+            
+            
+            ArrowIndicator.Target = Instantiate(detonatorGameObject, lastDetonator.transform).transform.position;
             
         }
         

@@ -21,8 +21,11 @@ namespace Muvuca.UI.Settings
         private RectTransform rectTransform;
         [SerializeField] private string playerPrefsKey = "GeneralVolume";
 
+        private Camera cam;
+        
         private void Awake()
         {
+            cam = Camera.main;
             rectTransform = GetComponent<RectTransform>();
             if (!PlayerPrefs.HasKey(playerPrefsKey)) return;
             var keyValue = PlayerPrefs.GetFloat(playerPrefsKey);
@@ -37,7 +40,7 @@ namespace Muvuca.UI.Settings
             RectTransformUtility.ScreenPointToWorldPointInRectangle(
                 (RectTransform)canvas.transform,
                 Mouse.current.position.ReadValue(),
-                null, out var mousePos
+                cam, out var mousePos
                 );
 
             var mouseX = mousePos.x - (rectTransform.position.x + rectTransform.rect.xMin);

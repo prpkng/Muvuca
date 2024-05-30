@@ -11,11 +11,13 @@ namespace Muvuca.UI
         public UnityEvent onClick;
         public void OnPointerEnter(PointerEventData eventData)
         {
+            print("Pause hovered");
             InputManager.IgnoringMouse = true;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            print("Pause unhovered");
             InputManager.IgnoringMouse = false;
         }
 

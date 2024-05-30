@@ -6,6 +6,7 @@ using Muvuca.Core;
 using Muvuca.Effects;
 using Muvuca.Tools;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -20,6 +21,7 @@ namespace Muvuca.UI.HUD
         public int maxHealth;
         [SerializeField] private float spacing;
         [SerializeField] private GameObject healthStripGameObject;
+        [SerializeField] private UnityEvent onHealthRemoved;
 
         [ReadOnly] [SerializeField] private List<Image> healthIndicators;
         public void SetMaxHealth(int value)
@@ -79,10 +81,12 @@ namespace Muvuca.UI.HUD
             while (amount < health)
             {
                 healthIndicators[health - 1].transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, shakeRandomness);
-                transform.DOKill(true);
-                transform.DOScale(Vector3.one * scaleMagnitude, scaleDuration).SetEase(scaleEase);
                 health--;
             }
+            
+            transform.DOKill(true);
+            transform.DOScale(Vector3.one * scaleMagnitude, scaleDuration).SetEase(scaleEase);
+            onHealthRemoved.Invoke();
 
             health = Mathf.Clamp(health, 0, maxHealth); 
             

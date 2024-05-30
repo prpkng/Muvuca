@@ -88,5 +88,8 @@ namespace Muvuca.Core
             => mask.value == (mask.value | (1 << layer));
 
         public static Vector2 VectorFromAngle(float angle) => new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+        public static float AngleFromVector(Vector2 vec) => Mathf.Atan2(vec.y, vec.x);
+        public static float AngleFromVectorDegrees(Vector2 vec) => AngleFromVector(vec) * Mathf.Rad2Deg;
+
     }
 }

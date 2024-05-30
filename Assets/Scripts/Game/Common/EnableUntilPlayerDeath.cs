@@ -2,14 +2,18 @@ using System;
 using Muvuca.Core;
 using Muvuca.Systems;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Muvuca.Game.Common
 {
     public class EnableUntilPlayerDeath : MonoBehaviour
     {
-        [SerializeField] private GameObject objectToDisable;
         [SerializeField] private HitboxChecker hitbox;
+        [SerializeField] private UnityEvent enable;
+        [SerializeField] private UnityEvent disable;
 
+        private bool didDisable = false;
+        
         private void OnEnable()
         {
             hitbox.entered += Entered;
@@ -22,10 +26,14 @@ namespace Muvuca.Game.Common
 
         private void Entered()
         {
-            if (!objectToDisable.activeSelf)
-                return;
-            LevelManager.onLevelReset += () => objectToDisable.SetActive(true);
-            objectToDisable.SetActive(false);
+            if (didDisable) return;
+            LevelManager.onLevelReset += () =>
+            {
+                enable.Invoke();
+                didDisable = false;
+            };
+            didDisable = true;
+            disable.Invoke();
         }
     }
 }

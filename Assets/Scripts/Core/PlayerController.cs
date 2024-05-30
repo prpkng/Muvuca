@@ -1,6 +1,5 @@
 using System;
 using Cysharp.Threading.Tasks;
-using FMOD.Studio;
 using FMODUnity;
 using Muvuca.Effects;
 using Muvuca.Game.Elements.Platform;
@@ -74,7 +73,8 @@ namespace Muvuca.Core
         internal Transform lastSafePlatform;
         
         public Action<Transform> enteredPlatform;
-        
+        [SerializeField] public Collider2D col;
+
         private void Awake()
         {
             Instance = this;
@@ -95,9 +95,6 @@ namespace Muvuca.Core
 
             
             PlayAnimation("idle");
-            
-            if (SaveSystem.TryGetString(SaveSystemKeyNames.PlayerSpawnPos, out var s))
-                transform.position = Util.DeserializeVector2(s);
         }
 
         private void Update()

@@ -34,7 +34,6 @@ namespace Muvuca.Effects
             IsHovering = false;
             rect = (RectTransform)transform;
             cam = Camera.main;
-            Cursor.visible = false;
         }
 
         private void OnEnable()
@@ -52,6 +51,7 @@ namespace Muvuca.Effects
 
         private void Update()
         {
+            Cursor.visible = false;
             if (!cam) return;
             cursorImage.sprite = IsHovering ? hoverCursor : defaultCursor;
             Vector3 pos;
