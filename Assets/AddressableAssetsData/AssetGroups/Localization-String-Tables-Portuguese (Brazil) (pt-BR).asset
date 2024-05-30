@@ -15,14 +15,14 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Portuguese (Brazil) (pt-BR)
   m_GUID: 4b3d0c3053cb4a543904f35400574986
   m_SerializeEntries:
-  - m_GUID: e22c23d4285a1114dadcd62576ff183a
-    m_Address: Menu Texts_pt-BR
+  - m_GUID: 9c7f6903b78e2f94a850bbb21b210c95
+    m_Address: Dialogues_pt-BR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9c7f6903b78e2f94a850bbb21b210c95
-    m_Address: Dialogues_pt-BR
+  - m_GUID: e22c23d4285a1114dadcd62576ff183a
+    m_Address: Menu Texts_pt-BR
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-pt-BR

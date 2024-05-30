@@ -15,14 +15,14 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Japanese (Japan) (ja-JP)
   m_GUID: a99f158410575ee42b404ed8b96c948d
   m_SerializeEntries:
-  - m_GUID: f2e7767ea593c1f42849c2b14afc7526
-    m_Address: Menu Texts_ja-JP
+  - m_GUID: d1ff93685fa7cdd4c9504bd2d4f26b20
+    m_Address: Dialogues_ja-JP
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja-JP
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d1ff93685fa7cdd4c9504bd2d4f26b20
-    m_Address: Dialogues_ja-JP
+  - m_GUID: f2e7767ea593c1f42849c2b14afc7526
+    m_Address: Menu Texts_ja-JP
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ja-JP

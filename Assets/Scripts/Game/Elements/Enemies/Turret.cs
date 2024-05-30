@@ -18,15 +18,17 @@ namespace Muvuca.Game.Elements.Enemies
         [SerializeField] private Transform rotateObject;
         [SerializeField] private Transform muzzleOrigin;
 
+        [SerializeField] private Transform lazerTransform;
+
         [SerializeField] private UnityEvent activated;
         [SerializeField] private UnityEvent deactivated;
         [SerializeField] private UnityEvent fired;
-        
+
         [SerializeField] private UnityEvent firstWarning;
         [SerializeField] private UnityEvent secondWarning;
         [SerializeField] private UnityEvent thirdWarning;
         [SerializeField] private UnityEvent resetWarnings;
-        
+
         [SerializeField] private GameObject bulletPrefab;
         [SerializeField] private float fireStartDelay;
         [SerializeField] private float fireRate;
@@ -40,9 +42,12 @@ namespace Muvuca.Game.Elements.Enemies
         [SerializeField] private ShakeData shotShakeAngle;
 
         private IEnumerator lastActiveCoroutine;
-        
+
+        private bool active;
+
         public void Activate()
         {
+            active = true;
             activated.Invoke();
             lastActiveCoroutine = ActivateCoroutine();
             if (!enabled) return;
@@ -51,18 +56,23 @@ namespace Muvuca.Game.Elements.Enemies
 
         public void Stop()
         {
+            active = false;
+            rotateObject.DOKill();
             resetWarnings.Invoke();
             deactivated.Invoke();
             StopCoroutine(lastActiveCoroutine);
             lastActiveCoroutine = null;
         }
-        
+
         public IEnumerator ActivateCoroutine()
         {
-            var dir = ((Vector2)PlayerController.Instance.col.bounds.center - (Vector2)muzzleOrigin.position).normalized;
+            var dir = ((Vector2)PlayerController.Instance.col.bounds.center - (Vector2)rotateObject.position).normalized;
             var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             firstWarning.Invoke();
-            yield return rotateObject.DORotate(Vector3.forward * (angle - 90), rotateDuration).SetEase(Ease.OutCubic).WaitForCompletion();
+            yield return rotateObject.DORotate(Vector3.forward * (angle - 90), rotateDuration)
+                .SetEase(Ease.OutCubic)
+                .WaitForCompletion();
+
             secondWarning.Invoke();
             yield return new WaitForSeconds(fireStartDelay);
             thirdWarning.Invoke();
@@ -70,16 +80,16 @@ namespace Muvuca.Game.Elements.Enemies
             int counter = 0;
             while (true)
             {
-                dir = ((Vector2)PlayerController.Instance.col.bounds.center - (Vector2)muzzleOrigin.position).normalized;
-                rotateObject.transform.up = dir; 
+                dir = ((Vector2)PlayerController.Instance.col.bounds.center - (Vector2)rotateObject.position).normalized;
+                rotateObject.transform.up = dir;
                 CameraShaker.TriggerShake(shotShake, shotShakeAngle);
-                var a = Util.AngleFromVectorDegrees(dir);  
+                var a = Util.AngleFromVectorDegrees(dir);
                 a += Random.Range(-shootingErrorAngle, shootingErrorAngle);
                 a *= Mathf.Deg2Rad;
                 dir = Util.VectorFromAngle(a);
                 var bullet = Instantiate(bulletPrefab).GetComponent<MoveIntoDir>();
                 bullet.transform.position = muzzleOrigin.position;
-                bullet.direction = dir; 
+                bullet.direction = dir;
                 bullet.speed = bulletSpeed;
                 counter++;
                 fired.Invoke();
@@ -91,7 +101,18 @@ namespace Muvuca.Game.Elements.Enemies
                 yield return new WaitForSeconds(fireRate);
             }
         }
-        
-        
+
+        [SerializeField] private LayerMask playerLayer;
+
+        private void Update()
+        {
+            lazerTransform.gameObject.SetActive(active);
+            if (!active)
+                return;
+
+            lazerTransform.up = (PlayerController.Instance.col.bounds.center - lazerTransform.position).normalized;
+            lazerTransform.localScale = new Vector3(1f, Vector2.Distance(lazerTransform.position, PlayerController.Instance.transform.position), 1f);
+        }
+
     }
 }
