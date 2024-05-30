@@ -8,18 +8,18 @@ namespace Muvuca.Effects
         private void Start()
         {
             target = Camera.main?.transform;
-            startPos = transform.position * parallaxSpeed;
+            startPos = transform.position * (1-parallaxSpeed);
         }
 
         private Transform target;
 
-        private Vector3 startPos;
+        private Vector2 startPos;
         
         [SerializeField] private float parallaxSpeed;
 
         private void LateUpdate()
         {
-            transform.position = startPos + target.position * parallaxSpeed;
+            transform.position = startPos + (Vector2)target.position * parallaxSpeed;
         }
     }
 }

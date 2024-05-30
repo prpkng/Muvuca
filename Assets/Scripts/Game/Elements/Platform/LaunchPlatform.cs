@@ -7,6 +7,7 @@ namespace Muvuca.Game.Elements.Platform
 {
     public class LaunchPlatform : MonoBehaviour
     {
+        public bool isSafePlatform = true;
         public bool followMouse = true;
         public static List<LaunchPlatform> availablePlatforms = new();
 

@@ -33,6 +33,7 @@ namespace Muvuca.Game.Elements.Enemies
         public void Activate()
         {
             lastActiveCoroutine = ActivateCoroutine();
+            if (!enabled) return;
             StartCoroutine(lastActiveCoroutine);
         }
 

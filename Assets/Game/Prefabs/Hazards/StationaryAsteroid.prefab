@@ -49,11 +49,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: -4329664150653950165}
   offsetForce: 0
+  enableOffset: 0
   returnPlayer: 1
   returnToNearest: 0
   playerReturnMinimumRange: 1
   hitOnInvulnerable: 0
   returnOnInvulnerable: 1
+  selfDestructOnEnter: 0
 --- !u!114 &8743734597218347867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +103,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 1.5
 --- !u!1 &9129389496644640819
 GameObject:
   m_ObjectHideFlags: 0

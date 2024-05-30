@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Muvuca.Game.Elements.Platform;
 using UnityEngine;
 
@@ -5,13 +6,27 @@ namespace Muvuca.Game.Player
 {
     public class ReturnState : PlayerState
     {
-        public override void Enter(string[] data = null)
+        private bool canReturn;
+        public async override void Enter(string[] data = null)
         {
+            canReturn = false;
             player.enteredPlatform += EnteredPlatform;
+            if (player.lastSafePlatform != player.platform)
+            { 
+                await player.transform.DOScale(0f, .5f).SetEase(Ease.OutCubic).AsyncWaitForCompletion();
+                player.transform.position = player.lastSafePlatform.position;
+                await player.transform.DOScale(1f, .5f).SetEase(Ease.OutCubic).AsyncWaitForCompletion();
+                
+                EnteredPlatform(player.lastSafePlatform);
+                return;
+            }
+
+            canReturn = true;
         }
         public override void Exit()
         {
             player.enteredPlatform -= EnteredPlatform;
+            canReturn = false;
         }
 
         private void EnteredPlatform(Transform platform)
@@ -25,7 +40,8 @@ namespace Muvuca.Game.Player
         }
         public override void Update()
         {
-            player.transform.position += (player.platform.position - player.transform.position) *
+            if (!canReturn) return; 
+            player.transform.position += (player.lastSafePlatform.position - player.transform.position) *
                                         (1f - Mathf.Exp(-player.returnSpeed * Time.deltaTime));
         }
     }

@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1573562691718265285
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2205797781311916254, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_Name
+      value: DetonableFireBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 471.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 45.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9956054
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.093647294
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480301041437667083, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -10.747
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535919386841080651, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      propertyPath: returnPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2205797781311916254, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7719230449479789799}
+    - targetCorrespondingSourceObject: {fileID: 2205797781311916254, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5742799586601273432}
+    - targetCorrespondingSourceObject: {fileID: 2205797781311916254, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7712979308308423029}
+  m_SourcePrefab: {fileID: 100100000, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+--- !u!1 &813739258838626587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2205797781311916254, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+  m_PrefabInstance: {fileID: 1573562691718265285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7719230449479789799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813739258838626587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff84a81d12a4829aa255f7567ee0cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7573892918652277455}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7712979308308423029}
+        m_TargetAssemblyTypeName: Muvuca.Game.Common.WaitForEvent, Assembly-CSharp
+        m_MethodName: Run
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.35
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5742799586601273432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813739258838626587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f484d7b912b0487dbd8fb621dba168c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7712979308308423029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813739258838626587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac391fc3c17494582425ba0d62dafc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5742799586601273432}
+        m_TargetAssemblyTypeName: Muvuca.Game.Common.DestroySelf, Assembly-CSharp
+        m_MethodName: Destroy_Self
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!198 &7573892918652277455 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8993043684105726730, guid: c781ab639d8a918449a162f7dee92c54, type: 3}
+  m_PrefabInstance: {fileID: 1573562691718265285}
+  m_PrefabAsset: {fileID: 0}

@@ -26,6 +26,7 @@ namespace Muvuca.Game.Player
         
         public void JumpPressed()
         {
+            player.jumpSound.Play();
             player.PlayAnimation("jump");
 
             Vector2 dir = overrideDirection ??
@@ -64,8 +65,6 @@ namespace Muvuca.Game.Player
             HoverSelectionBracket.BracketsDistance = -1;
             player.lineRenderer.gameObject.SetActive(false);
             player.hasPlatform = false;
-            
-            player.jumpSound.Play();
 
             InputManager.JumpPressed -= JumpPressed;
         }

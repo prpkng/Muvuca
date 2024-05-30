@@ -64,14 +64,14 @@ namespace Muvuca.Game.Elements.Enemies
             if (!returnPlayer || (PlayerController.Instance.isInvulnerable && !returnOnInvulnerable)) return;
             PlayerController.Instance.machine.ChangeState("return");
             if (!returnToNearest || LaunchPlatform.availablePlatforms.Count == 0) return;
-                //Find nearest platform in range
-            var pos = transform.position;
+            
+            //Find nearest platform in range
             var playerPos = PlayerController.Instance.transform.position;
             var platform = LaunchPlatform.availablePlatforms
                 .Where(p => Vector2.Distance(p.transform.position, transform.position) > playerReturnMinimumRange)
                 .OrderBy(p => Vector2.Distance(p.transform.position, playerPos))
                 .ElementAt(0);
-            PlayerController.Instance.platform = platform.transform;
+            PlayerController.Instance.lastSafePlatform = platform.transform;
 
         }
         

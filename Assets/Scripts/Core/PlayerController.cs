@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
 using Muvuca.Effects;
+using Muvuca.Game.Elements.Platform;
 using Muvuca.Game.Player;
 using Muvuca.Systems;
 using Muvuca.Tools;
@@ -69,10 +70,19 @@ namespace Muvuca.Core
             machine.currentState?.Exit();
         }
 
+
+        internal Transform lastSafePlatform;
+        
+        public Action<Transform> enteredPlatform;
+        
         private void Awake()
         {
             Instance = this;
             health = GetComponent<HealthSystem>();
+            enteredPlatform += plat =>
+            {
+                if (plat.TryGetComponent(out LaunchPlatform p) && p.isSafePlatform) lastSafePlatform = plat;
+            };
         }
 
         private void Start()
@@ -90,7 +100,7 @@ namespace Muvuca.Core
                 transform.position = Util.DeserializeVector2(s);
         }
 
-        void Update()
+        private void Update()
         {
             if (Time.timeScale == 0) return;
             machine.Update();
@@ -100,8 +110,8 @@ namespace Muvuca.Core
         {
             machine.FixedUpdate();
         }
-
-        public Action<Transform> enteredPlatform;
+        
+        public bool IsInReturnState => machine.currentStateName == "return";
 
         public void PlayAnimation(string id)
         {

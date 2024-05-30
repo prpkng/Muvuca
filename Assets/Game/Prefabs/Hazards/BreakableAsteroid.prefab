@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4758227245266885178}
   - component: {fileID: 5493590626892849324}
   m_Layer: 0
-  m_Name: Breakable
+  m_Name: BreakableAsteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7611204744557987734}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: 0.9895132, w: -0.14444251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.26, y: 2.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 842150412351916531}
   - {fileID: 771288049687510839}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 196.61}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3674809571925318569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,13 +62,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 5493590626892849324}
-  offsetForce: 2
+  offsetForce: -2
   enableOffset: 1
   returnPlayer: 1
   returnToNearest: 0
   playerReturnMinimumRange: 1
   hitOnInvulnerable: 0
   returnOnInvulnerable: 0
+  selfDestructOnEnter: 0
   emitter: {fileID: 4758227245266885178}
 --- !u!114 &4758227245266885178
 MonoBehaviour:
@@ -136,7 +137,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.75
+  m_Radius: 0.5
 --- !u!1 &9129389496644640819
 GameObject:
   m_ObjectHideFlags: 0

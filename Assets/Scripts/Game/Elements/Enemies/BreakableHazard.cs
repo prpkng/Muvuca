@@ -10,6 +10,7 @@ namespace Muvuca.Game.Elements.Enemies
         private StudioEventEmitter emitter;
         private void AttackPressed()
         {
+            if (PlayerController.Instance.IsInReturnState) return;
             gameObject.SetActive(false);
             LevelManager.onLevelReset += () => gameObject.SetActive(true);
             emitter.Play();

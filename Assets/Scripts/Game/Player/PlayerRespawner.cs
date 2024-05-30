@@ -21,10 +21,10 @@ namespace Muvuca.Game.Player
 
         public void Respawn()
         {
-            print("Respawn pressed OK!");
+            PlayerController.Instance.machine.ChangeState("moving", new string[] { });
+            PlayerController.Instance.isInvulnerable = false;
             transform.position = RespawnPosition;
             LevelManager.Reset();
-            print("Level reseted too!");
         }
     }
 }

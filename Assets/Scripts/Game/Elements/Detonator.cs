@@ -13,6 +13,12 @@ namespace Muvuca.Game.Elements
     {
         [SerializeField] private float shockwaveTravelSpeed;
         [SerializeField] private Transform detonatorTransform;
+
+        [SerializeField] private bool destroySelf = true;
+        [SerializeField] private GameObject shockwavePrefab;
+        
+        [Space]
+        
         [SerializeField] private float shockwaveStartSize;
         [SerializeField] private float shockwaveDestSize;
         [SerializeField] private float shockwaveDuration;
@@ -53,15 +59,15 @@ namespace Muvuca.Game.Elements
             shockwaveMaterial.DOFloat(shockwaveDestSize, "_Size", shockwaveDuration).SetEase(shockwaveEase);
             Exited();
             ArrowIndicator.Target = null;
-            Destroy(gameObject);
+            if (destroySelf) Destroy(gameObject);
+            else
+            {
+                LevelManager.onLevelReset += () => gameObject.SetActive(true);
+                gameObject.SetActive(false);
+            }
 
-            var bossController = BossController.CurrentInstance;
-            if (bossController == null) return;
-
-            await UniTask.WaitForSeconds(Vector2.Distance(bossController.transform.position, transform.position) /
-                                         shockwaveTravelSpeed);
-            
-            bossController.HitBoss();
+            var shockwave = Instantiate(shockwavePrefab);
+            shockwave.transform.position = transform.position;
         }
     }
 }
