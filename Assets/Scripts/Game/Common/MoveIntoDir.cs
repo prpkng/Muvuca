@@ -12,10 +12,11 @@ namespace Muvuca.Game.Common
         private float counter;
 
         [SerializeField] private bool faceDir;
-        
+
         private void Update()
         {
-            transform.position += Time.deltaTime * speed * (Vector3) direction;
+            transform.position += Time.deltaTime * speed * (Vector3)direction;
+            if (duration <= 0) return;
             counter += Time.deltaTime / duration;
             if (counter > 1f)
                 Destroy(gameObject);

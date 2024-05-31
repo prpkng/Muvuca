@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 7169746228545987661}
   growSpeedInSecs: 80
-  growMax: 80
+  growMax: 50
 --- !u!58 &7169746228545987661
 CircleCollider2D:
   m_ObjectHideFlags: 0

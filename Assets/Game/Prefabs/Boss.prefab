@@ -10191,7 +10191,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  bossHealth: {fileID: 4011028309089606948}
+  health: {fileID: 4011028309089606948}
   possibleDetonatorPlatforms:
   - {fileID: 0}
   - {fileID: 0}
@@ -10290,7 +10290,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   col: {fileID: 3117669753583397755}
-  hitCooldown: 500
   currentHp: 9
 --- !u!114 &7991820678833308929
 MonoBehaviour:

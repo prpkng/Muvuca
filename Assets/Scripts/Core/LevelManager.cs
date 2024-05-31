@@ -20,9 +20,9 @@ namespace Muvuca.Core
 
         public static event Action onLevelReset;
 
-        public static void Reset()
+        public static void Reset(bool fillPlayerHp = true)
         {
-            PlayerController.Instance.health.currentHp = 5; // Change this later ( to a constant maybe? )
+            if (fillPlayerHp) PlayerController.Instance.health.currentHp = 5; // Change this later ( to a constant maybe? )
             PlayerController.PlayerHealthChanged?.Invoke();
             onLevelReset?.Invoke();
             onLevelReset = null;

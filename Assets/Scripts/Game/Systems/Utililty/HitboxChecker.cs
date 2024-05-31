@@ -8,6 +8,7 @@ namespace Muvuca.Systems
 {
     public class HitboxChecker : MonoBehaviour
     {
+        public string targetTag = "Player";
         public Action entered;
         public Action exited;
 
@@ -15,14 +16,14 @@ namespace Muvuca.Systems
 
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.gameObject.CompareTag("Player"))
+            if (!other.gameObject.CompareTag(targetTag))
                 return;
             entered?.Invoke();
             IsInRange = true;
         }
         protected virtual void OnTriggerExit2D(Collider2D other)
         {
-            if (!other.gameObject.CompareTag("Player"))
+            if (!other.gameObject.CompareTag(targetTag))
                 return;
             exited?.Invoke();
             IsInRange = false;

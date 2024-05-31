@@ -34,10 +34,16 @@ namespace Muvuca.Game.Player
 
         private void EnteredPlatform(Transform platform)
         {
+            Debug.Log("Entered platform!");
             player.platform = platform;
             player.transform.position = platform.position;
             if (platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = true;
+            else if (platform.GetChild(0).TryGetComponent(out plat))
+            {
+                plat.hasPlayer = true;
+                player.platform = platform.GetChild(0);
+            }
 
             machine.ChangeState("idle", null);
         }

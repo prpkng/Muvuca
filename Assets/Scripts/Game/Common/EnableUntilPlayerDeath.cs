@@ -13,18 +13,31 @@ namespace Muvuca.Game.Common
         [SerializeField] private UnityEvent disable;
 
         private bool didDisable = false;
-        
+
         private void OnEnable()
         {
             hitbox.entered += Entered;
+            hitbox.exited += Exited;
         }
 
         private void OnDisable()
         {
             hitbox.entered -= Entered;
+            hitbox.exited -= Exited;
         }
 
         private void Entered()
+        {
+            InputManager.AttackPressed += AttackPressed;
+        }
+
+        private void Exited()
+        {
+            InputManager.AttackPressed -= AttackPressed;
+        }
+
+
+        private void AttackPressed()
         {
             if (didDisable) return;
             LevelManager.onLevelReset += () =>

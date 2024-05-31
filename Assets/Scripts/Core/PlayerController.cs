@@ -15,37 +15,37 @@ namespace Muvuca.Core
         public static PlayerController Instance;
 
         public bool isInvulnerable = false;
-        
+
         public float minimumReturnDistance = 5f;
         public float movingSpeed;
         public float returnSpeed;
         [SerializeField] public PlayerSpriteFlipping flipping;
-        
+
         public LineRenderer lineRenderer;
         public AnimationCurve distanceSpeedCurve;
-        
-        [SerializeField] private float playerInvulnerabilityTime = 2f; 
-        
+
+        [SerializeField] private float playerInvulnerabilityTime = 2f;
+
         public readonly StateMachine machine = new();
 
         [ReadOnly] public bool hasPlatform;
         [ReadOnly] public Transform platform;
         [ReadOnly] public HealthSystem health;
 
-        [Header("Sounds")] 
+        [Header("Sounds")]
         public StudioEventEmitter jumpSound;
         public StudioEventEmitter hitSound;
-        
+
         public Animator animator;
         public Flashing flashing;
-        
+
         public static Action PlayerHealthChanged;
-        
-        
-        
+
+
+
         public async void DamagePlayer(int amount = 0)
         {
-            if (machine.currentStateName != "idle") 
+            if (machine.currentStateName != "idle")
                 PlayAnimation("damage");
             CameraShaker.TriggerShake();
             health.DoDamage(amount);
@@ -57,7 +57,7 @@ namespace Muvuca.Core
             isInvulnerable = false;
 
         }
-        
+
         public void SetDirection(Vector2 direction)
         {
             machine.ChangeState("moving", new string[] { Util.SerializeVector3Array(new Vector3[] { direction }) });
@@ -71,7 +71,7 @@ namespace Muvuca.Core
 
 
         internal Transform lastSafePlatform;
-        
+
         public Action<Transform> enteredPlatform;
         [SerializeField] public Collider2D col;
 
@@ -82,6 +82,7 @@ namespace Muvuca.Core
             enteredPlatform += plat =>
             {
                 if (plat.TryGetComponent(out LaunchPlatform p) && p.isSafePlatform) lastSafePlatform = plat;
+                else if (plat.GetChild(0).TryGetComponent(out p) && p.isSafePlatform) lastSafePlatform = plat;
             };
         }
 
@@ -93,7 +94,7 @@ namespace Muvuca.Core
             machine.owner = this;
             machine.ChangeState("moving", new string[] { });
 
-            
+
             PlayAnimation("idle");
         }
 
@@ -107,7 +108,7 @@ namespace Muvuca.Core
         {
             machine.FixedUpdate();
         }
-        
+
         public bool IsInReturnState => machine.currentStateName == "return";
 
         public void PlayAnimation(string id)

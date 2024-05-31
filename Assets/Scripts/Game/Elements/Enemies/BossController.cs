@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using DG.Tweening;
 using FMODUnity;
@@ -12,7 +13,8 @@ using UnityEngine.Events;
 namespace Muvuca.Game.Elements.Enemies
 {
     public class BossController : MonoBehaviour
-    { 
+    {
+
         [SerializeField] private Material shockwaveMaterial;
         public void PlayShockwave()
         {
@@ -41,47 +43,50 @@ namespace Muvuca.Game.Elements.Enemies
 
         [SerializeField] private FollowObjectRigidbody follow;
         [SerializeField] private float hitSpeedFactor;
-        
+
         [SerializeField] private string savingKey;
         public static bool IsFightingBoss;
-        
+
         private bool isAwaken;
         [SerializeField] private UnityEvent<Transform> onAwake;
 
+        public static event Action BossGotHit;
+
         private void Start()
         {
-            bossHealth.onDamage.AddListener(OnBossAwake);
+            health.onDamage.AddListener(OnBossAwake);
         }
 
         private void OnBossAwake(int _)
         {
             isAwaken = true;
             onAwake.Invoke(PlayerController.Instance.transform);
-            bossHealth.onDamage.RemoveListener(OnBossAwake);
+            health.onDamage.RemoveListener(OnBossAwake);
         }
 
         private LaunchPlatform lastDetonator;
-        
+
         public void HitBoss()
         {
+            BossGotHit?.Invoke();
             follow.moveSpeedMultiplier += hitSpeedFactor;
-            bossHealth.DoDamage();
-            if (bossHealth.currentHp <= 0) return;
+            health.DoDamage();
+            if (health.currentHp <= 0) return;
             if (possibleDetonatorPlatforms.Length == 0) return;
             var platforms = possibleDetonatorPlatforms
                 .Where(p => Vector2.Distance(p.transform.position, transform.position) > nextDetonatorMinimumRange)
                 .ToArray();
-            
+
             var detonator = platforms.PickRandom();
             while (detonator == lastDetonator) detonator = platforms.PickRandom();
             lastDetonator = detonator;
-            
-            
+
+
             ArrowIndicator.Target = Instantiate(detonatorGameObject, lastDetonator.transform).transform.position;
-            
+
         }
-        
-        [SerializeField] private HealthSystem bossHealth;
+
+        public HealthSystem health;
         [SerializeField] private LaunchPlatform[] possibleDetonatorPlatforms;
     }
 }

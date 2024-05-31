@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: speed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1565866990735499927, guid: b9f5fc35f6c15a24e93bcee00c815d28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a9ceb920b6793a04f849574b663b94aa, type: 2}
     - target: {fileID: 4596615479802266861, guid: b9f5fc35f6c15a24e93bcee00c815d28, type: 3}
       propertyPath: m_Name
       value: Slow Asteroid Follow

@@ -9,50 +9,46 @@ using UnityEngine;
 
 namespace Muvuca.Game.Elements
 {
-    public class Detonator : MonoBehaviour
+    public class Detonator : HitboxListener
     {
+        protected override void OnEnable()
+        {
+            if (hitbox == null) hitbox = GetComponentInParent<HitboxChecker>();
+            base.OnEnable();
+        }
+        public bool active = true;
+        public void SetActive(bool b) => active = b;
         [SerializeField] private float shockwaveTravelSpeed;
         [SerializeField] private Transform detonatorTransform;
 
         [SerializeField] private bool destroySelf = true;
         [SerializeField] private GameObject shockwavePrefab;
-        
+
         [Space]
-        
+
         [SerializeField] private float shockwaveStartSize;
         [SerializeField] private float shockwaveDestSize;
         [SerializeField] private float shockwaveDuration;
         [SerializeField] private Ease shockwaveEase;
-        private HitboxChecker checker;
-        private void Awake() => checker = GetComponentInParent<HitboxChecker>();
 
-        private void OnEnable()
-        {
-            checker.entered += Entered;
-            checker.exited += Exited;
-        }
-        private void OnDisable()
-        {
-            checker.entered -= Entered;
-            checker.exited -= Exited;
-        }
 
         [SerializeField] private Material shockwaveMaterial;
-        
-        private void Entered()
+
+        protected override void Entered()
         {
             InputManager.AttackPressed += ActivateDetonator;
         }
 
-        private void Exited()
+        protected override void Exited()
         {
             InputManager.AttackPressed -= ActivateDetonator;
         }
 
         public StudioEventEmitter detonatorSfx;
-        
-        private async void ActivateDetonator()
+
+        private void ActivateDetonator()
         {
+            if (!active) return;
             detonatorSfx.Play();
             detonatorSfx.SetParameter("EQEffect", 1f);
             shockwaveMaterial.SetFloat("_Size", shockwaveStartSize);
