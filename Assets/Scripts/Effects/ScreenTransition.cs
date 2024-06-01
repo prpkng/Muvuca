@@ -11,31 +11,31 @@ namespace Muvuca.Effects
         private static readonly int Size = Shader.PropertyToID("_Size");
 
         private const string TransitionMaterialPath = "FullScreenCircleTransition";
-        
+
         public static async void TransitionIn(float duration, Action then)
         {
             var transitionMat = Resources.Load<Material>(TransitionMaterialPath);
             transitionMat.SetFloat(Size, 1f);
-            transitionMat.DOFloat(0f, Size, duration).onComplete += () => then?.Invoke();
+            transitionMat.DOFloat(0f, Size, duration).SetUpdate(true).onComplete += () => then?.Invoke();
         }
         public static async void TransitionOut(float duration, Action then)
         {
             var transitionMat = Resources.Load<Material>(TransitionMaterialPath);
 
             transitionMat.SetFloat(Size, 0f);
-            transitionMat.DOFloat(1f, Size, duration).onComplete += () => then?.Invoke();
+            transitionMat.DOFloat(1f, Size, duration).SetUpdate(true).onComplete += () => then?.Invoke();
         }
-        public static async Task TransitionIn(float duration) 
+        public static async Task TransitionIn(float duration)
         {
             var transitionMat = Resources.Load<Material>(TransitionMaterialPath);
             transitionMat.SetFloat(Size, 1f);
-            await transitionMat.DOFloat(0f, Size, duration).AsyncWaitForCompletion();
+            await transitionMat.DOFloat(0f, Size, duration).SetUpdate(true).AsyncWaitForCompletion();
         }
-        public static async Task TransitionOut(float duration) 
+        public static async Task TransitionOut(float duration)
         {
             var transitionMat = Resources.Load<Material>(TransitionMaterialPath);
             transitionMat.SetFloat(Size, 0f);
-            await transitionMat.DOFloat(1f, Size, duration).AsyncWaitForCompletion();
+            await transitionMat.DOFloat(1f, Size, duration).SetUpdate(true).AsyncWaitForCompletion();
         }
     }
 }

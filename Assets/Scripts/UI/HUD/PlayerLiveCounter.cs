@@ -11,6 +11,11 @@ namespace Muvuca.UI.HUD
     {
         [SerializeField] private TMP_Text tmp;
 
+        private void Awake()
+        {
+            PlayerLivesOnLifeRemoved();
+        }
+
         private void OnEnable()
         {
             PlayerLives.LifeRemoved += PlayerLivesOnLifeRemoved;

@@ -6,6 +6,7 @@ using DG.Tweening;
 using Muvuca.Core;
 using Muvuca.Effects;
 using Muvuca.Game.Common;
+using Muvuca.Game.Elements.Platform;
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
@@ -14,6 +15,7 @@ namespace Muvuca.Game.Elements.Enemies
 {
     public class Turret : MonoBehaviour
     {
+        [SerializeField] private Transform targetPlatform;
         [SerializeField] private float rotateDuration;
         [SerializeField] private Transform rotateObject;
         [SerializeField] private Transform muzzleOrigin;
@@ -36,53 +38,31 @@ namespace Muvuca.Game.Elements.Enemies
         [SerializeField] private float burstDelay;
         [SerializeField] private float shootingErrorAngle = 10;
         [SerializeField] private float bulletSpeed;
+        [SerializeField] private float minShakeDistance;
+
 
         [Header("Effects")]
         [SerializeField] private ShakeData shotShake;
         [SerializeField] private ShakeData shotShakeAngle;
 
-        private IEnumerator lastActiveCoroutine;
 
-        private bool active;
+        private LaunchPlatform plat;
 
-        public void Activate()
+        private void Awake()
         {
-            active = true;
-            activated.Invoke();
-            lastActiveCoroutine = ActivateCoroutine();
-            if (!enabled) return;
-            StartCoroutine(lastActiveCoroutine);
+            plat = GetComponent<LaunchPlatform>();
+            StartCoroutine(ShootingCoroutine());
         }
 
-        public void Stop()
+        public IEnumerator ShootingCoroutine()
         {
-            active = false;
-            rotateObject.DOKill();
-            resetWarnings.Invoke();
-            deactivated.Invoke();
-            StopCoroutine(lastActiveCoroutine);
-            lastActiveCoroutine = null;
-        }
-
-        public IEnumerator ActivateCoroutine()
-        {
-            var dir = ((Vector2)PlayerController.Instance.col.bounds.center - (Vector2)rotateObject.position).normalized;
-            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            firstWarning.Invoke();
-            yield return rotateObject.DORotate(Vector3.forward * (angle - 90), rotateDuration)
-                .SetEase(Ease.OutCubic)
-                .WaitForCompletion();
-
-            secondWarning.Invoke();
-            yield return new WaitForSeconds(fireStartDelay);
-            thirdWarning.Invoke();
-
-            int counter = 0;
+            var counter = 0;
             while (true)
             {
-                dir = ((Vector2)PlayerController.Instance.col.bounds.center - (Vector2)rotateObject.position).normalized;
+                var dir = ((Vector2)targetPlatform.position - (Vector2)rotateObject.position).normalized;
                 rotateObject.transform.up = dir;
-                CameraShaker.TriggerShake(shotShake, shotShakeAngle);
+                if (Vector2.Distance(PlayerController.Instance.transform.position, transform.position) < minShakeDistance)
+                    CameraShaker.TriggerShake(shotShake, shotShakeAngle);
                 var a = Util.AngleFromVectorDegrees(dir);
                 a += Random.Range(-shootingErrorAngle, shootingErrorAngle);
                 a *= Mathf.Deg2Rad;
@@ -98,20 +78,18 @@ namespace Muvuca.Game.Elements.Enemies
                     counter = 0;
                     yield return new WaitForSeconds(burstDelay);
                 }
+                yield return new WaitUntil(() => !plat.hasPlayer);
                 yield return new WaitForSeconds(fireRate);
             }
         }
 
         [SerializeField] private LayerMask playerLayer;
 
-        private void Update()
+        private void LateUpdate()
         {
-            lazerTransform.gameObject.SetActive(active);
-            if (!active)
-                return;
-
-            lazerTransform.up = (PlayerController.Instance.col.bounds.center - lazerTransform.position).normalized;
-            lazerTransform.localScale = new Vector3(1f, Vector2.Distance(lazerTransform.position, PlayerController.Instance.transform.position), 1f);
+            rotateObject.up = (targetPlatform.position - rotateObject.position).normalized;
+            lazerTransform.up = (targetPlatform.position - lazerTransform.position).normalized;
+            lazerTransform.localScale = new Vector3(1f, Vector2.Distance(lazerTransform.position, targetPlatform.position), 1f);
         }
 
     }

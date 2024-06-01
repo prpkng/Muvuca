@@ -12,10 +12,10 @@ namespace Muvuca.Core
         public static LevelManager Instance;
         private void Awake()
         {
-            if (Instance != null) Debug.LogError("You can't have multiple Level Managers in one single scene!");
             Instance = this;
             print(onLevelReset?.GetInvocationList().Length);
             onLevelReset = null;
+            TryAgain.LastPlayerLevel = SceneManager.GetActiveScene().buildIndex;
         }
 
         public static event Action onLevelReset;

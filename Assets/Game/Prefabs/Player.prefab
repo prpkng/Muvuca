@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1563546860996227118}
   - component: {fileID: 5692321216265714128}
   - component: {fileID: 4762058604701586158}
+  - component: {fileID: 7704565313597862795}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -96,6 +97,7 @@ MonoBehaviour:
   playerInvulnerabilityTime: 1.5
   hasPlatform: 0
   platform: {fileID: 0}
+  lastSafePlatform: {fileID: 0}
   health: {fileID: 0}
   jumpSound: {fileID: 1563546860996227118}
   hitSound: {fileID: 5692321216265714128}
@@ -310,6 +312,21 @@ MonoBehaviour:
   gameOverScene:
     asset: {fileID: 102900000, guid: b6edd7cce4d317241a5579360faee2a2, type: 3}
     guid: b6edd7cce4d317241a5579360faee2a2
+--- !u!114 &7704565313597862795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3370765259537907348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd255ca8933fdc648b1da397c176ac6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: dcd9a372ba8011640b6f4b9f4d05aec3, type: 2}
+  - {fileID: 2100000, guid: 7144eba6c25e5e94eb70346fa47cbda0, type: 2}
 --- !u!1 &4176968829493587409
 GameObject:
   m_ObjectHideFlags: 0

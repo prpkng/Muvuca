@@ -22,8 +22,8 @@ namespace Muvuca.UI.HUD
         [ReadOnly][SerializeField] private List<Image> healthIndicators;
 
         [Header("Properties")]
-        [SerializeField] private Color activeColor;
-        [SerializeField] private Color inactiveColor;
+        [SerializeField] private Sprite activeSpr;
+        [SerializeField] private Sprite inactiveSpr;
         [SerializeField] private float shakeDuration = .1f;
         [SerializeField] private float shakeStrength = 10f;
         [SerializeField] private int shakeVibrato = 10;
@@ -55,9 +55,7 @@ namespace Muvuca.UI.HUD
                 foreach (var healthIndicator in healthIndicators)
                 {
                     _i++;
-                    var clr = health >= _i ? activeColor : inactiveColor;
-                    var a = clr.a;
-                    healthIndicator.color = clr;
+                    healthIndicator.sprite = health >= _i ? activeSpr : inactiveSpr;
                 }
                 await UniTask.WaitForSeconds(.1f);
             }
@@ -76,9 +74,7 @@ namespace Muvuca.UI.HUD
             foreach (var healthIndicator in healthIndicators)
             {
                 i++;
-                var clr = health - 1 >= i ? activeColor : inactiveColor;
-                var a = clr.a;
-                healthIndicator.color = clr;
+                healthIndicator.sprite = health >= i ? activeSpr : inactiveSpr;
             }
         }
     }

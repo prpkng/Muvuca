@@ -646,6 +646,8 @@ MonoBehaviour:
     seconds: 0.3
   - character: 33
     seconds: 0.3
+  - character: 46
+    seconds: 0.5
   portrait: {fileID: 5132182840105938094}
   speakerText: {fileID: 7874576920772171065}
   tmp: {fileID: 6323419781951490198}

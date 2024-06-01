@@ -63,11 +63,38 @@ MonoBehaviour:
   Path: ../../../../../FMOD Studio/KMILLO/KMILLO/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638526821686023252
+  lastModified: 638527961440272756
   FileSizes:
   - Name: Desktop
-    Value: 910720
+    Value: 916704
   Exists: 1
+--- !u!114 &-4467306170611818156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Button_Pressed
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Button_Pressed
+  Guid:
+    Data1: -532936549
+    Data2: 1278729883
+    Data3: -1353753728
+    Data4: -1321550967
+  Banks:
+  - {fileID: -4023525308074134598}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 100
 --- !u!114 &-4023525308074134598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,10 +110,10 @@ MonoBehaviour:
   Path: ../../../../../FMOD Studio/KMILLO/KMILLO/Build/Desktop/Songs.bank
   Name: Songs
   StudioPath: bank:/Songs
-  lastModified: 638526821734829208
+  lastModified: 638527958396138704
   FileSizes:
   - Name: Desktop
-    Value: 4730144
+    Value: 7533440
   Exists: 1
 --- !u!114 &-3921872455373758525
 MonoBehaviour:
@@ -228,13 +255,17 @@ MonoBehaviour:
   - {fileID: 4141726883710136458}
   - {fileID: 2304503018799575464}
   - {fileID: -604277214346215758}
+  - {fileID: 7117083157274879960}
+  - {fileID: -4467306170611818156}
+  - {fileID: 2972465956490367388}
+  - {fileID: 5547257706334527058}
   EditorParameters:
   - {fileID: 4015261263243129060}
   MasterBanks:
   - {fileID: 3102992193175333641}
   StringsBanks:
   - {fileID: 579439999652328567}
-  cacheTime: 638526821736899074
+  cacheTime: 638527961440272756
   cacheVersion: 131617
 --- !u!114 &292808375472563728
 MonoBehaviour:
@@ -278,10 +309,10 @@ MonoBehaviour:
   Path: ../../../../../FMOD Studio/KMILLO/KMILLO/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638526821669577522
+  lastModified: 638527961100291473
   FileSizes:
   - Name: Desktop
-    Value: 1692
+    Value: 1870
   Exists: 1
 --- !u!114 &726493765257906121
 MonoBehaviour:
@@ -358,6 +389,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 135
+--- !u!114 &2972465956490367388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Songs/Kmillo - Final Boss
+  m_EditorClassIdentifier: 
+  Path: event:/Songs/Kmillo - Final Boss
+  Guid:
+    Data1: 670657207
+    Data2: 1242114730
+    Data3: -1794745691
+    Data4: -1336481547
+  Banks:
+  - {fileID: -4023525308074134598}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 135970
 --- !u!114 &3102992193175333641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,7 +431,7 @@ MonoBehaviour:
   Path: ../../../../../FMOD Studio/KMILLO/KMILLO/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638526821669537444
+  lastModified: 638527961100266463
   FileSizes:
   - Name: Desktop
     Value: 5408
@@ -484,6 +542,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1178
+--- !u!114 &5547257706334527058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Turret_Shot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Turret_Shot
+  Guid:
+    Data1: 176303029
+    Data2: 1114961901
+    Data3: -142754914
+    Data4: 1506831924
+  Banks:
+  - {fileID: -5327627804091035664}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 30
+  Length: 380
 --- !u!114 &6269285434893936040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,6 +597,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 115
+--- !u!114 &7117083157274879960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Songs/Kmillo - Explore
+  m_EditorClassIdentifier: 
+  Path: event:/Songs/Kmillo - Explore
+  Guid:
+    Data1: -1163384509
+    Data2: 1284265230
+    Data3: 1596385163
+    Data4: 584432056
+  Banks:
+  - {fileID: -4023525308074134598}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 72275
 --- !u!114 &7643541336137928333
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -72,6 +72,93 @@ MonoBehaviour:
       en el aire!"
     m_Metadata:
       m_Items: []
+  - m_Id: 4331633751814144
+    m_Localized: "Agente K-MILL0, encontre e neutralize a <color=#ff356c>anomalia
+      estelar.<color=black> A localiza\xE7\xE3o foi marcada em seu sensor"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331633751814145
+    m_Localized: "Utilize o<color=#ff356c> bot\xE3o do mouse <color=black> para se
+      locomover pelo espa\xE7o entre as plataformas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331633751814146
+    m_Localized: "Alguns meteoros podem estar no caminho, utilize seu ataque para
+      quebr\xE1-los no ar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331633751814147
+    m_Localized: "Cuidado com os meteoros vermelhos, eles s\xE3o mais resistentes
+      e n\xE3o podem ser quebrados"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4353520380866560
+    m_Localized: Evite-os usando sua agilidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331633751814148
+    m_Localized: "Algumas plataformas est\xE3o a muito tempo no espa\xE7o e podem
+      estar fr\xE1geis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4353520385060864
+    m_Localized: "Seja r\xE1pido e saia delas antes que se destruam"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331633751814149
+    m_Localized: "Essa \xE9 a anomalia, utilize os detonadores que n\xF3s enviamos
+      para neutraliz\xE1-las"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331633751814150
+    m_Localized: "Tem algo estranho, isso foi muito f\xE1cil...  Ainda estou recebendo
+      registros de anomalias no espa\xE7o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4331633751814151
+    m_Localized: Volte para a base usando o teleportador e iremos vasculhar a galaxia!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4376874118737921
+    m_Localized: "Agente K-MILLO, detectamos altos n\xEDveis de energia bloqueando
+      sua passagem."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4423595335020544
+    m_Localized: "Encontre um de nossos detonadores para liberar o caminho, c\xE2mbio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4423595460849664
+    m_Localized: "Agente K-MILLO, detectamos uma das <color=#ff356c>anomalias que
+      precisamos destruir. Siga para o objetivo, c\xE2mbio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4423595460849665
+    m_Localized: "Para desativar o <color=#ff356c>campo de energia<color=black>,
+      aperte o bot\xE3o direito"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4423595460849666
+    m_Localized: "Agente K-MILLO, essa \xE9 a anomalia. Ela est\xE1 adormecida, mas
+      cuidado: ela despertar\xE1 em estado de f\xFAria assim que voc\xEA ativar o
+      detonador <sprite=\"buttons\" index=1>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4423595460849667
+    m_Localized: "Ser\xE1 necess\xE1rio ativar todos os <color=#ff356c> detonadores
+      <color=black>da regi\xE3o para destru\xED-la completamente. Boa sorte, c\xE2mbio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473571092131840
+    m_Localized: "K-MILL0, agora sua miss\xE3o \xE9 <color=#ff356c>assegurar <color=black>que
+      o detonador chegue at\xE9 a <color=#ff356c>barreira de fogo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473571230543872
+    m_Localized: "<color=black>Suba nela para ir em dire\xE7\xE3o \xE0 anomalia,
+      mas n\xE3o deixe que os <color=#ff356c> aster\xF3ides <color=black>a destruam"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -30,6 +30,7 @@ namespace Muvuca.Core
 
         [ReadOnly] public bool hasPlatform;
         [ReadOnly] public Transform platform;
+        [ReadOnly] public Transform lastSafePlatform;
         [ReadOnly] public HealthSystem health;
 
         [Header("Sounds")]
@@ -69,8 +70,6 @@ namespace Muvuca.Core
             machine.currentState?.Exit();
         }
 
-
-        internal Transform lastSafePlatform;
 
         public Action<Transform> enteredPlatform;
         [SerializeField] public Collider2D col;

@@ -23,7 +23,7 @@ namespace Muvuca.Game.Player
         }
 
         private Vector3? overrideDirection = null;
-        
+
         public void JumpPressed()
         {
             player.jumpSound.Play();
@@ -32,27 +32,29 @@ namespace Muvuca.Game.Player
             Vector2 dir = overrideDirection ??
                           PlatformSelector.Instance.targetPosition - player.transform.position;
             dir = dir.normalized;
-            
+
             machine.ChangeState("moving",
                 new[] { Util.SerializeVector3Array(new[] { (Vector3)dir }) });
 
             player.transform.up = dir;
-            
+
             if (player.platform.TryGetComponent(out LaunchPlatform plat))
                 plat.hasPlayer = false;
         }
 
         private int frameCount;
-        
+
         public override void Update()
         {
             player.transform.up = player.platform.up;
             player.transform.position = player.platform.position;
 
             frameCount++;
-            
-            if (PlayerInputBuffering.BufferedPosition == null 
-                || Vector2.Distance(player.transform.position, PlayerInputBuffering.BufferedPosition.Value) < 1.5f 
+
+            if (InputManager.IgnoringMouse) return;
+
+            if (PlayerInputBuffering.BufferedPosition == null
+                || Vector2.Distance(player.transform.position, PlayerInputBuffering.BufferedPosition.Value) < 1.5f
                 || frameCount < 3) return;
             overrideDirection = (PlayerInputBuffering.BufferedPosition.Value - player.transform.position).normalized;
             JumpPressed();

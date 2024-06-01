@@ -1,4 +1,6 @@
 using Cysharp.Threading.Tasks;
+using Muvuca.Core;
+using Muvuca.Game.Player;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Events;
@@ -12,9 +14,11 @@ namespace Muvuca.Systems.DialogueSystem
 
         public UnityEvent onFinished;
         public float delay;
-        
+
         public async void Spawn()
         {
+            InputManager.IgnoringMouse = true;
+            PlayerInputBuffering.BufferedPosition = null;
             await UniTask.WaitForSeconds(delay);
             var prefab = Addressables.LoadAssetAsync<GameObject>(DialogueRunnerPrefabPath);
             await prefab.Task;

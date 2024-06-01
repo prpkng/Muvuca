@@ -16,7 +16,7 @@ namespace Muvuca.Game.Elements.Platform
         [SerializeField] private SpriteRenderer[] lights;
         [SerializeField] private Sprite activeSprite;
         [SerializeField] private Sprite inactiveSprite;
-        
+
         [SerializeField] private UnityEvent onBreak;
         [SerializeField] private UnityEvent onReset;
 
@@ -57,7 +57,7 @@ namespace Muvuca.Game.Elements.Platform
             for (int i = 0; i < 3; i++)
             {
                 lights[i].sprite = inactiveSprite;
-                yield return new WaitForSeconds(duration/3f);
+                yield return new WaitForSeconds(duration / 3f);
             }
             onBreak.Invoke();
             broken = true;
@@ -70,6 +70,8 @@ namespace Muvuca.Game.Elements.Platform
 
         protected override void Exited()
         {
+            for (int i = 0; i < 3; i++)
+                lights[i].sprite = inactiveSprite;
             if (breakCoroutine != null) StopCoroutine(breakCoroutine);
             breakCoroutine = null;
             if (broken) return;

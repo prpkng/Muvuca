@@ -54,7 +54,7 @@ namespace Muvuca.Game.Elements.Enemies
 
         private void Start()
         {
-            health.onDamage.AddListener(OnBossAwake);
+            health?.onDamage.AddListener(OnBossAwake);
         }
 
         private void OnBossAwake(int _)
@@ -68,9 +68,9 @@ namespace Muvuca.Game.Elements.Enemies
 
         public void HitBoss()
         {
-            BossGotHit?.Invoke();
             follow.moveSpeedMultiplier += hitSpeedFactor;
             health.DoDamage();
+            BossGotHit?.Invoke();
             if (health.currentHp <= 0) return;
             if (possibleDetonatorPlatforms.Length == 0) return;
             var platforms = possibleDetonatorPlatforms

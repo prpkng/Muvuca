@@ -12,7 +12,7 @@ namespace Muvuca.Game.Common
         [SerializeField] private UnityEvent enable;
         [SerializeField] private UnityEvent disable;
 
-        private bool didDisable = false;
+        internal bool didDisable = false;
 
         private void OnEnable()
         {
