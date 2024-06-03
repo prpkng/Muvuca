@@ -63,7 +63,7 @@ MonoBehaviour:
   Path: ../../../../../FMOD Studio/KMILLO/KMILLO/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638527961440272756
+  lastModified: 638527974481345428
   FileSizes:
   - Name: Desktop
     Value: 916704
@@ -110,7 +110,7 @@ MonoBehaviour:
   Path: ../../../../../FMOD Studio/KMILLO/KMILLO/Build/Desktop/Songs.bank
   Name: Songs
   StudioPath: bank:/Songs
-  lastModified: 638527958396138704
+  lastModified: 638527974482186473
   FileSizes:
   - Name: Desktop
     Value: 7533440
@@ -265,7 +265,7 @@ MonoBehaviour:
   - {fileID: 3102992193175333641}
   StringsBanks:
   - {fileID: 579439999652328567}
-  cacheTime: 638527961440272756
+  cacheTime: 638527974482186473
   cacheVersion: 131617
 --- !u!114 &292808375472563728
 MonoBehaviour:
@@ -567,7 +567,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 30
+  MaxDistance: 65
   Length: 380
 --- !u!114 &6269285434893936040
 MonoBehaviour:

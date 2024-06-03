@@ -23,13 +23,13 @@ Material:
   m_Name: Green Sun
   m_Shader: {fileID: -6465566751694194690, guid: 4c193bfe9b236b64591e76f5242fcbe0, type: 3}
   m_Parent: {fileID: 2100000, guid: dd5e496ae1113d54d8715989fa1dc202, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 16
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3022
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
