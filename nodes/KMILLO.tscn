@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xg55iovd78ks"]
+[gd_scene load_steps=14 format=3 uid="uid://xg55iovd78ks"]
 
 [ext_resource type="Script" path="res://scripts/player/player_controller.gd" id="1_54u8h"]
 [ext_resource type="Texture2D" uid="uid://sq27wbe2ci6l" path="res://art/sprites/KMILLO/kmillo-idle.png" id="2_56aud"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/common/state_machine.gd" id="4_t8km8"]
 [ext_resource type="Script" path="res://scripts/player/plr_state_idle.gd" id="5_k2v1d"]
 [ext_resource type="Script" path="res://scripts/player/plr_state_moving.gd" id="6_ewk5o"]
+[ext_resource type="Script" path="res://scripts/player/player_input.gd" id="7_2q5sl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xjihg"]
 radius = 32.0
@@ -178,7 +179,7 @@ _data = {
 [node name="KMILLO" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
 position = Vector2(612, 315)
 script = ExtResource("1_54u8h")
-state_machine = NodePath("")
+state_machine = NodePath("StateMachine")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xjihg")
@@ -202,3 +203,7 @@ script = ExtResource("5_k2v1d")
 
 [node name="moving" type="Node" parent="StateMachine"]
 script = ExtResource("6_ewk5o")
+
+[node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("7_2q5sl")
+player = NodePath("..")

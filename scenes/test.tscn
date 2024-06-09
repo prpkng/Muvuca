@@ -5,4 +5,3 @@
 [node name="Test" type="Node2D"]
 
 [node name="KMILLO" parent="." instance=ExtResource("1_idsft")]
-state_machine = null
