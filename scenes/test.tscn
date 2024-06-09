@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyro2376gew4d"]
+
+[ext_resource type="PackedScene" uid="uid://xg55iovd78ks" path="res://nodes/KMILLO.tscn" id="1_idsft"]
+
+[node name="Test" type="Node2D"]
+
+[node name="KMILLO" parent="." instance=ExtResource("1_idsft")]
+state_machine = null
