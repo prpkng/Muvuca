@@ -59,6 +59,6 @@ Material:
     - _Size: 2.25
     - _Smoothness: 0.25
     m_Colors:
-    - _Offset: {r: 0.32430455, g: 0.5, b: 0, a: 0}
+    - _Offset: {r: 0.5, g: 0.5, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

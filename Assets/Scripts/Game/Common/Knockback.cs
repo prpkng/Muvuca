@@ -10,7 +10,7 @@ namespace Muvuca.Game.Common
         
         public void TriggerKnockback()
         {
-            rb.velocity = (rb.position - (Vector2)PlayerController.Instance.transform.position).normalized * force;
+            rb.linearVelocity = (rb.position - (Vector2)PlayerController.Instance.transform.position).normalized * force;
         }
     }
 }

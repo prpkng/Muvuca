@@ -19,7 +19,7 @@ namespace Muvuca.Game.Common
             if (Mathf.Abs(distanceSpeedAffect) > Mathf.Epsilon)
                 velocity *= Vector2.Distance(from, dest) * distanceSpeedAffect;
             Vector2 targetSpd = (dest - from).normalized * velocity;
-            rb.velocity += (targetSpd - rb.velocity) * (1f - Mathf.Exp(-moveSpeed * Time.deltaTime));
+            rb.linearVelocity += (targetSpd - rb.linearVelocity) * (1f - Mathf.Exp(-moveSpeed * Time.deltaTime));
         }
     }
 }

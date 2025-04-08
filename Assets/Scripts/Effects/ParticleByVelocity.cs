@@ -23,7 +23,7 @@ namespace Muvuca.Effects
         private void Update()
         {
             var color = startColor;
-            color.a *= rb.velocity.magnitude.Map(0f, maxVel, minOpacity, maxOpacity);
+            color.a *= rb.linearVelocity.magnitude.Map(0f, maxVel, minOpacity, maxOpacity);
             var main = particle.main;
             main.startColor = color;
         }
