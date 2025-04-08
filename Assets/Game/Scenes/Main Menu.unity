@@ -42,7 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -404,14 +405,14 @@ MonoBehaviour:
       Data2: 1130980642
       Data3: -1248496469
       Data4: 635073941
-    Path: event:/UI/SFX_Menu_Pass
+    Path: event:/UI/sfx_menu_hover
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -437,12 +438,12 @@ MonoBehaviour:
       Data4: -1874270436
     Path: event:/UI/SFX_Menu_Click
   Event: 
-  PlayEvent: 20
-  StopEvent: 0
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -957,12 +958,12 @@ MonoBehaviour:
       Data4: -1874270436
     Path: event:/UI/SFX_Menu_Click
   Event: 
-  PlayEvent: 20
-  StopEvent: 0
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -988,12 +989,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -1416,12 +1417,12 @@ MonoBehaviour:
       Data4: -1874270436
     Path: event:/UI/SFX_Menu_Click
   Event: 
-  PlayEvent: 20
-  StopEvent: 0
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -1447,12 +1448,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -1743,12 +1744,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -3343,6 +3344,7 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+  m_ScrollDeltaPerTick: 6
 --- !u!114 &1203045324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3915,12 +3917,12 @@ MonoBehaviour:
       Data4: -1874270436
     Path: event:/UI/SFX_Menu_Click
   Event: 
-  PlayEvent: 20
-  StopEvent: 0
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -3946,12 +3948,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -4461,12 +4463,12 @@ MonoBehaviour:
       Data4: -1874270436
     Path: event:/UI/SFX_Menu_Click
   Event: 
-  PlayEvent: 20
-  StopEvent: 0
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -4492,12 +4494,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -5087,12 +5089,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -5243,6 +5245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
 --- !u!1 &1690386175
 GameObject:
@@ -5649,12 +5652,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -6139,12 +6142,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -6170,12 +6173,12 @@ MonoBehaviour:
       Data4: -1874270436
     Path: event:/UI/SFX_Menu_Click
   Event: 
-  PlayEvent: 20
-  StopEvent: 0
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -6466,12 +6469,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -6764,12 +6767,12 @@ MonoBehaviour:
       Data4: 635073941
     Path: event:/UI/SFX_Menu_Pass
   Event: 
-  PlayEvent: 17
-  StopEvent: 0
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
@@ -6795,12 +6798,12 @@ MonoBehaviour:
       Data4: -1874270436
     Path: event:/UI/SFX_Menu_Click
   Event: 
-  PlayEvent: 20
-  StopEvent: 0
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  AllowNonRigidbodyDoppler: 0
+  NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1

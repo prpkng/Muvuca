@@ -1,8 +1,7 @@
 {
     "name": "FMODUnityResonanceEditor",
     "references": [
-        "FMODUnityResonance",
-        "FMODUnity"
+        "FMODUnityResonance"
     ],
     "includePlatforms": [
         "Editor"
@@ -12,7 +11,9 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "UNITY_2021_3_OR_NEWER"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }
